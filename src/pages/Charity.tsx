@@ -15,7 +15,7 @@ export default function Charity() {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#002B5B] leading-tight mb-6 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-[#002B5B] leading-tight mb-6 tracking-tight drop-shadow-sm"
             >
               大手牽小手，<br />
               <span className="text-[#C5A059]">愛心齊步走</span>
@@ -24,11 +24,11 @@ export default function Charity() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8 font-light"
+              className="text-lg text-slate-500 leading-relaxed mb-8 font-medium"
             >
               教育不該有城鄉差距。我們帶著豐富的教育資源走入偏鄉，同時鼓勵我們的學員家庭一同參與志工行列，從小培養回饋社會的同理心。
             </motion.p>
-            <button className="bg-[#002B5B] hover:bg-[#003d82] text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <button className="bg-[#002B5B] hover:bg-[#C5A059] text-white px-10 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
               加入志工行列
             </button>
           </div>
@@ -37,9 +37,9 @@ export default function Charity() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl"
+              className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50 rotate-3 hover:rotate-0 transition-transform duration-500"
             >
-              <img src="/images/placeholder.svg" alt="公益活動" className="w-full h-auto aspect-square md:aspect-[4/3] object-cover" />
+              <img src="/images/placeholder.svg" alt="公益活動" className="w-full h-auto object-cover" style={{ aspectRatio: '4/3' }} />
             </motion.div>
             
             {/* Floating Stats */}
@@ -47,10 +47,10 @@ export default function Charity() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[2rem] shadow-xl border border-slate-100 hidden md:block"
+              className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[2rem] shadow-xl border-4 border-slate-50 hidden md:block"
             >
-              <div className="text-4xl font-bold text-[#C5A059] mb-1">50+</div>
-              <div className="text-slate-500 font-medium text-xs tracking-wider uppercase">走訪偏鄉學校</div>
+              <div className="text-4xl font-black text-[#C5A059] mb-1">50+</div>
+              <div className="text-slate-500 font-bold text-xs tracking-wider uppercase">走訪偏鄉學校</div>
             </motion.div>
           </div>
         </div>
@@ -59,8 +59,8 @@ export default function Charity() {
       {/* Pillars */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#002B5B] mb-4 tracking-tight">三大公益行動</h2>
-          <div className="w-16 h-1 bg-[#C5A059] mx-auto rounded-full" />
+          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">三大公益行動</h2>
+          <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -75,13 +75,14 @@ export default function Charity() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
-              className="bg-white p-8 rounded-[2rem] text-center shadow-sm hover:shadow-xl transition-shadow border border-slate-100 flex flex-col items-center"
+              whileHover={{ y: -8 }}
+              className="bg-white p-8 rounded-[3rem] text-center shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col items-center group"
             >
-              <div className="w-16 h-16 bg-[#C5A059]/10 rounded-2xl flex items-center justify-center mb-6 text-[#C5A059]">
-                <pillar.icon size={28} />
+              <div className="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mb-6 text-[#C5A059] group-hover:scale-110 transition-transform">
+                <pillar.icon size={32} />
               </div>
-              <h3 className="text-xl font-bold text-[#002B5B] mb-3 tracking-tight">{pillar.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{pillar.desc}</p>
+              <h3 className="text-xl font-black text-[#002B5B] mb-3 tracking-tight group-hover:text-[#C5A059] transition-colors">{pillar.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium">{pillar.desc}</p>
             </motion.div>
           ))}
         </div>

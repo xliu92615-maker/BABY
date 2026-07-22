@@ -34,20 +34,21 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-slate-100',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b-4 border-slate-50',
           scrolled ? 'shadow-md py-3 px-4 sm:px-6 lg:px-12' : 'py-6 px-4 sm:px-6 lg:px-12'
         )}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#002B5B] rounded-lg flex items-center justify-center">
-              <span className="text-white font-serif text-xl font-bold">啟</span>
+        <div className="max-w-7xl mx-auto flex justify-between items-center relative">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-14 h-14 bg-[#002B5B] rounded-full flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative">
+              <span className="text-white font-serif text-3xl font-bold">啟</span>
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#C5A059] rounded-full border-2 border-white scale-0 group-hover:scale-100 transition-transform delay-100" />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-[#002B5B] hidden sm:block">啟夢教育 <span className="text-[#C5A059] font-light">DreamEdu</span></span>
+            <span className="text-2xl font-black tracking-tight text-[#002B5B] hidden sm:block drop-shadow-sm">啟夢教育 <span className="text-[#C5A059] font-black">DreamEdu</span></span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -55,8 +56,8 @@ export function Navbar() {
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    'text-sm font-medium transition-colors hover:text-[#002B5B]',
-                    isActive ? 'text-[#002B5B] border-b-2 border-[#C5A059] pb-1' : 'text-slate-500'
+                    'text-sm font-black transition-all px-5 py-2.5 rounded-full',
+                    isActive ? 'bg-[#C5A059]/10 text-[#C5A059] shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-[#002B5B] hover:-translate-y-1 hover:shadow-sm'
                   )}
                 >
                   {link.name}
@@ -65,7 +66,7 @@ export function Navbar() {
             })}
             <a
               href="#"
-              className="bg-[#002B5B] hover:bg-[#003d82] text-white px-6 py-2 rounded-full text-xs font-medium transition-all"
+              className="bg-[#002B5B] hover:bg-[#C5A059] text-white px-8 py-3 rounded-full text-sm font-black transition-all hover:-translate-y-1 hover:rotate-2 hover:shadow-lg shadow-sm ml-4"
             >
               聯繫我們
             </a>
@@ -92,8 +93,8 @@ export function Navbar() {
           >
             <div className="flex justify-between items-center p-4 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#002B5B] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-serif text-xl font-bold">啟</span>
+                <div className="w-12 h-12 bg-[#002B5B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-serif text-2xl font-bold">啟</span>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -121,7 +122,7 @@ export function Navbar() {
               <div className="mt-8">
                 <a
                   href="#"
-                  className="w-full bg-[#002B5B] hover:bg-[#003d82] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all text-lg"
+                  className="w-full bg-[#002B5B] hover:bg-[#C5A059] text-white py-4 rounded-full font-black flex items-center justify-center gap-2 transition-all text-lg shadow-md hover:-translate-y-1"
                 >
                   聯繫我們
                 </a>
