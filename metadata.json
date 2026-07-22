@@ -1,0 +1,6 @@
+{
+  "name": "啟夢教育 (Qi Meng Education)",
+  "description": "高級、溫馨、現代、國際化的教育機構官方網站。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
