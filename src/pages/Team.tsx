@@ -1,22 +1,10 @@
 import { motion } from 'motion/react';
-import { Linkedin, Mail } from 'lucide-react';
-import wangImage from '../assets/images/regenerated_image_1784722538786.jpg';
+import { Linkedin, Mail, ExternalLink } from 'lucide-react';
+import wangImage from '../assets/images/regenerated_image_1784812506948.png';
 
 export default function Team() {
   return (
     <div className="bg-[#fdfdfd] min-h-screen pb-24">
-      {/* Header */}
-      <div className="bg-[#002B5B] py-24 relative overflow-hidden">
-        <div className="absolute top-10 right-20 w-32 h-32 bg-[#C5A059] rounded-full mix-blend-multiply filter blur-2xl opacity-40" />
-        <div className="absolute bottom-10 left-20 w-48 h-48 bg-white rounded-full mix-blend-overlay filter blur-2xl opacity-20" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight drop-shadow-sm">團隊介紹</h1>
-          <p className="text-xl text-slate-200 max-w-2xl mx-auto font-medium">
-            匯聚各領域充滿熱情的教育專家，共同為孩子打造卓越的學習體驗。
-          </p>
-        </div>
-      </div>
-
       {/* Intro Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <motion.div
@@ -89,7 +77,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col md:flex-row items-center md:items-start p-8 md:p-12 gap-10"
         >
-          <div className="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
+          <div className="w-48 md:w-72 aspect-[2/3] rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
             <img 
               src={wangImage} 
               alt="王景富 主任" 
@@ -125,22 +113,58 @@ export default function Team() {
         </motion.div>
       </div>
 
-      {/* Join Us CTA */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-        <div className="bg-[#C5A059] rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden border-8 border-white shadow-xl">
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-50" />
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-50" />
-          <div className="relative z-10">
-            <h2 className="text-3xl font-black text-white mb-4 tracking-tight drop-shadow-sm">加入啟夢團隊</h2>
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto font-bold">
-              我們隨時歡迎對教育充滿熱忱、具有創新思維的夥伴加入。如果您也相信教育的力量，請與我們聯繫。
-            </p>
-            <button className="bg-[#002B5B] text-white px-10 py-4 rounded-full font-black hover:bg-[#003d82] hover:-translate-y-1 transition-all shadow-lg text-sm uppercase tracking-wider">
-              查看招募職缺
-            </button>
-          </div>
+      {/* News Section */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">新聞專欄</h2>
+          <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              title: '啟夢教育聯盟：以教育為橋、以大愛為根，讓夢想成為行動',
+              source: '台灣網',
+              url: 'https://news.taiwannet.com.tw/news/188048/啟夢教育聯盟-以教育為橋-以大愛為根-讓夢想成為行動.html'
+            },
+            {
+              title: '方格子 Vocus 專題報導：啟夢教育的創新與堅持',
+              source: '方格子 Vocus',
+              url: 'https://vocus.cc/article/693ade83fd897800014c632e'
+            },
+            {
+              title: 'PChome 新聞：啟夢教育引領多元學習新風潮',
+              source: 'PChome 新聞',
+              url: 'https://news.pchome.com.tw/living/lifetoutiao/20251023/index-76120564283588315009.html'
+            }
+          ].map((news, idx) => (
+            <motion.a
+              key={idx}
+              href={news.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white rounded-[2rem] p-6 md:p-8 border-2 border-slate-100 hover:border-[#C5A059]/50 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between h-full relative overflow-hidden"
+            >
+              <div className="absolute -right-6 -top-6 w-24 h-24 bg-slate-50 rounded-full group-hover:bg-[#C5A059]/10 transition-colors" />
+              <div className="relative z-10">
+                <span className="text-[#C5A059] font-bold text-sm mb-3 block">{news.source}</span>
+                <h3 className="text-[#002B5B] font-black text-lg leading-snug group-hover:text-[#C5A059] transition-colors line-clamp-3">
+                  {news.title}
+                </h3>
+              </div>
+              <div className="mt-8 flex justify-end relative z-10">
+                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white text-slate-400 transition-colors">
+                  <ExternalLink size={18} />
+                </div>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
+
     </div>
   );
 }

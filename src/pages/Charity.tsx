@@ -28,9 +28,6 @@ export default function Charity() {
             >
               教育不該有城鄉差距。我們帶著豐富的教育資源走入偏鄉，同時鼓勵我們的學員家庭一同參與志工行列，從小培養回饋社會的同理心。
             </motion.p>
-            <button className="bg-[#002B5B] hover:bg-[#C5A059] text-white px-10 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-              加入志工行列
-            </button>
           </div>
           <div className="md:w-1/2 relative">
             <motion.div

@@ -6,7 +6,7 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#FAFAFA]">
       <Navbar />
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-[116px]">
         <Outlet />
       </main>
       <Footer />
