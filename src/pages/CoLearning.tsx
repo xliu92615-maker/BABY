@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, Star, Calendar, MapPin } from 'lucide-react';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
-import img3 from '../assets/images/regenerated_image_1784724383569.png';
-import img4 from '../assets/images/dream_mission_agency_1784821909336.jpg';
-import img5 from '../assets/images/capybara_baking_camp_1784822623447.jpg';
-import img6 from '../assets/images/taro_ball_making_1784822861410.jpg';
-import img7 from '../assets/images/emperor_roleplay_1784823051503.jpg';
+import img3 from '../assets/images/regenerated_image_1784823699963.png';
+import img4 from '../assets/images/regenerated_image_1784823421223.png';
+import img5 from '../assets/images/regenerated_image_1784823424190.png';
+import img6 from '../assets/images/regenerated_image_1784823425976.png';
+import img7 from '../assets/images/regenerated_image_1784823427616.png';
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -15,7 +15,7 @@ export default function CoLearning() {
   const activities = [
     { title: '小小農夫生存戰', desc: '【週末爸媽救星】週末想帶孩子出門，又怕自己回家比上班還累？\n\n這週末把孩子交給大自然，把電力通通留在田裡！\n\n⚡️孩子極致放電｜拔蘿蔔、採野菜、認識農作、野趣DIY\n☕️爸媽專屬休息｜遮陽休息區、飲品無限量、乾淨沖洗區\n💥原價$750，限時優惠只要$399\n\n在汗水與笑聲中，玩出最棒的課外第一課！🌱', category: '親子共學', image: img1 },
     { title: '公主夢成真！', desc: '還在煩惱假日帶孩子去哪裡嗎？\n7～12月限定活動來啦～\n專業兒童彩妝體驗，搭配夢幻造型與拍照紀念，留下最珍貴的童年回憶❤️\n\n✨限量優惠｜前20位報名贈 Shushu & Sassy冰雪奇緣聯名款彩妝乙組！\n\n孩子的童年只有一次，讓我們一起陪伴她，完成一次屬於自己的公主夢✨', category: '親子共學', image: img2 },
-    { title: '生活科學實驗', desc: '利用日常隨手可得的材料，進行趣味科學實驗，培養孩子與父母一起發掘問題與解決問題的能力。', category: '親子共學', image: img3 },
+    { title: '【最接地氣的感恩教育】長大後，我就成了你！', desc: '讓孩子穿上你的制服，用他的視角，讀懂父母的偉大\n體會辛苦： 戴上工程帽、手拿工具，明白上班需要付出汗水。\n理解責任： 知道安全是為了「平安回家陪你」，理解父母的叮嚀。\n建立崇拜： 發現爸爸媽媽在社會上，是默默守護大家安全的無名英雄。\n\n今年最觸動人心的親子職業體驗', category: '親子共學', image: img3 },
     { title: '🌙 夢境任務局 Dream Mission Agency', desc: '全台首創沉浸式兒童冒險體驗！\n💥半價優惠來襲！💥\n別再讓他們的週末只剩下平板和電視！\n✔️沉浸式劇情體驗\n✔️專屬夢境守護者勳章與證書\n讓孩子在遊戲中學習合作、勇敢挑戰、解決問題，也讓爸爸媽媽一起成為故事中的英雄！\n\n夢境任務局，等你一起完成這場屬於親子的夢想任務！', category: '親子共學', image: img4 },
     { title: '療癒登場！【2026限定開課】兒童卡皮巴拉療癒烘焙營', desc: '🔥獨家早鳥禮：前30位報名者，限定卡皮巴拉圍裙＆圍巾帽套組乙套（可帶回家紀念！）\n\n超可愛作品任選👍\n豚豚泡湯！立體糖霜餅乾\n水豚鬆軟生吐司\n卡皮巴拉派對蛋糕\n告別平淡無奇的假期，2026最讓小朋友尖叫、家長直呼「太可愛」的烘焙課正式上線‼️', category: '親子共學', image: img5 },
     { title: '週末放電首選！兒童手作芋圓🍠', desc: '➡️100%真食材：無防腐劑、零人工香精\n➡️五感大放電：訓練小手肌力，揉出滿滿成就感\n✨活動贈送：現場享用手作芋圓湯＋帶回自製芋圓生麵團！\n原價$599，現正半價優惠中🔥🔥\n\n大人舒壓、孩子放電，全家一起揉出專屬的古早味甜品～', category: '親子共學', image: img6 },
