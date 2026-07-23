@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -20,14 +19,6 @@ export function Footer() {
             <p className="text-blue-100 leading-relaxed text-sm font-medium">
               為每個孩子打造專屬的國際化學習旅程，啟發潛能，夢想啟航。
             </p>
-            <div className="flex gap-4 mt-8">
-              <a href="#" className="w-12 h-12 rounded-full bg-white/10 border-2 border-white/20 shadow-sm flex items-center justify-center text-white hover:bg-[#C5A059] hover:border-[#C5A059] hover:-translate-y-2 hover:rotate-6 transition-all duration-300">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-white/10 border-2 border-white/20 shadow-sm flex items-center justify-center text-white hover:bg-[#C5A059] hover:border-[#C5A059] hover:-translate-y-2 hover:-rotate-6 transition-all duration-300">
-                <Instagram size={20} />
-              </a>
-            </div>
           </div>
           
           <div>

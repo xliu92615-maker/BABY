@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { HeartHandshake, Smile, TreePine } from 'lucide-react';
+import charityImage from '../assets/images/regenerated_image_1784816871769.png';
 
 export default function Charity() {
   return (
@@ -20,14 +21,18 @@ export default function Charity() {
               大手牽小手，<br />
               <span className="text-[#C5A059]">愛心齊步走</span>
             </motion.h1>
-            <motion.p 
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8 font-medium"
+              className="text-lg text-slate-500 leading-relaxed mb-8 font-medium space-y-4"
             >
-              教育不該有城鄉差距。我們帶著豐富的教育資源走入偏鄉，同時鼓勵我們的學員家庭一同參與志工行列，從小培養回饋社會的同理心。
-            </motion.p>
+              <p>教育的價值，不僅在於知識的傳遞，更在於愛與關懷的實踐。</p>
+              <p>王景富主任始終相信，一個人的成長，不只是學會更多技能，更要懂得關心他人、珍惜資源，並將善意化為實際行動。</p>
+              <p>真正的教育並非只存在於教室之中，而是體現在生活中的每一次選擇與每一次行動。當孩子願意主動幫助他人、懂得分享、學會感恩，這些品格將成為陪伴他們一生的重要力量。</p>
+              <p>當每個人都願意付出一點點關懷，就能匯聚成改變社會的力量；當每個家庭都願意帶著孩子參與公益，就能讓愛與善良持續傳承，讓更多需要幫助的人感受到希望與溫暖。</p>
+              <p>教育能夠啟發夢想，公益能夠溫暖人心，而每一次真誠的付出，都將成為改變世界的一份力量。</p>
+            </motion.div>
           </div>
           <div className="md:w-1/2 relative">
             <motion.div
@@ -36,7 +41,7 @@ export default function Charity() {
               transition={{ duration: 0.5 }}
               className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50 rotate-3 hover:rotate-0 transition-transform duration-500"
             >
-              <img src="/images/placeholder.svg" alt="公益活動" className="w-full h-auto object-cover" style={{ aspectRatio: '4/3' }} />
+              <img src={charityImage} alt="公益活動" className="w-full h-auto object-cover" style={{ aspectRatio: '4/3' }} />
             </motion.div>
             
             {/* Floating Stats */}
