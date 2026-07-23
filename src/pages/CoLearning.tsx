@@ -4,10 +4,10 @@ import { X, Star, Calendar, MapPin } from 'lucide-react';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
 import img3 from '../assets/images/regenerated_image_1784724383569.png';
-import img4 from '../assets/images/baking_workshop_1784820982643.jpg';
-import img5 from '../assets/images/coding_camp_1784820994615.jpg';
-import img6 from '../assets/images/forest_adventure_1784821005441.jpg';
-import img7 from '../assets/images/pottery_class_1784821016831.jpg';
+import img4 from '../assets/images/dream_mission_agency_1784821909336.jpg';
+import img5 from '../assets/images/capybara_baking_camp_1784822623447.jpg';
+import img6 from '../assets/images/taro_ball_making_1784822861410.jpg';
+import img7 from '../assets/images/emperor_roleplay_1784823051503.jpg';
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -16,10 +16,10 @@ export default function CoLearning() {
     { title: '小小農夫生存戰', desc: '【週末爸媽救星】週末想帶孩子出門，又怕自己回家比上班還累？\n\n這週末把孩子交給大自然，把電力通通留在田裡！\n\n⚡️孩子極致放電｜拔蘿蔔、採野菜、認識農作、野趣DIY\n☕️爸媽專屬休息｜遮陽休息區、飲品無限量、乾淨沖洗區\n💥原價$750，限時優惠只要$399\n\n在汗水與笑聲中，玩出最棒的課外第一課！🌱', category: '親子共學', image: img1 },
     { title: '公主夢成真！', desc: '還在煩惱假日帶孩子去哪裡嗎？\n7～12月限定活動來啦～\n專業兒童彩妝體驗，搭配夢幻造型與拍照紀念，留下最珍貴的童年回憶❤️\n\n✨限量優惠｜前20位報名贈 Shushu & Sassy冰雪奇緣聯名款彩妝乙組！\n\n孩子的童年只有一次，讓我們一起陪伴她，完成一次屬於自己的公主夢✨', category: '親子共學', image: img2 },
     { title: '生活科學實驗', desc: '利用日常隨手可得的材料，進行趣味科學實驗，培養孩子與父母一起發掘問題與解決問題的能力。', category: '親子共學', image: img3 },
-    { title: '親子烘焙手作坊', desc: '與孩子一起動手揉麵團、烤餅乾，享受烘焙的樂趣！\n\n不僅能培養孩子的專注力與創造力，還能增進親子感情。完成的美味點心還能帶回家與家人分享！\n\n✔️提供全套烘焙器具與安全食材\n✔️專業老師從旁指導\n💥特價一大一小 $499', category: '親子共學', image: img4 },
-    { title: '兒童程式啟蒙營', desc: '讓孩子透過趣味遊戲與平板互動，輕鬆踏出程式學習的第一步！\n\n父母可以陪伴在旁，見證孩子解開程式謎題的成就感。\n\n✔️無須程式基礎\n✔️專屬平板設備借用\n💥特價一大一小 $599', category: '親子共學', image: img5 },
-    { title: '森林探險尋寶記', desc: '帶著放大鏡與尋寶圖，我們一起走進森林！\n\n認識自然生態，觀察昆蟲與植物，讓孩子在大自然中學習觀察與探索。\n\n✔️專業生態導覽員帶隊\n✔️贈送專屬探險裝備包\n💥原價$800，限時優惠 $499', category: '親子共學', image: img6 },
-    { title: '親子陶藝體驗課', desc: '大手拉小手，感受泥土的溫度與可塑性。\n\n體驗手捏陶或拉胚的樂趣，為彼此製作專屬的陶瓷紀念品！\n\n✔️含燒窯與上色服務\n✔️可帶回兩件作品\n💥特價一大一小 $699', category: '親子共學', image: img7 }
+    { title: '🌙 夢境任務局 Dream Mission Agency', desc: '全台首創沉浸式兒童冒險體驗！\n💥半價優惠來襲！💥\n別再讓他們的週末只剩下平板和電視！\n✔️沉浸式劇情體驗\n✔️專屬夢境守護者勳章與證書\n讓孩子在遊戲中學習合作、勇敢挑戰、解決問題，也讓爸爸媽媽一起成為故事中的英雄！\n\n夢境任務局，等你一起完成這場屬於親子的夢想任務！', category: '親子共學', image: img4 },
+    { title: '療癒登場！【2026限定開課】兒童卡皮巴拉療癒烘焙營', desc: '🔥獨家早鳥禮：前30位報名者，限定卡皮巴拉圍裙＆圍巾帽套組乙套（可帶回家紀念！）\n\n超可愛作品任選👍\n豚豚泡湯！立體糖霜餅乾\n水豚鬆軟生吐司\n卡皮巴拉派對蛋糕\n告別平淡無奇的假期，2026最讓小朋友尖叫、家長直呼「太可愛」的烘焙課正式上線‼️', category: '親子共學', image: img5 },
+    { title: '週末放電首選！兒童手作芋圓🍠', desc: '➡️100%真食材：無防腐劑、零人工香精\n➡️五感大放電：訓練小手肌力，揉出滿滿成就感\n✨活動贈送：現場享用手作芋圓湯＋帶回自製芋圓生麵團！\n原價$599，現正半價優惠中🔥🔥\n\n大人舒壓、孩子放電，全家一起揉出專屬的古早味甜品～', category: '親子共學', image: img6 },
+    { title: '限時搶購！全台最夯親子沉浸式體驗', desc: '奉天承運，皇帝詔曰！半價優惠中！\n家有「小霸王」與「小傲嬌」的爸爸媽媽請注意！快帶寶貝來一場穿越千年的帝王盛宴！\n\n✔️沉浸式儀態與趣味互動\n✔️1：1奢華宮廷服飾\n\n報名即贈！三大尊榮登基好禮\n📜【聖旨詔書紀念冊】\n📸【精修古風數位寫真照 2 張】\n👑【帝王/女帝專屬小禮冠】', category: '親子共學', image: img7 }
   ];
 
   return (
