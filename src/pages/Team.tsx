@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Linkedin, Mail, ExternalLink, Award, Star } from 'lucide-react';
 import wangImage from '../assets/images/regenerated_image_1784812506948.png';
+import awardImage from '../assets/images/wang_jingfu_1784812371266.jpg';
 
 export default function Team() {
   return (
@@ -108,6 +109,47 @@ export default function Team() {
               <p>
                 未來，啟夢教育將持續整合教育、國際留遊學、跨國文化交流、公益服務及多元學習資源，打造更完整、更具國際競爭力的教育平台，陪伴每一位孩子勇敢追逐夢想，從台灣出發，放眼世界，以知識改變人生，以視野創造未來，以公益回饋社會，成為能夠影響世界的下一代。
               </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Award Section */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-br from-[#002B5B] to-[#001a38] rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#C5A059] rounded-full blur-[80px] opacity-20 transform translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C5A059] rounded-full blur-[80px] opacity-20 transform -translate-x-1/2 translate-y-1/2" />
+          
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
+            <div className="w-48 md:w-64 aspect-[3/4] shrink-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#C5A059]/30 relative group">
+              <img src={awardImage} alt="Award" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[#C5A059] font-bold text-sm mb-6">
+                <Star size={16} fill="currentColor" />
+                <span>恭賀</span>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">
+                王景富 <span className="text-[#C5A059] text-2xl md:text-3xl font-bold ml-2">主任</span>
+              </h2>
+              <h3 className="text-xl md:text-2xl font-bold text-white/90 mb-4 leading-snug">
+                榮獲第六屆海外留學促談機會推廣<span className="text-[#C5A059]">卓越成就</span>
+              </h3>
+              
+              <p className="text-slate-300 font-medium text-lg mb-6">
+                成功協助逾300名學子取得海外留學機會
+              </p>
+              
+              <div className="inline-block border-t border-[#C5A059]/30 pt-4 text-[#C5A059] font-bold tracking-widest text-sm">
+                特頒此獎，以資表揚
+              </div>
             </div>
           </div>
         </motion.div>
