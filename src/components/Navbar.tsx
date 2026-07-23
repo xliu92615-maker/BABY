@@ -11,7 +11,7 @@ export function Navbar() {
   const location = useLocation();
 
   const navLinks = [
-    { name: '全部活動', path: '/activities' },
+    { name: '主題活動', path: '/activities' },
     { name: '親子共學', path: '/co-learning' },
     { name: '團隊介紹', path: '/team' },
     { name: '大手牽小手・愛心齊步走', path: '/charity' },

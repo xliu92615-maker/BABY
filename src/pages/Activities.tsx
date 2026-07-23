@@ -42,9 +42,38 @@ export default function Activities() {
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
       {/* Hero */}
-      <div className="bg-[#0f439c] py-20 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-black text-white mb-6">全部活動</h1>
-        <p className="text-[#FFCC00] text-lg font-bold">啟夢教育，帶給孩子最特別的體驗</p>
+      <div className="pt-24 pb-16 relative overflow-hidden bg-transparent">
+        <div className="absolute top-10 right-10 w-64 h-64 bg-[#FFE5B4] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E0F2FE] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
+          
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#FFF9E6] border border-[#F59E0B] text-[#92400E] font-bold text-sm sm:text-base tracking-wide mb-8 shadow-sm"
+          >
+            <Star size={18} className="fill-[#92400E] text-[#92400E]" />
+            全台唯一 24H 專業親子活動與職人營隊推薦門戶
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-5xl md:text-7xl font-black mb-6 tracking-tight drop-shadow-sm flex flex-wrap justify-center gap-2"
+          >
+            <span className="text-[#002B5B]">主題</span>
+            <span className="text-[#F59E0B]">活動</span>
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-slate-600 max-w-2xl mx-auto font-bold tracking-widest bg-white/50 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm border border-slate-100"
+          >
+            主題活動熱烈報名中 🔥
+          </motion.p>
+        </div>
       </div>
 
       {/* Grid */}

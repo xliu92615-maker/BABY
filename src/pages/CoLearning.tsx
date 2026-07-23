@@ -4,6 +4,10 @@ import { X, Star, Calendar, MapPin } from 'lucide-react';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
 import img3 from '../assets/images/regenerated_image_1784724383569.png';
+import img4 from '../assets/images/baking_workshop_1784820982643.jpg';
+import img5 from '../assets/images/coding_camp_1784820994615.jpg';
+import img6 from '../assets/images/forest_adventure_1784821005441.jpg';
+import img7 from '../assets/images/pottery_class_1784821016831.jpg';
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -11,7 +15,11 @@ export default function CoLearning() {
   const activities = [
     { title: '小小農夫生存戰', desc: '【週末爸媽救星】週末想帶孩子出門，又怕自己回家比上班還累？\n\n這週末把孩子交給大自然，把電力通通留在田裡！\n\n⚡️孩子極致放電｜拔蘿蔔、採野菜、認識農作、野趣DIY\n☕️爸媽專屬休息｜遮陽休息區、飲品無限量、乾淨沖洗區\n💥原價$750，限時優惠只要$399\n\n在汗水與笑聲中，玩出最棒的課外第一課！🌱', category: '親子共學', image: img1 },
     { title: '公主夢成真！', desc: '還在煩惱假日帶孩子去哪裡嗎？\n7～12月限定活動來啦～\n專業兒童彩妝體驗，搭配夢幻造型與拍照紀念，留下最珍貴的童年回憶❤️\n\n✨限量優惠｜前20位報名贈 Shushu & Sassy冰雪奇緣聯名款彩妝乙組！\n\n孩子的童年只有一次，讓我們一起陪伴她，完成一次屬於自己的公主夢✨', category: '親子共學', image: img2 },
-    { title: '生活科學實驗', desc: '利用日常隨手可得的材料，進行趣味科學實驗，培養孩子與父母一起發掘問題與解決問題的能力。', category: '親子共學', image: img3 }
+    { title: '生活科學實驗', desc: '利用日常隨手可得的材料，進行趣味科學實驗，培養孩子與父母一起發掘問題與解決問題的能力。', category: '親子共學', image: img3 },
+    { title: '親子烘焙手作坊', desc: '與孩子一起動手揉麵團、烤餅乾，享受烘焙的樂趣！\n\n不僅能培養孩子的專注力與創造力，還能增進親子感情。完成的美味點心還能帶回家與家人分享！\n\n✔️提供全套烘焙器具與安全食材\n✔️專業老師從旁指導\n💥特價一大一小 $499', category: '親子共學', image: img4 },
+    { title: '兒童程式啟蒙營', desc: '讓孩子透過趣味遊戲與平板互動，輕鬆踏出程式學習的第一步！\n\n父母可以陪伴在旁，見證孩子解開程式謎題的成就感。\n\n✔️無須程式基礎\n✔️專屬平板設備借用\n💥特價一大一小 $599', category: '親子共學', image: img5 },
+    { title: '森林探險尋寶記', desc: '帶著放大鏡與尋寶圖，我們一起走進森林！\n\n認識自然生態，觀察昆蟲與植物，讓孩子在大自然中學習觀察與探索。\n\n✔️專業生態導覽員帶隊\n✔️贈送專屬探險裝備包\n💥原價$800，限時優惠 $499', category: '親子共學', image: img6 },
+    { title: '親子陶藝體驗課', desc: '大手拉小手，感受泥土的溫度與可塑性。\n\n體驗手捏陶或拉胚的樂趣，為彼此製作專屬的陶瓷紀念品！\n\n✔️含燒窯與上色服務\n✔️可帶回兩件作品\n💥特價一大一小 $699', category: '親子共學', image: img7 }
   ];
 
   return (
