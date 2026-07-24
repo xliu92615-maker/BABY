@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Heart, Users, Globe, Shield, Activity, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Star, Heart, Users, Globe, Shield, Activity } from 'lucide-react';
 
 import gallery1 from '../assets/images/已改11.jpg';
 import gallery2 from '../assets/images/已改7.jpg';
@@ -15,23 +14,6 @@ import gallery8 from '../assets/images/已改14.png';
 const homeGalleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
 
 function HomePhotoSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % homeGalleryImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % homeGalleryImages.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + homeGalleryImages.length) % homeGalleryImages.length);
-  };
-
   return (
     <section className="py-24 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,49 +22,16 @@ function HomePhotoSlider() {
           <div className="w-16 h-1.5 bg-[#FFCC00] mx-auto rounded-full" />
         </div>
 
-        <div className="relative max-w-5xl mx-auto group">
-          <div className="aspect-[4/3] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-2xl border-4 border-white">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                src={homeGalleryImages[currentIndex]}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full object-cover"
-                alt="精彩活動回顧"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {homeGalleryImages.map((src, idx) => (
+            <div key={idx} className="aspect-[4/3] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-xl border-4 border-white">
+              <img
+                src={src}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                alt={`精彩活動回顧 ${idx + 1}`}
               />
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#002B5B]/50 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-          {/* Controls */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-4 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#002B5B] shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex items-center justify-center hover:bg-[#FFCC00] hover:text-[#002B5B] transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 z-10"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="absolute right-4 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#002B5B] shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex items-center justify-center hover:bg-[#FFCC00] hover:text-[#002B5B] transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 z-10"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          {/* Indicators */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
-            {homeGalleryImages.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`transition-all duration-500 rounded-full ${
-                  currentIndex === idx ? 'w-8 h-2 bg-[#FFCC00]' : 'w-2 h-2 bg-white/70 hover:bg-white'
-                }`}
-              />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
