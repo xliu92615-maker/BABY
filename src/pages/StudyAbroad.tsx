@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
-import heroImage from '../assets/images/study_abroad_hero_1784862121586.jpg';
+import heroImage from '../assets/images/regenerated_image_1784864451239.png';
 
 export default function StudyAbroad() {
   return (

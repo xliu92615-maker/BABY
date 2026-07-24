@@ -161,7 +161,7 @@ export default function Team() {
           <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">新聞專欄</h2>
           <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               title: '啟夢教育聯盟：以教育為橋、以大愛為根，讓夢想成為行動',
@@ -177,6 +177,11 @@ export default function Team() {
               title: 'PChome 新聞：啟夢教育引領多元學習新風潮',
               source: 'PChome 新聞',
               url: 'https://news.pchome.com.tw/living/lifetoutiao/20251023/index-76120564283588315009.html'
+            },
+            {
+              title: '啟夢教育聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
+              source: '全國大小事新聞網',
+              url: 'https://nchn.news/archives/138051'
             }
           ].map((news, idx) => (
             <motion.a
