@@ -1,6 +1,87 @@
-import { motion } from 'motion/react';
-import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Globe2, Plane, Compass, HeartHandshake, ChevronLeft, ChevronRight } from 'lucide-react';
 import heroImage from '../assets/images/regenerated_image_1784864451239.png';
+import gallery1 from '../assets/images/regenerated_image_1784900403422.png';
+import gallery2 from '../assets/images/regenerated_image_1784900552407.png';
+import gallery3 from '../assets/images/study_abroad_gallery_3_1784899611825.jpg';
+import gallery4 from '../assets/images/study_abroad_gallery_4_1784899625868.jpg';
+import gallery5 from '../assets/images/study_abroad_gallery_5_1784899641045.jpg';
+
+const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
+
+function PhotoSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">見證300+份優秀成績背後：王景富主任陪伴孩子走向世界的築夢足跡</h2>
+        <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto group">
+        <div className="aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-2xl border-4 border-white">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentIndex}
+              src={galleryImages[currentIndex]}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover"
+              alt="國際留遊學剪影"
+            />
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#002B5B]/50 via-transparent to-transparent pointer-events-none" />
+        </div>
+
+        {/* Controls */}
+        <button 
+          onClick={prevSlide}
+          className="absolute left-4 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#002B5B] shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 z-10"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button 
+          onClick={nextSlide}
+          className="absolute right-4 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white text-[#002B5B] shadow-[0_4px_20px_rgba(0,0,0,0.1)] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 z-10"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Indicators */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+          {galleryImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`transition-all duration-500 rounded-full ${
+                currentIndex === idx ? 'w-8 h-2 bg-[#C5A059]' : 'w-2 h-2 bg-white/70 hover:bg-white'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function StudyAbroad() {
   return (
@@ -140,6 +221,8 @@ export default function StudyAbroad() {
           </div>
         </motion.div>
       </div>
+
+      <PhotoSlider />
     </div>
   );
 }
