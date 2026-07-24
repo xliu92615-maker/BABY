@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
 import heroImage from '../assets/images/regenerated_image_1784864451239.png';
-import gallery1 from '../assets/images/regenerated_image_1784908559713.png';
+import gallery1 from '../assets/images/regenerated_image_1784909579699.png';
 import gallery2 from '../assets/images/regenerated_image_1784908561547.png';
 import gallery3 from '../assets/images/regenerated_image_1784909145001.jpg';
 import gallery4 from '../assets/images/regenerated_image_1784908146827.jpg';
