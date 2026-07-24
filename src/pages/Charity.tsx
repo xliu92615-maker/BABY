@@ -1,13 +1,12 @@
 import { motion } from 'motion/react';
 import { HeartHandshake, Smile, TreePine } from 'lucide-react';
 import charityImage from '../assets/images/regenerated_image_1784816871769.png';
-import gallery1 from '../assets/images/已改13.png';
+import gallery1 from '../assets/images/KKK-12.jpg';
 import gallery2 from '../assets/images/charity_gallery_2_1784860937562.jpg';
 import gallery3 from '../assets/images/charity_gallery_3_1784860950316.jpg';
-import gallery4 from '../assets/images/已改14.png';
-import gallery5 from '../assets/images/charity_gallery_5_1784860977626.jpg';
+import gallery4 from '../assets/images/KKK-13.jpg';
 
-const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
+const galleryImages = [gallery1, gallery2, gallery3, gallery4];
 
 function PhotoSlider() {
   return (
