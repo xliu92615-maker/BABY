@@ -15,6 +15,7 @@ export function Navbar() {
     { name: '親子共學', path: '/co-learning' },
     { name: '團隊介紹', path: '/team' },
     { name: '大手牽小手・愛心齊步走', path: '/charity' },
+    { name: '國際留遊學', path: '/study-abroad' },
     { name: '常見問題', path: '/faq', icon: HelpCircle },
   ];
 

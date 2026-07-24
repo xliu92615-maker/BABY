@@ -6,6 +6,7 @@ import CoLearning from './pages/CoLearning';
 import Team from './pages/Team';
 import Charity from './pages/Charity';
 import FAQ from './pages/FAQ';
+import StudyAbroad from './pages/StudyAbroad';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="team" element={<Team />} />
           <Route path="charity" element={<Charity />} />
           <Route path="faq" element={<FAQ />} />
+          <Route path="study-abroad" element={<StudyAbroad />} />
           {/* Catch-all route to redirect to home */}
           <Route path="*" element={<Home />} />
         </Route>
