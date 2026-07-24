@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
 import heroImage from '../assets/images/regenerated_image_1784864451239.png';
-import gallery1 from '../assets/images/regenerated_image_1784905871977.jpg';
-import gallery2 from '../assets/images/已改7.jpg';
+import gallery1 from '../assets/images/regenerated_image_1784908559713.png';
+import gallery2 from '../assets/images/regenerated_image_1784908561547.png';
 import gallery3 from '../assets/images/已改8.png';
-import gallery4 from '../assets/images/已改9.jpg';
+import gallery4 from '../assets/images/regenerated_image_1784908146827.jpg';
 import gallery5 from '../assets/images/已改11.jpg';
 
 const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
