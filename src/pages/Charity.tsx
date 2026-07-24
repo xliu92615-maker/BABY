@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HeartHandshake, Smile, TreePine, ChevronLeft, ChevronRight } from 'lucide-react';
 import charityImage from '../assets/images/regenerated_image_1784816871769.png';
-import gallery1 from '../assets/images/charity_gallery_1_1784860922522.jpg';
+import gallery1 from '../assets/images/已改13.png';
 import gallery2 from '../assets/images/charity_gallery_2_1784860937562.jpg';
 import gallery3 from '../assets/images/charity_gallery_3_1784860950316.jpg';
-import gallery4 from '../assets/images/charity_gallery_4_1784860963695.jpg';
+import gallery4 from '../assets/images/已改14.png';
 import gallery5 from '../assets/images/charity_gallery_5_1784860977626.jpg';
 
 const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
@@ -36,7 +36,7 @@ function PhotoSlider() {
       </div>
 
       <div className="relative max-w-5xl mx-auto group">
-        <div className="aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-2xl border-4 border-white">
+        <div className="aspect-[4/3] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-2xl border-4 border-white">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentIndex}

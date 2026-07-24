@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake, ChevronLeft, ChevronRight } from 'lucide-react';
 import heroImage from '../assets/images/regenerated_image_1784864451239.png';
-import gallery1 from '../assets/images/regenerated_image_1784900403422.png';
-import gallery2 from '../assets/images/regenerated_image_1784900552407.png';
-import gallery3 from '../assets/images/study_abroad_gallery_3_1784899611825.jpg';
-import gallery4 from '../assets/images/study_abroad_gallery_4_1784899625868.jpg';
-import gallery5 from '../assets/images/study_abroad_gallery_5_1784899641045.jpg';
+import gallery1 from '../assets/images/已改6.jpg';
+import gallery2 from '../assets/images/已改7.jpg';
+import gallery3 from '../assets/images/已改8.png';
+import gallery4 from '../assets/images/已改9.jpg';
+import gallery5 from '../assets/images/已改11.jpg';
 
 const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
