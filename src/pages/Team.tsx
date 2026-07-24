@@ -182,6 +182,11 @@ export default function Team() {
               title: '啟夢教育聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
               source: '全國大小事新聞網',
               url: 'https://nchn.news/archives/138051'
+            },
+            {
+              title: 'LINE TODAY：啟夢教育聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
+              source: 'LINE TODAY',
+              url: 'https://today.line.me/tw/v3/article/0MmaQRp'
             }
           ].map((news, idx) => (
             <motion.a
