@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake, ChevronLeft, ChevronRight } from 'lucide-react';
 import heroImage from '../assets/images/regenerated_image_1784864451239.png';
-import gallery1 from '../assets/images/已改6.jpg';
+import gallery1 from '../assets/images/regenerated_image_1784905871977.jpg';
 import gallery2 from '../assets/images/已改7.jpg';
 import gallery3 from '../assets/images/已改8.png';
 import gallery4 from '../assets/images/已改9.jpg';
