@@ -10,6 +10,9 @@ import gg06 from '../assets/images/GG-06.jpg';
 import gg07 from '../assets/images/GG-07.jpg';
 import gg08 from '../assets/images/GG-08.jpg';
 import gg09 from '../assets/images/GG-09.jpg';
+import h01 from '../assets/images/H-01.jpg';
+import h02 from '../assets/images/H-02.jpg';
+import h03 from '../assets/images/H-03.jpg';
 
 const galleryImages = [
   gg01,
@@ -179,14 +182,13 @@ export default function Charity() {
               </div>
             </div>
 
-            {/* 4張照片 2x2 Grid */}
+            {/* 3張照片 Grid */}
             <div className="lg:col-span-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { src: 'https://via.placeholder.com/600x400', alt: '救災物資準備與運送' },
-                  { src: 'https://via.placeholder.com/600x400', alt: '花蓮現場關懷與陪伴' },
-                  { src: 'https://via.placeholder.com/600x400', alt: '孩子與啟夢教育活動紀錄' },
-                  { src: 'https://via.placeholder.com/600x400', alt: '重建與希望合照' },
+                  { src: h01, alt: '救災重機具與工程車輛運送' },
+                  { src: h02, alt: '花蓮災後現場清理與重建作業' },
+                  { src: h03, alt: '第一時間準備的救災物資與民生用品' },
                 ].map((img, idx) => (
                   <motion.div
                     key={idx}
