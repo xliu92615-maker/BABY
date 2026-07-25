@@ -17,6 +17,12 @@ import jj09 from '../assets/images/JJ-09.jpg';
 import jj10 from '../assets/images/JJ-10.jpg';
 import jj11 from '../assets/images/JJ-11.jpg';
 import jj12 from '../assets/images/JJ-12.jpg';
+import aa11 from '../assets/images/AA-11.jpg';
+import aa12 from '../assets/images/AA-12.jpg';
+import aa13 from '../assets/images/AA-13.jpg';
+import aa14 from '../assets/images/AA-14.jpg';
+import aa15 from '../assets/images/AA-15.jpg';
+import aa16 from '../assets/images/AA-16.jpg';
 
 const galleryImages = [
   gallery1, 
@@ -34,7 +40,13 @@ const galleryImages = [
   jj09,
   jj10,
   jj11,
-  jj12
+  jj12,
+  aa11,
+  aa12,
+  aa13,
+  aa14,
+  aa15,
+  aa16
 ];
 
 function PhotoSlider() {
