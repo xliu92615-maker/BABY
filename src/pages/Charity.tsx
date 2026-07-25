@@ -135,6 +135,81 @@ export default function Charity() {
         </div>
       </div>
 
+      {/* 花蓮地震賑災公益專題 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-[3rem] p-8 md:p-12 lg:p-16 shadow-xl border-4 border-slate-50"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* 文章內容 */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-[#C5A059] font-bold text-xs tracking-widest uppercase">
+                <HeartHandshake size={16} />
+                公益特別報導
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] tracking-tight leading-tight">
+                災難無情，人間有愛
+              </h2>
+              
+              <div className="w-16 h-1.5 bg-[#C5A059] rounded-full" />
+
+              <div className="text-slate-600 text-base leading-relaxed space-y-4 font-medium">
+                <p>
+                  去年花蓮發生強烈地震，光復鄉等地受到災情影響，許多家庭的生活在一夕之間被打亂。道路受損、房屋受創，不少居民面臨物資短缺與生活上的困境。
+                </p>
+                <p>
+                  災難發生後，王景富主任也第一時間準備救災物資及民生用品送往花蓮，王景富主任說：公益不是等到有能力才去做，而是在別人最需要的時候，願意伸出援手。
+                </p>
+                <p className="p-4 bg-amber-50/60 rounded-2xl border-l-4 border-[#C5A059] italic text-[#002B5B]">
+                  他也常分享：「教育，不只是教孩子如何讀書，更要教會他們什麼是責任、什麼是同理心，以及如何用自己的力量幫助別人。」
+                </p>
+                <p>
+                  因此啟夢教育始終將公益視為教育的一部份。我們希望孩子在學習知識、拓展視野的同時，也能看見社會的需要，理解分享的價值，學會感恩，並在未來成為願意回饋社會的人。
+                </p>
+                <p>
+                  願花蓮早日重建家園，願每一位受災居民都能重新迎向平安與希望；也願更多人因為一份善意而選擇投入公益，讓愛不因災難而停止，而是在每一次伸出援手的瞬間持續傳遞。
+                </p>
+                <p className="font-bold text-[#002B5B]">
+                  一座城市可以因為重建而再次站起來，而一個社會，則會因為更多願意付出的人，而變得更加溫暖。
+                </p>
+              </div>
+            </div>
+
+            {/* 4張照片 2x2 Grid */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { src: 'https://via.placeholder.com/600x400', alt: '救災物資準備與運送' },
+                  { src: 'https://via.placeholder.com/600x400', alt: '花蓮現場關懷與陪伴' },
+                  { src: 'https://via.placeholder.com/600x400', alt: '孩子與啟夢教育活動紀錄' },
+                  { src: 'https://via.placeholder.com/600x400', alt: '重建與希望合照' },
+                ].map((img, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ scale: 1.03 }}
+                    className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md border-2 border-slate-100 bg-slate-100 relative group"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3 text-white text-xs font-medium opacity-90">
+                      {img.alt}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
       {/* Photo Gallery Slider */}
       <PhotoSlider />
     </div>
