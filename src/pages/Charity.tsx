@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { HeartHandshake, Smile, TreePine } from 'lucide-react';
-import charityImage from '../assets/images/regenerated_image_1784816871769.png';
+import charityImage from '../assets/images/regenerated_image_1784973601430.jpg';
 import gg01 from '../assets/images/GG-01.jpg';
 import gg02 from '../assets/images/GG-02.jpg';
 import gg03 from '../assets/images/GG-03.jpg';

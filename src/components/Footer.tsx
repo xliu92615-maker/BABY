@@ -40,7 +40,7 @@ export function Footer() {
             © {new Date().getFullYear()} 啟夢教育 DreamEdu. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs font-bold text-blue-200/60">
-            <Link to="#" className="hover:text-white transition-colors">隱私權政策</Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">隱私權政策</Link>
             <Link to="#" className="hover:text-white transition-colors">服務條款</Link>
           </div>
         </div>
