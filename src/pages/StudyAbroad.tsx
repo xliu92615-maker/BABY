@@ -5,9 +5,37 @@ import gallery1 from '../assets/images/regenerated_image_1784909579699.png';
 import gallery2 from '../assets/images/regenerated_image_1784908561547.png';
 import gallery3 from '../assets/images/regenerated_image_1784909145001.jpg';
 import gallery4 from '../assets/images/regenerated_image_1784908146827.jpg';
-import gallery5 from '../assets/images/已改11.jpg';
+import jj01 from '../assets/images/JJ-01.jpg';
+import jj02 from '../assets/images/JJ-02.jpg';
+import jj03 from '../assets/images/JJ-03.jpg';
+import jj04 from '../assets/images/JJ-04.jpg';
+import jj05 from '../assets/images/JJ-05.jpg';
+import jj06 from '../assets/images/JJ-06.jpg';
+import jj07 from '../assets/images/JJ-07.jpg';
+import jj08 from '../assets/images/JJ-08.jpg';
+import jj09 from '../assets/images/JJ-09.jpg';
+import jj10 from '../assets/images/JJ-10.jpg';
+import jj11 from '../assets/images/JJ-11.jpg';
+import jj12 from '../assets/images/JJ-12.jpg';
 
-const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
+const galleryImages = [
+  gallery1, 
+  gallery2, 
+  gallery3, 
+  gallery4, 
+  jj01,
+  jj02,
+  jj03,
+  jj04,
+  jj05,
+  jj06,
+  jj07,
+  jj08,
+  jj09,
+  jj10,
+  jj11,
+  jj12
+];
 
 function PhotoSlider() {
   return (
