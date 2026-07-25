@@ -1,17 +1,26 @@
 import { motion } from 'motion/react';
 import { HeartHandshake, Smile, TreePine } from 'lucide-react';
 import charityImage from '../assets/images/regenerated_image_1784816871769.png';
-import gallery2 from '../assets/images/charity_gallery_2_1784860937562.jpg';
-import gallery3 from '../assets/images/charity_gallery_3_1784860950316.jpg';
+import gg01 from '../assets/images/GG-01.jpg';
+import gg02 from '../assets/images/GG-02.jpg';
+import gg03 from '../assets/images/GG-03.jpg';
+import gg04 from '../assets/images/GG-04.jpg';
+import gg05 from '../assets/images/GG-05.jpg';
+import gg06 from '../assets/images/GG-06.jpg';
+import gg07 from '../assets/images/GG-07.jpg';
+import gg08 from '../assets/images/GG-08.jpg';
+import gg09 from '../assets/images/GG-09.jpg';
 
 const galleryImages = [
-  '/images/KKK-12.png', 
-  gallery2, 
-  gallery3, 
-  '/images/KKK-13.png',
-  '/images/placeholder.svg',
-  '/images/placeholder.svg',
-  '/images/placeholder.svg'
+  gg01,
+  gg02,
+  gg03,
+  gg04,
+  gg05,
+  gg06,
+  gg07,
+  gg08,
+  gg09
 ];
 
 function PhotoSlider() {
@@ -29,6 +38,7 @@ function PhotoSlider() {
               src={src}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               alt={`公益活動剪影 ${idx + 1}`}
+              loading="lazy"
             />
           </div>
         ))}

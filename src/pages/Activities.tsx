@@ -4,6 +4,7 @@ import { X, Star, Calendar, MapPin } from 'lucide-react';
 import activity1Image from '../assets/images/regenerated_image_1784723277413.png';
 import activity2Image from '../assets/images/regenerated_image_1784723276333.jpg';
 import activity3Image from '../assets/images/regenerated_image_1784723280280.jpg';
+import activity4Image from '../assets/images/regenerated_image_1784968699805.jpg';
 
 export default function Activities() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -34,7 +35,7 @@ export default function Activities() {
       id: 4,
       title: '🎉超人氣巧虎🐯見面會來啦！',
       category: '美學設計',
-      image: '/images/placeholder.svg',
+      image: activity4Image,
       desc: '每一次見面都是孩子最期待的歡樂時光💛\n\n讓巧虎帶領寶貝們唱歌跳舞、學習生活禮貌與常規！現場還有精采的互動遊戲，以及難得的親密一對一合照環節，給孩子留下最溫暖、難忘的童年回憶！\n\n🎵 一起唱唱跳跳\n📸 一起留下美好回憶\n🎈 一起享受親子互動\n💥特價一大一小＄299'
     }
   ];
