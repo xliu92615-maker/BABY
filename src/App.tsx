@@ -8,6 +8,7 @@ import Charity from './pages/Charity';
 import FAQ from './pages/FAQ';
 import StudyAbroad from './pages/StudyAbroad';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="faq" element={<FAQ />} />
           <Route path="study-abroad" element={<StudyAbroad />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-service" element={<TermsOfService />} />
           {/* Catch-all route to redirect to home */}
           <Route path="*" element={<Home />} />
         </Route>
