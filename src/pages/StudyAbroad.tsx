@@ -57,13 +57,14 @@ function PhotoSlider() {
         <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto">
         {galleryImages.map((src, idx) => (
-          <div key={idx} className="aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-xl border-4 border-white">
+          <div key={idx} className="aspect-video rounded-2xl md:rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-xl border-2 sm:border-4 border-white group">
             <img
               src={src}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full h-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
               alt={`國際留遊學剪影 ${idx + 1}`}
+              loading="lazy"
             />
           </div>
         ))}
