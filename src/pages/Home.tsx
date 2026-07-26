@@ -10,6 +10,7 @@ import gallery5 from '../assets/images/charity_gallery_3_1784860950316.jpg';
 import gallery6 from '../assets/images/已改6.jpg';
 import gallery7 from '../assets/images/regenerated_image_1784912070866.png';
 import gallery8 from '../assets/images/regenerated_image_1784912073909.png';
+import HomeTopSlider from '../components/HomeTopSlider';
 
 const homeGalleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
 
@@ -41,6 +42,9 @@ function HomePhotoSlider() {
 export default function Home() {
   return (
     <div>
+      {/* Top Slider Section */}
+      <HomeTopSlider />
+
       {/* Hero Section */}
       <section className="bg-[#fdfcf9] py-16 text-center">
         <div className="max-w-5xl mx-auto px-4">
@@ -88,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Services Grid Section (Replaces Features) */}
-      <section className="py-24 bg-[#fdfcf9] border-t border-slate-100">
+      <section id="services-section" className="py-24 bg-[#fdfcf9] border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">探索我們的服務</h2>
