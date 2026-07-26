@@ -7,7 +7,7 @@ import gallery2 from '../assets/images/已改7.jpg';
 import gallery3 from '../assets/images/已改8.png';
 import gallery4 from '../assets/images/已改9.jpg';
 import gallery5 from '../assets/images/charity_gallery_3_1784860950316.jpg';
-import gallery6 from '../assets/images/已改6.jpg';
+import gallery6 from '../assets/images/ppp-41.jpg';
 import gallery7 from '../assets/images/regenerated_image_1784912070866.png';
 import gallery8 from '../assets/images/regenerated_image_1784912073909.png';
 import HomeTopSlider from '../components/HomeTopSlider';
