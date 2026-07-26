@@ -13,7 +13,7 @@ export function Navbar() {
   const navLinks = [
     { name: '主題活動', path: '/activities' },
     { name: '親子共學', path: '/co-learning' },
-    { name: '團隊介紹', path: '/team' },
+    { name: '創辦人介紹', path: '/team' },
     { name: '大手牽小手・愛心齊步走', path: '/charity' },
     { name: '國際留遊學', path: '/study-abroad' },
     { name: '常見問題', path: '/faq', icon: HelpCircle },
@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="bg-[#FFCC00] text-[#000000] py-1.5 px-4 text-sm font-bold flex justify-center items-center gap-2">
           <Volume2 size={16} />
           <span className="bg-[#FF6600] text-white px-2 py-0.5 rounded text-xs">感謝</span>
-          <span>王景富主任贊助活動</span>
+          <span>創辦人－王景富主任贊助活動</span>
         </div>
 
         {/* Main Blue Header */}

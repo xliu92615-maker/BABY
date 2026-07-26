@@ -13,6 +13,7 @@ import gg09 from '../assets/images/GG-09.jpg';
 import h01 from '../assets/images/H-01.jpg';
 import h02 from '../assets/images/H-02.jpg';
 import h03 from '../assets/images/H-03.jpg';
+import HandInHandWarmthSection from '../components/HandInHandWarmthSection';
 
 const galleryImages = [
   gg01,
@@ -28,7 +29,7 @@ const galleryImages = [
 
 function PhotoSlider() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div id="photo-slider" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
         <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">活動精彩剪影</h2>
         <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
@@ -76,7 +77,7 @@ export default function Charity() {
               className="text-lg text-slate-500 leading-relaxed mb-8 font-medium space-y-4"
             >
               <p>教育的價值，不僅在於知識的傳遞，更在於愛與關懷的實踐。</p>
-              <p>王景富主任始終相信，一個人的成長，不只是學會更多技能，更要懂得關心他人、珍惜資源，並將善意化為實際行動。</p>
+              <p>創辦人－王景富主任始終相信，一個人的成長，不只是學會更多技能，更要懂得關心他人、珍惜資源，並將善意化為實際行動。</p>
               <p>真正的教育並非只存在於教室之中，而是體現在生活中的每一次選擇與每一次行動。當孩子願意主動幫助他人、懂得分享、學會感恩，這些品格將成為陪伴他們一生的重要力量。</p>
               <p>當每個人都願意付出一點點關懷，就能匯聚成改變社會的力量；當每個家庭都願意帶著孩子參與公益，就能讓愛與善良持續傳承，讓更多需要幫助的人感受到希望與溫暖。</p>
               <p>教育能夠啟發夢想，公益能夠溫暖人心，而每一次真誠的付出，都將成為改變世界的一份力量。</p>
@@ -165,7 +166,7 @@ export default function Charity() {
                   去年花蓮發生強烈地震，光復鄉等地受到災情影響，許多家庭的生活在一夕之間被打亂。道路受損、房屋受創，不少居民面臨物資短缺與生活上的困境。
                 </p>
                 <p>
-                  災難發生後，王景富主任也第一時間準備救災物資及民生用品送往花蓮，王景富主任說：公益不是等到有能力才去做，而是在別人最需要的時候，願意伸出援手。
+                  災難發生後，創辦人－王景富主任也第一時間準備救災物資及民生用品送往花蓮，創辦人－王景富主任說：公益不是等到有能力才去做，而是在別人最需要的時候，願意伸出援手。
                 </p>
                 <p className="p-4 bg-amber-50/60 rounded-2xl border-l-4 border-[#C5A059] italic text-[#002B5B]">
                   他也常分享：「教育，不只是教孩子如何讀書，更要教會他們什麼是責任、什麼是同理心，以及如何用自己的力量幫助別人。」
@@ -211,6 +212,9 @@ export default function Charity() {
           </div>
         </motion.div>
       </div>
+
+      {/* Hand In Hand Warmth Section */}
+      <HandInHandWarmthSection />
 
       {/* Photo Gallery Slider */}
       <PhotoSlider />

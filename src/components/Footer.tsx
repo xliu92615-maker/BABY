@@ -29,7 +29,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-bold">
               <li><Link to="/activities" className="text-blue-200 hover:text-[#C5A059] hover:translate-x-2 transition-all inline-block">主題活動</Link></li>
               <li><Link to="/co-learning" className="text-blue-200 hover:text-[#C5A059] hover:translate-x-2 transition-all inline-block">親子共學</Link></li>
-              <li><Link to="/team" className="text-blue-200 hover:text-[#C5A059] hover:translate-x-2 transition-all inline-block">團隊介紹</Link></li>
+              <li><Link to="/team" className="text-blue-200 hover:text-[#C5A059] hover:translate-x-2 transition-all inline-block">創辦人介紹</Link></li>
               <li><Link to="/faq" className="text-blue-200 hover:text-[#C5A059] hover:translate-x-2 transition-all inline-block">常見問題</Link></li>
             </ul>
           </div>

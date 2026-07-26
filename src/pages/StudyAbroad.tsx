@@ -53,7 +53,7 @@ function PhotoSlider() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">見證300+份優秀成績背後：王景富主任陪伴孩子走向世界的築夢足跡</h2>
+        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">見證300+份優秀成績背後：創辦人－王景富主任陪伴孩子走向世界的築夢足跡</h2>
         <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
       </div>
 

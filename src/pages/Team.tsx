@@ -81,7 +81,7 @@ export default function Team() {
           <div className="w-48 md:w-72 aspect-[2/3] rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
             <img 
               src={wangImage} 
-              alt="王景富 主任" 
+              alt="創辦人－王景富主任" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-[#002B5B]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
@@ -95,7 +95,7 @@ export default function Team() {
           </div>
           <div className="text-center md:text-left flex-1">
             <h3 className="text-3xl font-black text-[#002B5B] mb-2 tracking-tight">王景富</h3>
-            <p className="text-[#C5A059] font-bold mb-6 text-xl">主任</p>
+            <p className="text-[#C5A059] font-bold mb-6 text-xl">創辦人－王景富主任</p>
             <div className="space-y-4 text-slate-600 font-medium leading-relaxed">
               <p>
                 自2023年創立啟夢教育以來，始終秉持著「教育改變人生，國際視野成就未來」的理念，長期深耕台灣教育領域，致力於打造兼具知識、品格、國際視野與實踐能力的學習環境，陪伴每一位孩子在人生的成長道路上發掘潛能、建立自信，勇敢迎向未來。
@@ -104,7 +104,7 @@ export default function Team() {
                 每位孩子都擁有獨一無二的天賦，而教育的價值，不只是提升學業成績，更重要的是培養良好的品格、溝通能力、創造力、獨立思考能力，以及面對未來世界所需的國際競爭力。
               </p>
               <p>
-                王景富主任始終相信，一個人的成長，不只是擁有優異的成績，更重要的是擁有正確的價值觀、國際視野與服務社會的精神。教育的使命，不只是培養會讀書的人，更要培養能夠關懷他人、勇於挑戰、具備世界觀與責任感的人才。
+                創辦人－王景富主任始終相信，一個人的成長，不只是擁有優異的成績，更重要的是擁有正確的價值觀、國際視野與服務社會的精神。教育的使命，不只是培養會讀書的人，更要培養能夠關懷他人、勇於挑戰、具備世界觀與責任感的人才。
               </p>
               <p>
                 未來，啟夢教育將持續整合教育、國際留遊學、跨國文化交流、公益服務及多元學習資源，打造更完整、更具國際競爭力的教育平台，陪伴每一位孩子勇敢追逐夢想，從台灣出發，放眼世界，以知識改變人生，以視野創造未來，以公益回饋社會，成為能夠影響世界的下一代。
@@ -137,7 +137,7 @@ export default function Team() {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">
-                王景富 <span className="text-[#C5A059] text-2xl md:text-3xl font-bold ml-2">主任</span>
+                創辦人－王景富主任
               </h2>
               <h3 className="text-xl md:text-2xl font-bold text-white/90 mb-4 leading-snug">
                 榮獲第六屆海外留學促談機會推廣<span className="text-[#C5A059]">卓越成就</span>

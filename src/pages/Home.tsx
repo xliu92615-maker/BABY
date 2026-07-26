@@ -120,7 +120,7 @@ export default function Home() {
                 <div className="w-20 h-20 bg-[#fefce8] text-[#eab308] rounded-2xl flex items-center justify-center mb-6 rotate-3 group-hover:-rotate-3 transition-transform">
                   <Users size={40} />
                 </div>
-                <h3 className="text-xl font-black text-[#0f439c] mb-3">團隊介紹</h3>
+                <h3 className="text-xl font-black text-[#0f439c] mb-3">創辦人介紹</h3>
                 <p className="text-slate-500 font-medium text-sm leading-relaxed mb-6">嚴選各領域最專業、最有耐心的教育專家與活動導師。</p>
                 <span className="text-[#eab308] font-bold text-sm uppercase mt-auto flex items-center gap-1">了解更多 <ArrowRight size={16}/></span>
               </motion.div>
