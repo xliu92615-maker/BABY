@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+const fs = require('fs');
+const content = `import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Mail } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -51,19 +52,19 @@ export function Footer() {
             </p>
 
             {/* 服務時間區塊 */}
-            <div className="inline-block w-full max-w-sm mt-2">
+            <div className="bg-white rounded-2xl p-6 shadow-lg inline-block w-full max-w-sm">
               <div className="flex items-center gap-2 mb-4">
                 <Clock className="text-[#ff6600]" size={22} />
-                <h4 className="text-white font-black text-lg">服務時間</h4>
+                <h4 className="text-[#002B5B] font-black text-lg">服務時間</h4>
               </div>
-              <div className="space-y-3 text-sm text-white font-medium">
-                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+              <div className="space-y-3 text-sm text-slate-600 font-bold">
+                <div className="flex justify-between items-center pb-2 border-b border-slate-100">
                   <span>週一至週六</span>
-                  <span>10:00～21:30</span>
+                  <span className="text-slate-800">10:00～21:30</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>週日</span>
-                  <span>14:00～20:00</span>
+                  <span className="text-slate-800">14:00～20:00</span>
                 </div>
               </div>
             </div>
@@ -94,7 +95,6 @@ export function Footer() {
             
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <div className="relative flex items-center">
-                <Mail className="absolute left-4 text-[#6B7280]" size={20} />
                 <input
                   type="email"
                   value={email}
@@ -103,17 +103,17 @@ export function Footer() {
                     if (status === 'error') setStatus('idle');
                   }}
                   placeholder="請輸入您的電子郵件"
-                  className="w-full pl-12 pr-[110px] h-[52px] bg-white border border-[#D9D9D9] rounded-[14px] text-[#1F2937] text-base placeholder:text-[#6B7280] placeholder:text-base focus:outline-none focus:border-[#ff6600] focus:ring-2 focus:ring-[#ff6600]/30 transition-all"
+                  className="w-full px-5 py-3.5 pr-[110px] rounded-full text-slate-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#ff6600] border-2 border-transparent transition-all"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1.5 bottom-1.5 px-5 bg-[#ff6600] hover:bg-[#e55c00] text-white text-sm font-bold rounded-[10px] transition-colors shadow-sm whitespace-nowrap"
+                  className="absolute right-1.5 top-1.5 bottom-1.5 px-5 bg-[#ff6600] hover:bg-[#e55c00] text-white text-sm font-bold rounded-full transition-colors shadow-sm whitespace-nowrap"
                 >
                   立即訂閱
                 </button>
               </div>
               
-              <div className="min-h-[48px] pt-1">
+              <div className="h-6">
                 {status === 'error' && (
                   <p className="text-red-300 text-xs font-bold px-2 animate-in fade-in slide-in-from-top-1">
                     請輸入正確的電子郵件格式。
@@ -143,3 +143,5 @@ export function Footer() {
     </footer>
   );
 }
+`;
+fs.writeFileSync('src/components/Footer.tsx', content);
