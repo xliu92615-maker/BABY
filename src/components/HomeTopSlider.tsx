@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import ppp01 from "../assets/images/ppp-01.jpg";
+import ppp01 from "../assets/images/regenerated_image_1785387960727.png";
 import ppp02 from "../assets/images/ppp-02.jpg";
 import ppp03 from "../assets/images/ppp-03.jpg";
 import ppp04 from "../assets/images/ppp-04.jpg";
