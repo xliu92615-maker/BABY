@@ -1,5 +1,8 @@
-import { motion } from 'motion/react';
-import { ShieldAlert, Coins, Landmark, PhoneCall, Headset, CreditCard, Wallet, Key, Shield, Lock, AlertTriangle, Smartphone } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ShieldAlert, Coins, Landmark, PhoneCall, Headset, CreditCard, Wallet, Key, Shield, Lock, AlertTriangle, Smartphone, X } from 'lucide-react';
+import fraudImage1 from '../assets/images/OOO-01.jpg';
+import fraudImage2 from '../assets/images/OOO-02.jpg';
 
 const fraudTypes = [
   {
@@ -53,6 +56,10 @@ const fraudTypes = [
 ];
 
 export default function AntiFraud() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const promoImages = [fraudImage1, fraudImage2];
+
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
       {/* Hero Banner */}
@@ -124,6 +131,36 @@ export default function AntiFraud() {
         </div>
       </div>
 
+      {/* Promo Images Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">📢 防詐宣導資訊</h2>
+          <div className="w-16 h-1.5 bg-[#FFCC00] mx-auto rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {promoImages.map((src, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-slate-50 cursor-pointer group"
+              onClick={() => setSelectedImage(src)}
+            >
+              <div className="aspect-[3/4] relative w-full overflow-hidden">
+                <img
+                  src={src}
+                  alt={`防詐宣導資訊 ${idx + 1}`}
+                  className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       {/* Parent Reminder Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <motion.div 
@@ -165,6 +202,39 @@ export default function AntiFraud() {
           </p>
         </motion.div>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors"
+            >
+              <X size={40} />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-5xl w-full max-h-[90vh] flex justify-center items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedImage}
+                alt="放大圖片"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
