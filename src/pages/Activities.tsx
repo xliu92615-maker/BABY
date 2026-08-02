@@ -5,6 +5,9 @@ import activity1Image from '../assets/images/regenerated_image_1784723277413.png
 import activity2Image from '../assets/images/regenerated_image_1784723276333.jpg';
 import activity3Image from '../assets/images/regenerated_image_1784723280280.jpg';
 import activity4Image from '../assets/images/regenerated_image_1784968699805.jpg';
+import activity5Image from '../assets/images/oooo-001.jpg';
+import activity6Image from '../assets/images/oooo-002.jpg';
+import activity7Image from '../assets/images/oooo-03.jpg';
 
 export default function Activities() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -37,6 +40,30 @@ export default function Activities() {
       category: '美學設計',
       image: activity4Image,
       desc: '每一次見面都是孩子最期待的歡樂時光💛\n\n讓巧虎帶領寶貝們唱歌跳舞、學習生活禮貌與常規！現場還有精采的互動遊戲，以及難得的親密一對一合照環節，給孩子留下最溫暖、難忘的童年回憶！\n\n🎵 一起唱唱跳跳\n📸 一起留下美好回憶\n🎈 一起享受親子互動\n💥特價一大一小＄299'
+    },
+    {
+      id: 5,
+      title: '🦸 超人力霸王見面會 ⚡️',
+      category: '主題活動',
+      image: activity5Image,
+      shortDesc: '孩子最愛的光之英雄來了！\n一起近距離見到超人力霸王，感受熱血舞台魅力！',
+      desc: '🦸 超人力霸王見面會 ⚡️\n\n孩子最愛的光之英雄來了！\n一起近距離見到超人力霸王，感受熱血舞台魅力！\n\n⚡ 真人超人力霸王震撼登場\n🎭 精彩英雄舞台演出\n🙌 近距離互動體驗\n📸 專屬英雄合影留念\n🎉 全場一起為正義應援！\n\n💰 優惠體驗價\n👨‍👩‍👧 299 元／組（一大一小）\n💡 每加一位大人 +100 元\n💡 每加一位小朋友 +100 元'
+    },
+    {
+      id: 6,
+      title: '🦊💖 Pinkfong 碰碰狐放電趴',
+      category: '主題活動',
+      image: activity6Image,
+      shortDesc: '孩子最喜歡的碰碰狐來了！\n一起唱跳互動、開心遊戲，留下最難忘的親子回憶！',
+      desc: '🦊💖 Pinkfong 碰碰狐放電趴\n\n孩子最喜歡的碰碰狐要來和大家見面啦！\n\n✨ 活動內容\n🦊 碰碰狐見面互動\n🎵 歡樂唱跳表演\n🎈 趣味活動設施\n📸 專屬合影留念\n🎁 完成活動贈送精美小禮物\n\n🎉 限時優惠\n💰 優惠價：299 元／一位小朋友\n（家長可陪同入場）\n\n🌞 上午場｜10:00－13:00\n🌈 下午場｜14:00－17:00\n\n🎟 憑活動手環，當日該場次不限次數自由進出。'
+    },
+    {
+      id: 7,
+      title: '🚓 交通小鎮快閃特展',
+      category: '主題活動',
+      image: activity7Image,
+      shortDesc: '讓孩子化身小小交通英雄，\n邊玩邊學！',
+      desc: '🚓 交通小鎮快閃特展\n\n讓孩子化身小小交通英雄，邊玩邊學！\n\n✨ 真人角色互動\n🎮 趣味闖關遊戲\n🎬 3D 互動大螢幕\n📸 親子合影留念\n🎭 歡樂舞台劇\n\n💰 優惠價：299 元／組（一大一小）\n👨 多一位大人 +100 元\n🧒 多一位小朋友 +100 元'
     }
   ];
 
@@ -102,7 +129,7 @@ export default function Activities() {
               <div className="p-6 md:p-8 flex flex-col flex-1">
                 <h3 className="text-2xl font-black text-[#0f439c] mb-3 group-hover:text-[#ff6600] transition-colors">{activity.title}</h3>
                 <p className="text-slate-500 mb-6 text-sm leading-relaxed font-medium whitespace-pre-wrap line-clamp-3">
-                  {activity.desc}
+                  {activity.shortDesc || activity.desc}
                 </p>
                 <div className="mt-auto">
                   <button className="w-full py-3 rounded-full border-2 border-[#00C300] text-[#00C300] font-bold group-hover:bg-[#00C300] group-hover:text-white transition-colors">
