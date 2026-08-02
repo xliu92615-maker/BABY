@@ -101,7 +101,7 @@ export default function FAQ() {
               我們的教育顧問團隊隨時準備好為您解答任何關於課程、環境與報名的疑問。
             </p>
             <a
-              href="https://line.me/ti/p/NUTLuJnPsY"
+              href="https://line.me/ti/p/e9xyybD4Fb"
               className="inline-flex items-center gap-3 bg-[#C5A059] hover:bg-[#B8962E] text-white px-10 py-4 rounded-full font-black text-sm transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 uppercase tracking-wider"
             >
               <MessageCircle size={20} />

@@ -81,7 +81,7 @@ export function Navbar() {
                 <Heart size={24} />
               </button>
               <a
-                href="https://line.me/ti/p/NUTLuJnPsY"
+                href="https://line.me/ti/p/e9xyybD4Fb"
                 className="bg-[#00C300] hover:bg-[#00a600] text-white px-5 py-2.5 rounded-full text-[15px] font-bold flex items-center gap-2 transition-all shadow-sm"
               >
                 <MessageCircle size={20} className="fill-current" />
@@ -142,7 +142,7 @@ export function Navbar() {
                   <span>我的收藏</span>
                 </button>
                 <a
-                  href="https://line.me/ti/p/NUTLuJnPsY"
+                  href="https://line.me/ti/p/e9xyybD4Fb"
                   className="w-full bg-[#00C300] text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all text-lg shadow-md mt-4"
                 >
                   <MessageCircle size={24} className="fill-current" />
