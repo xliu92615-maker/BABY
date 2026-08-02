@@ -31,7 +31,7 @@ function PhotoSlider() {
   return (
     <div id="photo-slider" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">活動精彩剪影</h2>
+        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">大手牽小手．愛心齊步走</h2>
         <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
       </div>
 
