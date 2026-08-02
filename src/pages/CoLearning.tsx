@@ -8,6 +8,8 @@ import img4 from '../assets/images/regenerated_image_1784823421223.png';
 import img5 from '../assets/images/regenerated_image_1784823424190.png';
 import img6 from '../assets/images/regenerated_image_1784823425976.png';
 import img7 from '../assets/images/regenerated_image_1784823427616.png';
+import img8 from '../assets/images/oooo-05.jpg';
+import img9 from '../assets/images/oooo-04.jpg';
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -19,7 +21,21 @@ export default function CoLearning() {
     { title: '🌙 夢境任務局 Dream Mission Agency', desc: '全台首創沉浸式兒童冒險體驗！\n💥半價優惠來襲！💥\n別再讓他們的週末只剩下平板和電視！\n✔️沉浸式劇情體驗\n✔️專屬夢境守護者勳章與證書\n讓孩子在遊戲中學習合作、勇敢挑戰、解決問題，也讓爸爸媽媽一起成為故事中的英雄！\n\n夢境任務局，等你一起完成這場屬於親子的夢想任務！', category: '親子共學', image: img4 },
     { title: '療癒登場！【2026限定開課】兒童卡皮巴拉療癒烘焙營', desc: '🔥獨家早鳥禮：前30位報名者，限定卡皮巴拉圍裙＆圍巾帽套組乙套（可帶回家紀念！）\n\n超可愛作品任選👍\n豚豚泡湯！立體糖霜餅乾\n水豚鬆軟生吐司\n卡皮巴拉派對蛋糕\n告別平淡無奇的假期，2026最讓小朋友尖叫、家長直呼「太可愛」的烘焙課正式上線‼️', category: '親子共學', image: img5 },
     { title: '週末放電首選！兒童手作芋圓🍠', desc: '➡️100%真食材：無防腐劑、零人工香精\n➡️五感大放電：訓練小手肌力，揉出滿滿成就感\n✨活動贈送：現場享用手作芋圓湯＋帶回自製芋圓生麵團！\n原價$599，現正半價優惠中🔥🔥\n\n大人舒壓、孩子放電，全家一起揉出專屬的古早味甜品～', category: '親子共學', image: img6 },
-    { title: '限時搶購！全台最夯親子沉浸式體驗', desc: '奉天承運，皇帝詔曰！半價優惠中！\n家有「小霸王」與「小傲嬌」的爸爸媽媽請注意！快帶寶貝來一場穿越千年的帝王盛宴！\n\n✔️沉浸式儀態與趣味互動\n✔️1：1奢華宮廷服飾\n\n報名即贈！三大尊榮登基好禮\n📜【聖旨詔書紀念冊】\n📸【精修古風數位寫真照 2 張】\n👑【帝王/女帝專屬小禮冠】', category: '親子共學', image: img7 }
+    { title: '限時搶購！全台最夯親子沉浸式體驗', desc: '奉天承運，皇帝詔曰！半價優惠中！\n家有「小霸王」與「小傲嬌」的爸爸媽媽請注意！快帶寶貝來一場穿越千年的帝王盛宴！\n\n✔️沉浸式儀態與趣味互動\n✔️1：1奢華宮廷服飾\n\n報名即贈！三大尊榮登基好禮\n📜【聖旨詔書紀念冊】\n📸【精修古風數位寫真照 2 張】\n👑【帝王/女帝專屬小禮冠】', category: '親子共學', image: img7 },
+    { 
+      title: '👨‍🍳 陶板屋 迷你小廚師', 
+      shortDesc: '爸媽們千呼萬喚的小廚師正式開課啦！\n穿上專屬小廚師制服，\n一起完成第一道星級料理！', 
+      desc: '👨‍🍳【陶板屋 迷你小廚師】萌趣登場！\n\n爸媽們千呼萬喚的小廚師正式開課啦～\n\n🌟 萌度爆表！小小廚師變裝秀\n\n🌟 手作創意！星級餐點親手做\n\n🌟 榮譽時刻！專屬證書與限定好禮\n\n💰 活動費用\n\n限時優惠 NT$350／人\n\n（原價 NT$850）', 
+      category: '親子共學', 
+      image: img8 
+    },
+    { 
+      title: '🍍 陽光小烘焙師', 
+      shortDesc: '一起變身小小烘焙師！\n親手完成香噴噴鳳梨酥，\n留下最難忘的親子回憶！', 
+      desc: '🍍 邀請小寶貝化身「陽光小烘焙師」\n\n穿上專屬小小圍裙，\n\n做出屬於自己的鳳梨酥！\n\n⏱ 活動流程（約60～90分鐘）\n\n① 報到變裝\n\n② 故事與導覽\n\n③ 手作 DIY\n\n④ 點心時間與烘烤\n\n⑤ 頒獎、合照、領取贈禮隨行袋\n\n💰 活動費用\n\n原價 NT$899\n\n限時優惠 NT$450\n\n👶 適合年齡\n\n3～12歲兒童\n\n（5歲以下須至少一位家長全程陪同）', 
+      category: '親子共學', 
+      image: img9 
+    }
   ];
 
   return (
@@ -55,7 +71,7 @@ export default function CoLearning() {
               <div className="p-6 pt-2 flex flex-col flex-1">
                 <h3 className="text-xl font-black text-[#0f439c] mb-3 group-hover:text-[#ff6600] transition-colors">{activity.title}</h3>
                 <p className="text-slate-500 mb-6 text-sm leading-relaxed font-medium whitespace-pre-wrap line-clamp-3">
-                  {activity.desc}
+                  {activity.shortDesc || activity.desc}
                 </p>
                 <div className="mt-auto">
                   <button className="w-full py-3 rounded-full border-2 border-[#00C300] text-[#00C300] font-bold group-hover:bg-[#00C300] group-hover:text-white transition-colors">
