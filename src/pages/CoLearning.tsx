@@ -8,8 +8,8 @@ import img4 from '../assets/images/regenerated_image_1784823421223.png';
 import img5 from '../assets/images/regenerated_image_1784823424190.png';
 import img6 from '../assets/images/regenerated_image_1784823425976.png';
 import img7 from '../assets/images/regenerated_image_1784823427616.png';
-import img8 from '../assets/images/oooo-05.jpg';
-import img9 from '../assets/images/oooo-04.jpg';
+import taobanwuImage from '../assets/images/oooo-05.png';
+import bakeryImage from '../assets/images/oooo-04.jfif';
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -27,14 +27,14 @@ export default function CoLearning() {
       shortDesc: '爸媽們千呼萬喚的小廚師正式開課啦！\n穿上專屬小廚師制服，\n一起完成第一道星級料理！', 
       desc: '👨‍🍳【陶板屋 迷你小廚師】萌趣登場！\n\n爸媽們千呼萬喚的小廚師正式開課啦～\n\n🌟 萌度爆表！小小廚師變裝秀\n\n🌟 手作創意！星級餐點親手做\n\n🌟 榮譽時刻！專屬證書與限定好禮\n\n💰 活動費用\n\n限時優惠 NT$350／人\n\n（原價 NT$850）', 
       category: '親子共學', 
-      image: img8 
+      image: taobanwuImage 
     },
     { 
       title: '🍍 陽光小烘焙師', 
       shortDesc: '一起變身小小烘焙師！\n親手完成香噴噴鳳梨酥，\n留下最難忘的親子回憶！', 
       desc: '🍍 邀請小寶貝化身「陽光小烘焙師」\n\n穿上專屬小小圍裙，\n\n做出屬於自己的鳳梨酥！\n\n⏱ 活動流程（約60～90分鐘）\n\n① 報到變裝\n\n② 故事與導覽\n\n③ 手作 DIY\n\n④ 點心時間與烘烤\n\n⑤ 頒獎、合照、領取贈禮隨行袋\n\n💰 活動費用\n\n原價 NT$899\n\n限時優惠 NT$450\n\n👶 適合年齡\n\n3～12歲兒童\n\n（5歲以下須至少一位家長全程陪同）', 
       category: '親子共學', 
-      image: img9 
+      image: bakeryImage 
     }
   ];
 
