@@ -9,7 +9,7 @@ import img5 from '../assets/images/regenerated_image_1784823424190.png';
 import img6 from '../assets/images/regenerated_image_1784823425976.png';
 import img7 from '../assets/images/regenerated_image_1784823427616.png';
 import taobanwuImage from '../assets/images/oooo-05.png';
-import bakeryImage from '../assets/images/oooo-04.jfif';
+import bakeryImage from '../assets/images/regenerated_image_1785690748101.jpg';
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
