@@ -6,7 +6,6 @@ import gg02 from '../assets/images/GG-02.jpg';
 import gg03 from '../assets/images/GG-03.jpg';
 import gg04 from '../assets/images/GG-04.jpg';
 import gg05 from '../assets/images/GG-05.jpg';
-import gg06 from '../assets/images/GG-06.jpg';
 import gg07 from '../assets/images/GG-07.jpg';
 import gg08 from '../assets/images/GG-08.jpg';
 import gg09 from '../assets/images/GG-09.jpg';
@@ -21,7 +20,6 @@ const galleryImages = [
   gg03,
   gg04,
   gg05,
-  gg06,
   gg07,
   gg08,
   gg09
