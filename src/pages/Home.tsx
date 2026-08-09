@@ -11,6 +11,7 @@ import gallery6 from '../assets/images/ppp-41.jpg';
 import gallery7 from '../assets/images/regenerated_image_1784912070866.png';
 import gallery8 from '../assets/images/regenerated_image_1784912073909.png';
 import HomeTopSlider from '../components/HomeTopSlider';
+import HomeBrandImage from '../components/HomeBrandImage';
 import HomeVideoShowcase from '../components/HomeVideoShowcase';
 
 const homeGalleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
@@ -45,6 +46,9 @@ export default function Home() {
     <div>
       {/* Top Slider Section */}
       <HomeTopSlider />
+
+      {/* Brand Image Section */}
+      <HomeBrandImage />
 
       {/* Video Showcase Section */}
       <HomeVideoShowcase />

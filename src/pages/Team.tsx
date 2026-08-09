@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Linkedin, Mail, ExternalLink, Award, Star } from 'lucide-react';
-import wangImage from '../assets/images/regenerated_image_1784812506948.png';
+import wangImage from '../assets/images/wang-jing-fu.jpg.jpg';
 import awardImage from '../assets/images/wang_jingfu_1784812371266.jpg';
 
 export default function Team() {
@@ -82,7 +82,7 @@ export default function Team() {
             <img 
               src={wangImage} 
               alt="創辦人－王景富" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-[#002B5B]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="#" className="w-12 h-12 rounded-full bg-white text-[#002B5B] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-colors shadow-sm hover:-translate-y-1">
