@@ -4,6 +4,7 @@ import { Menu, X, Heart, MessageCircle, Volume2, HelpCircle } from 'lucide-react
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
 import logo from '../assets/images/regenerated_image_1784724383569.png'; // Will replace with actual logo or text
+import AnnouncementMarquee from './AnnouncementMarquee';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +38,7 @@ export function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md">
         {/* Yellow Announcement Bar */}
-        <div className="bg-[#FFCC00] text-[#000000] py-1.5 px-4 text-sm font-bold flex justify-center items-center gap-2">
-          <Volume2 size={16} />
-          <span className="bg-[#FF6600] text-white px-2 py-0.5 rounded text-xs">感謝</span>
-          <span>創辦人－王景富贊助活動</span>
-        </div>
+        <AnnouncementMarquee />
 
         {/* Main Blue Header */}
         <div className="bg-[#0f439c] py-3 px-4 sm:px-6 lg:px-12">
