@@ -2,44 +2,10 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Heart, Users, Globe, Shield, Activity } from 'lucide-react';
 
-import gallery1 from '../assets/images/已改11.jpg';
-import gallery2 from '../assets/images/已改7.jpg';
-import gallery3 from '../assets/images/已改8.png';
-import gallery4 from '../assets/images/已改9.jpg';
-import gallery5 from '../assets/images/charity_gallery_3_1784860950316.jpg';
-import gallery6 from '../assets/images/ppp-41.jpg';
-import gallery7 from '../assets/images/regenerated_image_1784912070866.png';
-import gallery8 from '../assets/images/regenerated_image_1784912073909.png';
 import HomeTopSlider from '../components/HomeTopSlider';
 import HomeBrandImage from '../components/HomeBrandImage';
 import HomeVideoShowcase from '../components/HomeVideoShowcase';
-
-const homeGalleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
-
-function HomePhotoSlider() {
-  return (
-    <section className="py-24 bg-white border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">精彩活動回顧</h2>
-          <div className="w-16 h-1.5 bg-[#FFCC00] mx-auto rounded-full" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {homeGalleryImages.map((src, idx) => (
-            <div key={idx} className="aspect-[4/3] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-xl border-4 border-white">
-              <img
-                src={src}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                alt={`精彩活動回顧 ${idx + 1}`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+import HomeEventSlider from '../components/HomeEventSlider';
 
 export default function Home() {
   return (
@@ -152,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Photo Gallery Slider */}
-      <HomePhotoSlider />
+      <HomeEventSlider />
     </div>
   );
 }
