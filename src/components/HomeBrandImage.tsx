@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Sparkles, Compass, Rocket } from 'lucide-react';
-import wangImage from '../assets/images/wang-jing-fu.jpg.jpg';
+import wangImage from '../assets/images/WAN-11.jpg';
 
 export default function HomeBrandImage() {
   return (
@@ -29,7 +29,7 @@ export default function HomeBrandImage() {
               <img 
                 src={wangImage} 
                 alt="啟夢教育品牌形象" 
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           </motion.div>
