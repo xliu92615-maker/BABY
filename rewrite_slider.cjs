@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+const fs = require('fs');
+
+const code = `import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -53,7 +55,7 @@ function SmartImage({ src, alt, className }: { src: string, alt: string, classNa
       {isVertical && (
         <div 
           className="absolute inset-0 bg-cover bg-center blur-xl opacity-20 pointer-events-none" 
-          style={{ backgroundImage: `url(${src})` }} 
+          style={{ backgroundImage: \`url(\${src})\` }} 
         />
       )}
     </div>
@@ -217,7 +219,7 @@ export default function HomeEventSlider() {
                   ? "w-6 bg-[#C5A059]" 
                   : "bg-slate-300 hover:bg-slate-400"
               )}
-              aria-label={`Go to slide ${idx + 1}`}
+              aria-label={\`Go to slide \${idx + 1}\`}
             />
           ))}
         </div>
@@ -225,3 +227,6 @@ export default function HomeEventSlider() {
     </section>
   );
 }
+`;
+
+fs.writeFileSync('src/components/HomeEventSlider.tsx', code);
