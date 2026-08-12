@@ -104,7 +104,7 @@ export default function HomeEventSlider() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">啟夢教育活動回顧</h2>
+          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">樂共學活動回顧</h2>
           <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full mb-4" />
           <p className="text-slate-600 font-medium">每一次參與、每一份笑容，都是孩子成長路上最珍貴的回憶。</p>
         </div>

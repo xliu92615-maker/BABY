@@ -10,7 +10,7 @@ const announcement1 = (
 const announcement2 = (
   <span className="inline-block whitespace-nowrap px-4">
     📢 <span className="text-[#e11d48] font-black mr-1">【重要公告】</span>
-    本團隊所有活動皆由「我們（啟夢教育）」團隊官方主辦，合作場地與品牌僅提供設備支援，並非主辦方，特此說明，感謝大家的理解與支持！
+    本團隊所有活動皆由「我們」團隊官方主辦，合作場地與品牌僅提供設備支援，並非主辦方，特此說明，感謝大家的理解與支持！
   </span>
 );
 

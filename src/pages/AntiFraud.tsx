@@ -195,7 +195,7 @@ export default function AntiFraud() {
           viewport={{ once: true }}
           className="bg-white rounded-[3rem] p-12 md:p-16 shadow-lg border-2 border-slate-50"
         >
-          <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] mb-6">啟夢教育關心您</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] mb-6">我們關心您</h2>
           <p className="text-lg md:text-xl text-slate-600 font-bold mb-10 leading-relaxed">
             陪伴孩子安心成長，也陪伴每個家庭建立更安全的生活環境。<br />
             共同守護孩子與家人的幸福。

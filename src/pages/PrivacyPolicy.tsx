@@ -3,7 +3,7 @@ import { ShieldCheck, Calendar, Lock } from 'lucide-react';
 
 export default function PrivacyPolicy() {
   useEffect(() => {
-    document.title = '啟夢教育｜隱私權政策';
+    document.title = '樂共學｜隱私權政策';
     
     // Update or create meta description tag
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
     }
     metaDesc.setAttribute(
       'content',
-      '啟夢教育個人資料與隱私權保護政策，說明本網站蒐集、處理、利用及保護個人資料之方式。'
+      '樂共學個人資料與隱私權保護政策，說明本網站蒐集、處理、利用及保護個人資料之方式。'
     );
 
     // Scroll to top on mount
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </div>
           <h1 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight drop-shadow-sm leading-tight">
-            啟夢教育 個人資料與隱私權保護政策
+            樂共學 個人資料與隱私權保護政策
           </h1>
           <p className="text-slate-200 font-medium max-w-2xl mx-auto text-base leading-relaxed mb-6">
             我們重視每一位家長與孩子的個人資料安全，致力於提供安心、安全的教育服務。
@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
           
           {/* Welcome Intro */}
           <div className="p-6 bg-amber-50/50 rounded-2xl border-l-4 border-[#C5A059] text-slate-700 text-base leading-relaxed">
-            歡迎您光臨「啟夢教育」官方網站（以下簡稱「本網站」）。啟夢教育非常重視您與孩子的個人資料與隱私權。為了讓您與孩子能安心使用本網站的各項服務、報名課程及參與活動，我們特此向您說明本網站的隱私權保護政策，以保障您的權益。請您詳閱以下內容：
+            歡迎您光臨「樂共學」官方網站（以下簡稱「本網站」）。樂共學非常重視您與孩子的個人資料與隱私權。為了讓您與孩子能安心使用本網站的各項服務、報名課程及參與活動，我們特此向您說明本網站的隱私權保護政策，以保障您的權益。請您詳閱以下內容：
           </div>
 
           {/* 一、 隱私權保護政策的適用範圍 */}
@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
               一、 隱私權保護政策的適用範圍
             </h2>
             <div className="space-y-3 pl-2 text-base text-slate-600">
-              <p>本政策適用於您在「啟夢教育」網站活動時，所涉及的個人資料蒐集、處理、利用與保護。</p>
+              <p>本政策適用於您在「樂共學」網站活動時，所涉及的個人資料蒐集、處理、利用與保護。</p>
               <p>本政策不適用於本網站以外的連結網站，也不適用於非本網站所委託或參與管理的人員。若您點選第三方網站連結，請參閱該網站個別的隱私權政策。</p>
             </div>
           </section>
@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
                     <span className="font-bold text-slate-800">線上諮詢與表單填寫：</span> 當您填寫聯絡表單、諮詢表單或進行線上課務互動時，我們將蒐集您所輸入的姓名、Email、聯絡電話及留言內容。
                   </li>
                   <li>
-                    <span className="font-bold text-slate-800">金流與交易資料：</span> 若您進行線上繳費，我們會處理必要的交易紀錄（刷卡過程均採用加密安全金流服務，啟夢教育不會留存您的信用卡完整卡號與敏感金融資訊）。
+                    <span className="font-bold text-slate-800">金流與交易資料：</span> 若您進行線上繳費，我們會處理必要的交易紀錄（刷卡過程均採用加密安全金流服務，樂共學不會留存您的信用卡完整卡號與敏感金融資訊）。
                   </li>
                 </ul>
               </div>
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
               <div className="bg-slate-50/80 rounded-2xl p-6 border border-slate-100 space-y-3">
                 <h3 className="font-bold text-lg text-[#002B5B]">2. 未成年人（兒童及青少年）資料保護</h3>
                 <p className="text-slate-600">
-                  啟夢教育深知未成年人個人資料保護的重要性。若學員未滿 18 歲，在提供個人資料前，應取得法定代理人（父母或監護人）之同意。
+                  樂共學深知未成年人個人資料保護的重要性。若學員未滿 18 歲，在提供個人資料前，應取得法定代理人（父母或監護人）之同意。
                 </p>
                 <p className="text-slate-600">
                   我們絕不會在未經家長/監護人同意的情況下，向未成年人索取超出服務必要範圍的個人資料。
@@ -125,7 +125,7 @@ export default function PrivacyPolicy() {
               <div className="flex gap-3 items-start">
                 <Lock className="w-5 h-5 text-[#C5A059] shrink-0 mt-1" />
                 <p className="text-slate-600">
-                  <span className="font-bold text-slate-800">嚴密的資訊安全措施：</span> 啟夢教育主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，保護網站及您的個人資料。
+                  <span className="font-bold text-slate-800">嚴密的資訊安全措施：</span> 樂共學主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，保護網站及您的個人資料。
                 </p>
               </div>
               <div className="flex gap-3 items-start">
@@ -144,7 +144,7 @@ export default function PrivacyPolicy() {
               四、 個人資料的利用與第三方共享
             </h2>
             <p className="text-base text-slate-600 pl-2">
-              啟夢教育絕不會任意出售、交換、出租或以其他變相形式，將您的個人資料提供給其他團體、個人或私人企業。但有下列情形者除外：
+              樂共學絕不會任意出售、交換、出租或以其他變相形式，將您的個人資料提供給其他團體、個人或私人企業。但有下列情形者除外：
             </p>
             <ol className="space-y-3 text-slate-600 pl-6 list-decimal">
               <li>事先取得您的書面或明示同意。</li>
@@ -186,7 +186,7 @@ export default function PrivacyPolicy() {
               六、 您的個人資料權利（查閱、更正與刪除）
             </h2>
             <p className="text-base text-slate-600 pl-2">
-              依據《個人資料保護法》，您及您的孩子針對提供給啟夢教育的個人資料，享有以下權利：
+              依據《個人資料保護法》，您及您的孩子針對提供給樂共學的個人資料，享有以下權利：
             </p>
             <ol className="space-y-3 text-slate-600 pl-6 list-decimal">
               <li>查詢或請求閱覽。</li>
@@ -206,7 +206,7 @@ export default function PrivacyPolicy() {
               七、 隱私權保護政策之修訂
             </h2>
             <p className="text-base text-slate-600 pl-2">
-              啟夢教育將因應社會環境變遷、法令規定修正或服務需求之變更，隨時檢討並修改本隱私權政策。修訂後的條款將直接更新於本網站上，並自公布之日起生效。建議您定期閱讀本頁面以了解最新的隱私保護資訊。
+              樂共學將因應社會環境變遷、法令規定修正或服務需求之變更，隨時檢討並修改本隱私權政策。修訂後的條款將直接更新於本網站上，並自公布之日起生效。建議您定期閱讀本頁面以了解最新的隱私保護資訊。
             </p>
           </section>
 

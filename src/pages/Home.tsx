@@ -52,12 +52,12 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] mb-10 flex items-center justify-center gap-4">
-            <span>啟夢教育</span>
+            <span>樂共學</span>
             <span className="w-1 h-8 bg-slate-300 rounded"></span>
             <span>陪伴每一段成長，實現每一個夢想</span>
           </h2>
           <p className="text-[#002B5B] text-lg leading-loose font-bold mb-6">
-            啟夢教育秉持著「陪伴、專業、創新」的教育理念，我們相信，教育不僅侷限於課堂，更應延伸至生活中的每一次探索、每一場活動、每一段旅程，讓每位小朋友都能在快樂中學習，在體驗中成長！
+            我們秉持著「陪伴、專業、創新」的教育理念，相信教育不僅侷限於課堂，更應延伸至生活中的每一次探索、每一場活動、每一段旅程，讓每位小朋友都能在快樂中學習，在體驗中成長！
           </p>
           <p className="text-[#002B5B] text-lg leading-loose font-bold">
             未來，我們將持續推出更多優質課程、親子活動、國內外文化交流、國際留遊學、公益計畫，讓每一位孩子、都能在這裡找到屬於自己的舞台，累積更多知識、創造更多幸福回憶。

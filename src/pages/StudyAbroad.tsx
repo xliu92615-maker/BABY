@@ -133,7 +133,7 @@ export default function StudyAbroad() {
             </p>
             
             <p className="mb-8 leading-relaxed">
-              啟夢教育相信，教育不只是學習知識，更陪伴孩子找到方向、建立自信，培養迎接世界的能力。
+              我們相信，教育不只是學習知識，更陪伴孩子找到方向、建立自信，培養迎接世界的能力。
             </p>
 
             <div className="my-12 p-8 bg-slate-50 rounded-2xl border-l-4 border-[#C5A059]">
@@ -207,7 +207,7 @@ export default function StudyAbroad() {
               
               <div className="relative z-10">
                 <p className="text-lg leading-relaxed">
-                  啟夢教育希望成為每個家庭最值得信賴的教育夥伴，陪伴孩子一路成長，從探索興趣、規劃學習，走向國際舞台，共同見證每一次蛻變與成長。
+                  我們希望成為每個家庭最值得信賴的教育夥伴，陪伴孩子一路成長，從探索興趣、規劃學習，走向國際舞台，共同見證每一次蛻變與成長。
                 </p>
               </div>
             </div>

@@ -28,7 +28,7 @@ export default function HomeBrandImage() {
             <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-2xl shadow-[#002B5B]/10 border border-[#C5A059]/20 group">
               <img 
                 src={wangImage} 
-                alt="啟夢教育品牌形象" 
+                alt="樂共學品牌形象" 
                 className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -49,7 +49,7 @@ export default function HomeBrandImage() {
 
             {/* Main Title */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-snug tracking-tight mb-6">
-              <span className="text-[#002B5B] block">啟夢教育陪伴每一段成長，</span>
+              <span className="text-[#002B5B] block">我們陪伴每一段成長，</span>
               <span className="text-[#C5A059] block mt-1">實現每一個夢想</span>
             </h2>
 
@@ -62,7 +62,7 @@ export default function HomeBrandImage() {
                 我們相信，教育不只是知識的傳遞，更是一段陪伴孩子探索世界、發現自己的旅程。
               </p>
               <p>
-                從學習、成長到勇敢追尋夢想，啟夢教育希望陪伴每一位孩子走得更遠、看得更廣，找到屬於自己的方向。
+                從學習、成長到勇敢追尋夢想，我們希望陪伴每一位孩子走得更遠、看得更廣，找到屬於自己的方向。
               </p>
             </div>
 

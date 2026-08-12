@@ -16,14 +16,14 @@ export default function Team() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full mix-blend-multiply opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4" />
           <div className="relative z-10">
-            <h2 className="text-3xl font-black text-[#002B5B] mb-6 tracking-tight drop-shadow-sm">關於啟夢教育｜以教育為根，以愛為名</h2>
+            <h2 className="text-3xl font-black text-[#002B5B] mb-6 tracking-tight drop-shadow-sm">關於樂共學｜以教育為根，以愛為名</h2>
             <div className="w-16 h-2 bg-[#C5A059] rounded-full mb-8" />
             
             <p className="text-xl text-[#002B5B] font-bold mb-4">教育，是改變人生的起點；視野，是開創未來的力量。</p>
             <p className="text-[#C5A059] text-2xl font-black mb-8 italic drop-shadow-sm">「我們不只是送孩子出國，而是幫他們找到自己的未來。」</p>
             
             <p className="text-slate-600 font-medium leading-relaxed mb-10 text-lg">
-              啟夢教育以多元教育為核心，尊重每位學生的個性和志向，提供量身打造的職涯與學業規劃。我們陪伴孩子在探索世界的過程中，認識自我、建立自信，進而找到屬於自己的方向與抱負。
+              樂共學以多元教育為核心，尊重每位學生的個性和志向，提供量身打造的職涯與學業規劃。我們陪伴孩子在探索世界的過程中，認識自我、建立自信，進而找到屬於自己的方向與抱負。
             </p>
 
             <div className="space-y-8">
@@ -53,7 +53,7 @@ export default function Team() {
                   深耕公益與社會責任｜傳遞溫暖，播下希望
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                  世界需要的不是高高在上的精英，而是懂得愛的個體。啟夢教育持續將資源與關懷延伸至社會需要的角落，讓孩子在汲取知識的同時，也學會關懷生命、回饋社會，讓愛的循環生生不息。
+                  世界需要的不是高高在上的精英，而是懂得愛的個體。我們持續將資源與關懷延伸至社會需要的角落，讓孩子在汲取知識的同時，也學會關懷生命、回饋社會，讓愛的循環生生不息。
                 </p>
               </div>
 
@@ -98,7 +98,7 @@ export default function Team() {
             <p className="text-[#C5A059] font-bold mb-6 text-xl">創辦人－王景富</p>
             <div className="space-y-4 text-slate-600 font-medium leading-relaxed">
               <p>
-                自2023年創立啟夢教育以來，始終秉持著「教育改變人生，國際視野成就未來」的理念，長期深耕台灣教育領域，致力於打造兼具知識、品格、國際視野與實踐能力的學習環境，陪伴每一位孩子在人生的成長道路上發掘潛能、建立自信，勇敢迎向未來。
+                自2023年創立樂共學以來，始終秉持著「教育改變人生，國際視野成就未來」的理念，長期深耕台灣教育領域，致力於打造兼具知識、品格、國際視野與實踐能力的學習環境，陪伴每一位孩子在人生的成長道路上發掘潛能、建立自信，勇敢迎向未來。
               </p>
               <p>
                 每位孩子都擁有獨一無二的天賦，而教育的價值，不只是提升學業成績，更重要的是培養良好的品格、溝通能力、創造力、獨立思考能力，以及面對未來世界所需的國際競爭力。
@@ -107,7 +107,7 @@ export default function Team() {
                 創辦人－王景富始終相信，一個人的成長，不只是擁有優異的成績，更重要的是擁有正確的價值觀、國際視野與服務社會的精神。教育的使命，不只是培養會讀書的人，更要培養能夠關懷他人、勇於挑戰、具備世界觀與責任感的人才。
               </p>
               <p>
-                未來，啟夢教育將持續整合教育、國際留遊學、跨國文化交流、公益服務及多元學習資源，打造更完整、更具國際競爭力的教育平台，陪伴每一位孩子勇敢追逐夢想，從台灣出發，放眼世界，以知識改變人生，以視野創造未來，以公益回饋社會，成為能夠影響世界的下一代。
+                未來，樂共學將持續整合教育、國際留遊學、跨國文化交流、公益服務及多元學習資源，打造更完整、更具國際競爭力的教育平台，陪伴每一位孩子勇敢追逐夢想，從台灣出發，放眼世界，以知識改變人生，以視野創造未來，以公益回饋社會，成為能夠影響世界的下一代。
               </p>
             </div>
           </div>
@@ -164,27 +164,27 @@ export default function Team() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              title: '啟夢教育聯盟：以教育為橋、以大愛為根，讓夢想成為行動',
+              title: '樂共學聯盟：以教育為橋、以大愛為根，讓夢想成為行動',
               source: '台灣網',
-              url: 'https://news.taiwannet.com.tw/news/188048/啟夢教育聯盟-以教育為橋-以大愛為根-讓夢想成為行動.html'
+              url: 'https://news.taiwannet.com.tw/news/188048/樂共學聯盟-以教育為橋-以大愛為根-讓夢想成為行動.html'
             },
             {
-              title: '方格子 Vocus 專題報導：啟夢教育的創新與堅持',
+              title: '方格子 Vocus 專題報導：樂共學的創新與堅持',
               source: '方格子 Vocus',
               url: 'https://vocus.cc/article/693ade83fd897800014c632e'
             },
             {
-              title: 'PChome 新聞：啟夢教育引領多元學習新風潮',
+              title: 'PChome 新聞：樂共學引領多元學習新風潮',
               source: 'PChome 新聞',
               url: 'https://news.pchome.com.tw/living/lifetoutiao/20251023/index-76120564283588315009.html'
             },
             {
-              title: '啟夢教育聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
+              title: '樂共學聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
               source: '全國大小事新聞網',
               url: 'https://nchn.news/archives/138051'
             },
             {
-              title: 'LINE TODAY：啟夢教育聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
+              title: 'LINE TODAY：樂共學聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
               source: 'LINE TODAY',
               url: 'https://today.line.me/tw/v3/article/0MmaQRp'
             }

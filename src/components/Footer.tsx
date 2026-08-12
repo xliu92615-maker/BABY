@@ -44,7 +44,7 @@ export function Footer() {
               <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <span className="text-[#002B5B] font-serif text-3xl font-bold">啟</span>
               </div>
-              <span className="text-3xl font-black tracking-tight text-white drop-shadow-sm">啟夢教育</span>
+              <span className="text-3xl font-black tracking-tight text-white drop-shadow-sm">樂共學</span>
             </div>
             <p className="text-blue-100 leading-relaxed text-sm font-medium mb-8">
               為每個孩子打造專屬的國際化學習旅程，啟發潛能，夢想啟航。
@@ -132,7 +132,7 @@ export function Footer() {
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-blue-200/60 text-xs font-bold tracking-wider">
-            © {new Date().getFullYear()} 啟夢教育 DreamEdu. All rights reserved.
+            © {new Date().getFullYear()} 樂共學. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs font-bold text-blue-200/60">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">隱私權政策</Link>
