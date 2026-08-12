@@ -1,61 +1,37 @@
 import { motion } from 'motion/react';
 import { HeartHandshake, Smile, TreePine } from 'lucide-react';
-import charityImage from '../assets/images/regenerated_image_1784973601430.jpg';
-import gg01 from '../assets/images/GG-01.jpg';
-import gg02 from '../assets/images/GG-02.jpg';
-import gg03 from '../assets/images/GG-03.jpg';
-import gg04 from '../assets/images/GG-04.jpg';
-import gg05 from '../assets/images/GG-05.jpg';
-import gg07 from '../assets/images/GG-07.jpg';
-import gg08 from '../assets/images/GG-08.jpg';
-import gg09 from '../assets/images/GG-09.jpg';
-import h01 from '../assets/images/H-01.jpg';
-import h02 from '../assets/images/H-02.jpg';
-import h03 from '../assets/images/H-03.jpg';
+
+
+
 import HandInHandWarmthSection from '../components/HandInHandWarmthSection';
+import ee001 from '../assets/images/EE-001.jpg';
+import ee002 from '../assets/images/EE-002.jpg';
+import ee003 from '../assets/images/EE-003.jpg';
+import ee004 from '../assets/images/EE-004.jpg';
+import ee005 from '../assets/images/EE-005.jpg';
+import { useState, useCallback, useEffect } from 'react';
+import { AnimatePresence } from 'motion/react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
-const galleryImages = [
-  gg01,
-  gg02,
-  gg03,
-  gg04,
-  gg05,
-  gg07,
-  gg08,
-  gg09
-];
 
-function PhotoSlider() {
-  return (
-    <div id="photo-slider" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">大手牽小手．愛心齊步走</h2>
-        <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {galleryImages.map((src, idx) => (
-          <div key={idx} className="aspect-[4/3] rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-xl border-4 border-white">
-            <img
-              src={src}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              alt={`公益活動剪影 ${idx + 1}`}
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function Charity() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const handleNext = useCallback(() => {
+    setLightboxIndex((prev) => (prev !== null ? (prev + 1) % allImages.length : null));
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setLightboxIndex((prev) => (prev !== null ? (prev - 1 + allImages.length) % allImages.length : null));
+  }, []);
+
   return (
     <div className="bg-[#fdfdfd] min-h-screen pb-24">
       {/* Hero */}
       <div className="relative py-24 bg-white overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center gap-16">
-          <div className="md:w-1/2">
+          <div className="w-full md:w-[45%]">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C5A059]/10 text-[#C5A059] font-bold text-[10px] tracking-widest uppercase mb-6">
               <HeartHandshake size={14} />
               社會企業責任
@@ -81,25 +57,21 @@ export default function Charity() {
               <p>教育能夠啟發夢想，公益能夠溫暖人心，而每一次真誠的付出，都將成為改變世界的一份力量。</p>
             </motion.div>
           </div>
-          <div className="md:w-1/2 relative">
+          <div className="w-full md:w-[55%] relative mt-8 md:mt-0">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50 rotate-3 hover:rotate-0 transition-transform duration-500"
+              transition={{ duration: 0.6 }}
+              className="relative rounded-[24px] overflow-hidden shadow-xl border-4 border-white group"
             >
-              <img src={charityImage} alt="公益活動" className="w-full h-auto object-cover" style={{ aspectRatio: '4/3' }} />
-            </motion.div>
-            
-            {/* Floating Stats */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="absolute -bottom-8 -left-8 bg-white p-6 rounded-[2rem] shadow-xl border-4 border-slate-50 hidden md:block"
-            >
-              <div className="text-4xl font-black text-[#C5A059] mb-1">50+</div>
-              <div className="text-slate-500 font-bold text-xs tracking-wider uppercase">走訪偏鄉學校</div>
+              <img 
+  src={ee002} 
+  alt="公益活動紀錄" 
+  className="w-full h-auto object-cover cursor-pointer hover:scale-105 transition-transform duration-500" 
+  style={{ aspectRatio: '4/3' }} 
+  onClick={() => setLightboxIndex(1)}
+/>
+              <div className="absolute inset-0 border border-[#C5A059]/30 rounded-[20px] pointer-events-none" />
             </motion.div>
           </div>
         </div>
@@ -147,7 +119,7 @@ export default function Charity() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* 文章內容 */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-12 space-y-6 max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-[#C5A059] font-bold text-xs tracking-widest uppercase">
                 <HeartHandshake size={16} />
                 公益特別報導
@@ -181,32 +153,6 @@ export default function Charity() {
               </div>
             </div>
 
-            {/* 3張照片 Grid */}
-            <div className="lg:col-span-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { src: h01, alt: '救災重機具與工程車輛運送' },
-                  { src: h02, alt: '花蓮災後現場清理與重建作業' },
-                  { src: h03, alt: '第一時間準備的救災物資與民生用品' },
-                ].map((img, idx) => (
-                  <motion.div
-                    key={idx}
-                    whileHover={{ scale: 1.03 }}
-                    className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md border-2 border-slate-100 bg-slate-100 relative group"
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-3 text-white text-xs font-medium opacity-90">
-                      {img.alt}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>
@@ -215,7 +161,141 @@ export default function Charity() {
       <HandInHandWarmthSection />
 
       {/* Photo Gallery Slider */}
-      <PhotoSlider />
+      <CharityGallery openLightbox={setLightboxIndex} />
+      {lightboxIndex !== null && (
+        <Lightbox 
+          images={allImages}
+          selectedIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNext={handleNext}
+          onPrev={handlePrev}
+        />
+      )}
     </div>
   );
 }
+
+
+const allImages = [
+  ee001,
+  ee002,
+  ee003,
+  ee004,
+  ee005
+];
+
+function CharityGallery({ openLightbox }: { openLightbox: (idx: number) => void }) {
+  const galleryImages = [
+    { src: ee001, index: 0 },
+    { src: ee003, index: 2 },
+    { src: ee004, index: 3 },
+    { src: ee005, index: 4 }
+  ];
+
+  return (
+    <div id="photo-slider" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">大手牽小手．愛心齊步走</h2>
+        <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+        {galleryImages.map((img) => (
+          <motion.div 
+            key={img.index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => openLightbox(img.index)}
+            className="aspect-[4/3] rounded-[20px] md:rounded-[24px] overflow-hidden relative shadow-sm hover:shadow-xl border-4 border-white group cursor-pointer bg-slate-50"
+          >
+            <img
+              src={img.src}
+              className="absolute inset-0 w-full h-full object-cover"
+              alt="公益活動紀錄"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-[#002B5B]/0 group-hover:bg-[#002B5B]/10 transition-colors duration-300 pointer-events-none" />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Lightbox({ 
+  images, 
+  selectedIndex, 
+  onClose, 
+  onNext, 
+  onPrev 
+}: { 
+  images: string[], 
+  selectedIndex: number, 
+  onClose: () => void, 
+  onNext: () => void, 
+  onPrev: () => void 
+}) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') onNext();
+      if (e.key === 'ArrowLeft') onPrev();
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onNext, onPrev, onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-8 backdrop-blur-sm"
+        onClick={onClose}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-[110] bg-black/20 rounded-full p-2"
+        >
+          <X size={32} />
+        </button>
+        
+        <button
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-[110] bg-black/20 hover:bg-black/40 rounded-full p-3"
+        >
+          <ChevronLeft size={36} />
+        </button>
+
+        <button
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-[110] bg-black/20 hover:bg-black/40 rounded-full p-3"
+        >
+          <ChevronRight size={36} />
+        </button>
+
+        <motion.div
+          key={selectedIndex}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.2 }}
+          className="relative max-w-[90vw] max-h-[90vh] flex justify-center items-center"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <img
+            src={images[selectedIndex]}
+            alt="放大圖片"
+            className="max-w-full max-h-[90vh] object-contain rounded-sm shadow-2xl"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+
