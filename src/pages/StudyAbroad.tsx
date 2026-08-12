@@ -2,23 +2,36 @@ import { motion } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
 import StudyAbroadVideoStory from '../components/StudyAbroadVideoStory';
 import StudyAbroadNewGallery from '../components/StudyAbroadNewGallery';
-import heroImage from '../assets/images/regenerated_image_1784976670698.jpg';
 
 export default function StudyAbroad() {
   return (
     <div className="bg-[#FAFAFA] min-h-screen">
       {/* Hero Section */}
-      <div className="relative pt-20 pb-24 md:pt-32 md:pb-40 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="從台灣出發，走向世界" 
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002B5B]/90 via-[#002B5B]/80 to-transparent" />
+      <div className="relative pt-24 pb-24 md:pt-32 md:pb-0 overflow-hidden min-h-[400px] md:h-[560px] bg-gradient-to-br from-[#063568] via-[#0B4A86] to-[#123F73] flex items-center">
+        {/* Abstract Background Decorations */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.08]">
+          {/* Earth/Grid pattern */}
+          <svg className="absolute -right-20 top-10 w-[500px] h-[500px] md:w-[600px] md:h-[600px] text-white" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5">
+             <circle cx="100" cy="100" r="80" />
+             <ellipse cx="100" cy="100" rx="40" ry="80" />
+             <ellipse cx="100" cy="100" rx="80" ry="40" />
+             <line x1="20" y1="100" x2="180" y2="100" />
+             <line x1="100" y1="20" x2="100" y2="180" />
+          </svg>
+          {/* Flight Path */}
+          <svg className="absolute left-0 top-1/4 w-[400px] h-[200px] text-[#C5A059]" viewBox="0 0 400 200" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6">
+             <path d="M 0,200 Q 200,0 400,100" />
+          </svg>
+          {/* Plane Icon */}
+          <div className="absolute top-[calc(25%+80px)] left-[380px] text-[#C5A059] rotate-45">
+             <Plane size={32} />
+          </div>
+          {/* Gold Dots */}
+          <div className="absolute right-1/3 bottom-20 w-2 h-2 bg-[#C5A059] rounded-full" />
+          <div className="absolute left-1/4 top-1/4 w-3 h-3 bg-[#C5A059] rounded-full opacity-50" />
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center">
           <div className="w-full md:w-2/3 lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -42,7 +55,7 @@ export default function StudyAbroad() {
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#C5A059]/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -right-10 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-[80px]" />
       </div>
 
       <StudyAbroadVideoStory />
