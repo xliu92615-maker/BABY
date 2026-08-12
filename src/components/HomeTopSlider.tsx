@@ -2,16 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import ppp01 from "../assets/images/regenerated_image_1785387960727.png";
-import ppp02 from "../assets/images/ppp-02.jpg";
-import ppp03 from "../assets/images/ppp-03.jpg";
-import ppp04 from "../assets/images/ppp-04.jpg";
+import rr16 from "../assets/images/RR-16.jpg";
+import ee002 from "../assets/images/EE-002.jpg";
 
 const sliderImages = [
-  ppp01,
-  ppp02,
-  ppp03,
-  ppp04
+  rr16,
+  ee002
 ];
 
 export default function HomeTopSlider() {
@@ -96,6 +92,7 @@ export default function HomeTopSlider() {
           <ChevronLeft size={28} className="mr-0.5" />
         </button>
       </div>
+      
       <div className="absolute inset-y-0 right-0 flex items-center pr-4 md:pr-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <button 
           onClick={handleNext}
