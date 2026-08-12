@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShieldAlert, Coins, Landmark, PhoneCall, Headset, CreditCard, Wallet, Key, Shield, Lock, AlertTriangle, Smartphone, X } from 'lucide-react';
-import fraudImage1 from '../assets/images/OOO-01.jpg';
+import fraudImage1 from '../assets/images/pa-01.jpg';
 import fraudImage2 from '../assets/images/OOO-02.jpg';
 
 const fraudTypes = [
