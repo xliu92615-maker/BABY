@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { Linkedin, Mail, Award, Star } from 'lucide-react';
-import wangImage from '../assets/images/WAN-11.jpg';
-import awardImage from '../assets/images/wang_jingfu_1784812371266.jpg';
+import dd01 from '../assets/images/DD-01.jpg';
 
 export default function Team() {
   return (
@@ -78,11 +77,11 @@ export default function Team() {
           viewport={{ once: true }}
           className="bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col md:flex-row items-center md:items-start p-8 md:p-12 gap-10"
         >
-          <div className="w-48 md:w-72 aspect-[2/3] rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
+          <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
             <img 
-              src={wangImage} 
+              src={dd01} 
               alt="創辦人" 
-              className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-[#002B5B]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
               <a href="#" className="w-12 h-12 rounded-full bg-white text-[#002B5B] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-colors shadow-sm hover:-translate-y-1">
@@ -114,6 +113,7 @@ export default function Team() {
         </motion.div>
       </div>
 
+
       {/* Award Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <motion.div
@@ -126,11 +126,11 @@ export default function Team() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C5A059] rounded-full blur-[80px] opacity-20 transform -translate-x-1/2 translate-y-1/2" />
           
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
-            <div className="w-48 md:w-64 aspect-[3/4] shrink-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#C5A059]/30 relative group">
-              <img src={awardImage} alt="Award" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="w-full md:w-[40%] aspect-[4/3] shrink-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#C5A059]/30 relative group bg-[#001a38]">
+              <img src={dd01} alt="Award" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
             
-            <div className="flex-1">
+            <div className="flex-1 md:w-[60%]">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[#C5A059] font-bold text-sm mb-6">
                 <Star size={16} fill="currentColor" />
                 <span>恭賀</span>
@@ -154,7 +154,6 @@ export default function Team() {
           </div>
         </motion.div>
       </div>
-
     </div>
   );
 }

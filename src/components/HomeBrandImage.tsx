@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Sparkles, Compass, Rocket } from 'lucide-react';
-import wangImage from '../assets/images/WAN-11.jpg';
+import dd01 from '../assets/images/DD-01.jpg';
 
 export default function HomeBrandImage() {
   return (
@@ -19,17 +19,17 @@ export default function HomeBrandImage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="w-[90%] sm:w-[85%] md:w-[42%] relative shrink-0"
+            className="w-full md:w-[48%] relative shrink-0"
           >
             {/* Offset decorative block */}
             <div className="absolute -inset-4 bg-gradient-to-br from-[#C5A059]/10 to-transparent rounded-[32px] -z-10 translate-x-4 translate-y-4" />
             <div className="absolute -inset-1 bg-white rounded-[26px] -z-10" />
 
-            <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-2xl shadow-[#002B5B]/10 border border-[#C5A059]/20 group">
+            <div className="relative aspect-[4/3] bg-white rounded-[24px] overflow-hidden shadow-2xl shadow-[#002B5B]/10 border border-[#C5A059]/20 group">
               <img 
-                src={wangImage} 
+                src={dd01} 
                 alt="樂共學品牌形象" 
-                className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           </motion.div>
@@ -40,7 +40,7 @@ export default function HomeBrandImage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-            className="w-full md:w-[58%] flex flex-col"
+            className="w-full md:w-[52%] flex flex-col"
           >
             {/* Pill Tag */}
             <div className="inline-flex items-center self-start mb-6 px-4 py-1.5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[#C5A059] font-bold text-sm tracking-wide">
