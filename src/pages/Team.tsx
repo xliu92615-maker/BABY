@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Linkedin, Mail, ExternalLink, Award, Star } from 'lucide-react';
+import { Linkedin, Mail, Award, Star } from 'lucide-react';
 import wangImage from '../assets/images/WAN-11.jpg';
 import awardImage from '../assets/images/wang_jingfu_1784812371266.jpg';
 
@@ -153,68 +153,6 @@ export default function Team() {
             </div>
           </div>
         </motion.div>
-      </div>
-
-      {/* News Section */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">新聞專欄</h2>
-          <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              title: '樂共學聯盟：以教育為橋、以大愛為根，讓夢想成為行動',
-              source: '台灣網',
-              url: 'https://news.taiwannet.com.tw/news/188048/樂共學聯盟-以教育為橋-以大愛為根-讓夢想成為行動.html'
-            },
-            {
-              title: '方格子 Vocus 專題報導：樂共學的創新與堅持',
-              source: '方格子 Vocus',
-              url: 'https://vocus.cc/article/693ade83fd897800014c632e'
-            },
-            {
-              title: 'PChome 新聞：樂共學引領多元學習新風潮',
-              source: 'PChome 新聞',
-              url: 'https://news.pchome.com.tw/living/lifetoutiao/20251023/index-76120564283588315009.html'
-            },
-            {
-              title: '樂共學聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
-              source: '全國大小事新聞網',
-              url: 'https://nchn.news/archives/138051'
-            },
-            {
-              title: 'LINE TODAY：樂共學聯盟 為孩子點亮未來燈 讓教育成為通往世界的橋',
-              source: 'LINE TODAY',
-              url: 'https://today.line.me/tw/v3/article/0MmaQRp'
-            }
-          ].map((news, idx) => (
-            <motion.a
-              key={idx}
-              href={news.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-[2rem] p-6 md:p-8 border-2 border-slate-100 hover:border-[#C5A059]/50 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between h-full relative overflow-hidden"
-            >
-              <div className="absolute -right-6 -top-6 w-24 h-24 bg-slate-50 rounded-full group-hover:bg-[#C5A059]/10 transition-colors" />
-              <div className="relative z-10">
-                <span className="text-[#C5A059] font-bold text-sm mb-3 block">{news.source}</span>
-                <h3 className="text-[#002B5B] font-black text-lg leading-snug group-hover:text-[#C5A059] transition-colors line-clamp-3">
-                  {news.title}
-                </h3>
-              </div>
-              <div className="mt-8 flex justify-end relative z-10">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#C5A059] group-hover:text-white text-slate-400 transition-colors">
-                  <ExternalLink size={18} />
-                </div>
-              </div>
-            </motion.a>
-          ))}
-        </div>
       </div>
 
     </div>
