@@ -3,77 +3,6 @@ import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
 import StudyAbroadVideoStory from '../components/StudyAbroadVideoStory';
 import StudyAbroadNewGallery from '../components/StudyAbroadNewGallery';
 import heroImage from '../assets/images/regenerated_image_1784976670698.jpg';
-import gallery1 from '../assets/images/regenerated_image_1784909579699.png';
-import gallery2 from '../assets/images/regenerated_image_1784908561547.png';
-import gallery3 from '../assets/images/regenerated_image_1784909145001.jpg';
-import gallery4 from '../assets/images/regenerated_image_1784908146827.jpg';
-import jj01 from '../assets/images/JJ-01.jpg';
-import jj02 from '../assets/images/JJ-02.jpg';
-import jj03 from '../assets/images/JJ-03.jpg';
-import jj04 from '../assets/images/JJ-04.jpg';
-import jj05 from '../assets/images/JJ-05.jpg';
-import jj06 from '../assets/images/JJ-06.jpg';
-import jj07 from '../assets/images/JJ-07.jpg';
-import jj08 from '../assets/images/JJ-08.jpg';
-import jj09 from '../assets/images/JJ-09.jpg';
-import jj10 from '../assets/images/JJ-10.jpg';
-import jj11 from '../assets/images/JJ-11.jpg';
-import jj12 from '../assets/images/JJ-12.jpg';
-import aa11 from '../assets/images/AA-11.jpg';
-import aa12 from '../assets/images/AA-12.jpg';
-import aa13 from '../assets/images/AA-13.jpg';
-import aa14 from '../assets/images/AA-14.jpg';
-import aa15 from '../assets/images/AA-15.jpg';
-import aa16 from '../assets/images/AA-16.jpg';
-
-const galleryImages = [
-  gallery1, 
-  gallery2, 
-  gallery3, 
-  gallery4, 
-  jj01,
-  jj02,
-  jj03,
-  jj04,
-  jj05,
-  jj06,
-  jj07,
-  jj08,
-  jj09,
-  jj10,
-  jj11,
-  jj12,
-  aa11,
-  aa12,
-  aa13,
-  aa14,
-  aa15,
-  aa16
-];
-
-function PhotoSlider() {
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">見證300+份優秀成績背後：創辦人陪伴孩子走向世界的築夢足跡</h2>
-        <div className="w-16 h-1.5 bg-[#C5A059] mx-auto rounded-full" />
-      </div>
-
-      <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto">
-        {galleryImages.map((src, idx) => (
-          <div key={idx} className="aspect-video rounded-2xl md:rounded-[2rem] overflow-hidden relative bg-slate-100 shadow-xl border-2 sm:border-4 border-white group">
-            <img
-              src={src}
-              className="w-full h-full aspect-video object-cover transition-transform duration-500 hover:scale-105"
-              alt={`國際留遊學剪影 ${idx + 1}`}
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function StudyAbroad() {
   return (
@@ -211,12 +140,10 @@ export default function StudyAbroad() {
                 </p>
               </div>
             </div>
-
           </div>
         </motion.div>
       </div>
 
-      <PhotoSlider />
       <StudyAbroadNewGallery />
     </div>
   );
