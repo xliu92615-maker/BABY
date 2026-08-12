@@ -3,7 +3,7 @@ import { Volume2 } from 'lucide-react';
 
 const announcement1 = (
   <span className="inline-block whitespace-nowrap px-4">
-    📢 感謝創辦人王景富以及多位家長贊助活動
+    📢 感謝創辦人以及多位家長贊助活動
   </span>
 );
 

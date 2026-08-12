@@ -42,7 +42,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-2 mb-6 group cursor-pointer w-fit">
               <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <span className="text-[#002B5B] font-serif text-3xl font-bold">啟</span>
+                <span className="text-[#002B5B] font-serif text-3xl font-bold">樂</span>
               </div>
               <span className="text-3xl font-black tracking-tight text-white drop-shadow-sm">樂共學</span>
             </div>

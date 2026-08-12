@@ -46,10 +46,10 @@ export function Navbar() {
             {/* Logo Area */}
             <Link to="/" className="flex items-center gap-3">
               <div className="bg-white rounded-full p-1 w-12 h-12 flex items-center justify-center">
-                <span className="text-[#0f439c] font-black text-xl">啟夢</span>
+                <span className="text-[#0f439c] font-black text-xl">樂</span>
               </div>
               <span className="text-2xl font-black text-white tracking-widest hidden sm:block">樂共學</span>
-              <span className="bg-[#FFCC00] text-[#0f439c] text-[10px] font-bold px-2 py-0.5 rounded-full hidden sm:block">啟夢</span>
+              <span className="bg-[#FFCC00] text-[#0f439c] text-[10px] font-bold px-2 py-0.5 rounded-full hidden sm:block">樂</span>
             </Link>
 
             {/* Desktop Nav */}
@@ -113,7 +113,7 @@ export function Navbar() {
             <div className="flex justify-between items-center p-4 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
-                  <span className="text-[#0f439c] font-black text-lg">啟夢</span>
+                  <span className="text-[#0f439c] font-black text-lg">樂</span>
                 </div>
                 <span className="text-xl font-black text-white tracking-widest">樂共學</span>
               </div>
