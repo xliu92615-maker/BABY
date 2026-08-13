@@ -1,4 +1,6 @@
-import { useState, useCallback, useEffect } from 'react';
+const fs = require('fs');
+
+const code = `import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HeartHandshake, Smile, TreePine, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import HandInHandWarmthSection from '../components/HandInHandWarmthSection';
@@ -148,7 +150,7 @@ function CharityMaterialSupport() {
             <motion.div 
               className="h-full bg-[#C5A059]"
               initial={{ width: 0 }}
-              animate={{ width: `${((page + 1) / materialImages.length) * 100}%` }}
+              animate={{ width: \`\${((page + 1) / materialImages.length) * 100}%\` }}
               transition={{ duration: 0.3 }}
             />
           </div>
@@ -260,3 +262,6 @@ export default function Charity() {
     </div>
   );
 }
+`;
+
+fs.writeFileSync('src/pages/Charity.tsx', code);
