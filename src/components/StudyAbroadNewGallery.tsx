@@ -12,7 +12,6 @@ import jj05 from '../assets/images/JJ-05.jpg';
 import jj06 from '../assets/images/JJ-06.jpg';
 import jj07 from '../assets/images/JJ-07.jpg';
 import jj08 from '../assets/images/JJ-08.jpg';
-import ppp01 from '../assets/images/ppp-01.jpg';
 
 const footprintPhotos = [
   aa11,
@@ -24,8 +23,7 @@ const footprintPhotos = [
   jj05,
   jj06,
   jj07,
-  jj08,
-  ppp01
+  jj08
 ];
 
 export default function StudyAbroadNewGallery() {
