@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
 import StudyAbroadVideoStory from '../components/StudyAbroadVideoStory';
 import StudyAbroadNewGallery from '../components/StudyAbroadNewGallery';
+import StudyAbroadEditorialGallery from '../components/StudyAbroadEditorialGallery';
+
 
 export default function StudyAbroad() {
   return (
@@ -158,6 +160,7 @@ export default function StudyAbroad() {
       </div>
 
       <StudyAbroadNewGallery />
+      <StudyAbroadEditorialGallery />
     </div>
   );
 }
