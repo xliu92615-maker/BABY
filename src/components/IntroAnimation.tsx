@@ -3,31 +3,25 @@ import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Rocket, Cloud } from 'lucide-react';
 
 export default function IntroAnimation() {
-  const [isVisible, setIsVisible] = useState(false);
+  // 預設為 true，確保一載入就蓋住畫面，不會閃爍
+  const [isVisible, setIsVisible] = useState(true);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    // 檢查是否為該 session 首次進站
-    const introPlayed = sessionStorage.getItem('introPlayed');
-    
-    if (!introPlayed) {
-      if (shouldReduceMotion) {
-        // 若使用者偏好減少動畫，直接跳過或做極簡處理
+    if (shouldReduceMotion) {
+      // 若使用者偏好減少動畫，直接跳過或做極簡處理
+      completeIntro();
+    } else {
+      // 設定自動關閉計時器 (約 3.2 秒後完全 unmount)
+      const timer = setTimeout(() => {
         completeIntro();
-      } else {
-        setIsVisible(true);
-        // 設定自動關閉計時器 (約 3.2 秒後完全 unmount)
-        const timer = setTimeout(() => {
-          completeIntro();
-        }, 3200);
-        return () => clearTimeout(timer);
-      }
+      }, 3200);
+      return () => clearTimeout(timer);
     }
   }, [shouldReduceMotion]);
 
   const completeIntro = () => {
     setIsVisible(false);
-    sessionStorage.setItem('introPlayed', 'true');
   };
 
   // 隨機生成星點
@@ -48,7 +42,7 @@ export default function IntroAnimation() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="fixed inset-0 z-[9999] bg-gradient-to-b from-[#041024] via-[#0a234f] to-[#0f439c] overflow-hidden flex flex-col items-center justify-center touch-none"
+          className="fixed inset-0 z-[99999] bg-gradient-to-b from-[#041024] via-[#0a234f] to-[#0f439c] overflow-hidden flex flex-col items-center justify-center touch-none"
         >
           {/* 背景星點 */}
           {stars.map((star) => (
