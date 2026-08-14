@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import IntroAnimation from './components/IntroAnimation';
 import Home from './pages/Home';
 import Activities from './pages/Activities';
 import CoLearning from './pages/CoLearning';
@@ -14,8 +15,10 @@ import Reviews from './pages/Reviews';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <>
+      <IntroAnimation />
+      <BrowserRouter>
+        <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="activities" element={<Activities />} />
@@ -33,6 +36,7 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
