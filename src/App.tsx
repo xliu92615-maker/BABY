@@ -10,6 +10,7 @@ import StudyAbroad from './pages/StudyAbroad';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import AntiFraud from './pages/AntiFraud';
+import Reviews from './pages/Reviews';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="charity" element={<Charity />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="study-abroad" element={<StudyAbroad />} />
+          <Route path="reviews" element={<Reviews />} />
           <Route path="anti-fraud" element={<AntiFraud />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-service" element={<TermsOfService />} />

@@ -10,3 +10,9 @@
   }
 }
 
+:root {
+  --announcement-height: 74px;
+  --mobile-header-height: 72px;
+  --desktop-header-height: 80px;
+}
+

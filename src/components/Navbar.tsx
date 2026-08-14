@@ -18,6 +18,7 @@ export function Navbar() {
     { name: '創辦人介紹', path: '/team' },
     { name: '大手牽小手・愛心齊步走', path: '/charity' },
     { name: '國際留遊學', path: '/study-abroad' },
+    { name: '家長反饋', path: '/reviews' },
     { name: '常見問題', path: '/faq', icon: HelpCircle },
     { name: '防詐宣導', path: '/anti-fraud' },
   ];

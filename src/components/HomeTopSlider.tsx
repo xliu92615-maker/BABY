@@ -72,7 +72,7 @@ export default function HomeTopSlider() {
           key={currentIndex}
           src={sliderImages[currentIndex]}
           alt={`首頁輪播圖 ${currentIndex + 1}`}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[center_20%] md:object-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
