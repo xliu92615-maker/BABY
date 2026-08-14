@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ShieldCheck } from 'lucide-react';
 
 import aa11 from '../assets/images/AA-11.jpg';
 import aa12 from '../assets/images/AA-12.jpg';
@@ -81,6 +81,12 @@ export default function StudyAbroadNewGallery() {
           <p className="text-slate-600 font-medium text-lg max-w-2xl mx-auto">
             從學習到交流，從台灣走向世界，每一次相遇都是成長的重要篇章。
           </p>
+          <div className="mt-8 mb-4 flex justify-center">
+            <div className="inline-flex items-center gap-2 bg-amber-50 px-4 py-2 rounded-full">
+              <ShieldCheck size={16} className="text-[#002B5B]" />
+              <span className="text-sm font-medium text-[#002B5B]">以下照片均已取得家長同意授權發佈至本網站</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[26px]">

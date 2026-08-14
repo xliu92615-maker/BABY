@@ -1,4 +1,106 @@
-import { motion } from 'motion/react';
+
+function HeroBackground() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const particles = [
+    { left: '10%', top: '20%', size: 4, color: 'bg-[#C5A059]', dur: 6 },
+    { left: '85%', top: '15%', size: 3, color: 'bg-[#93C5FD]', dur: 8, hideMobile: false },
+    { left: '45%', top: '70%', size: 5, color: 'bg-[#C5A059]', dur: 7, hideMobile: true },
+    { left: '70%', top: '80%', size: 4, color: 'bg-[#93C5FD]', dur: 5, hideMobile: false },
+    { left: '20%', top: '60%', size: 3, color: 'bg-[#C5A059]', dur: 9, hideMobile: true },
+    { left: '60%', top: '30%', size: 2, color: 'bg-[#93C5FD]', dur: 6, hideMobile: true },
+  ];
+
+  return (
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* Animated Semi-transparent Earth */}
+      <motion.div 
+        className="absolute -right-24 -bottom-12 md:-right-16 md:top-1/2 md:-translate-y-1/2 w-[300px] h-[300px] md:w-[420px] md:h-[420px] opacity-[0.25]"
+        animate={shouldReduceMotion ? {} : { rotate: 360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      >
+        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-2xl">
+          {/* Outer Thin Rings */}
+          <circle cx="50" cy="50" r="49" fill="none" stroke="#C5A059" strokeWidth="0.3" strokeDasharray="2 3" opacity="0.8" />
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#93C5FD" strokeWidth="0.2" opacity="0.5" />
+          
+          {/* Deep Blue Body */}
+          <circle cx="50" cy="50" r="45" fill="#001a3d" stroke="#3b82f6" strokeWidth="0.5" opacity="0.9" />
+          
+          {/* Light Blue-Gray Landmasses */}
+          <g fill="#94A3B8" opacity="0.45">
+            <path d="M 30,30 Q 40,25 45,35 T 55,30 Q 65,35 60,45 T 75,55 Q 85,60 70,75 T 45,70 Q 25,60 30,45 Z" />
+            <path d="M 15,50 Q 25,45 25,55 T 20,65 Q 10,60 15,50 Z" />
+            <path d="M 65,20 Q 75,15 80,25 T 70,35 Q 60,30 65,20 Z" />
+          </g>
+          
+          {/* Latitude/Longitude lines */}
+          <ellipse cx="50" cy="50" rx="22" ry="45" fill="none" stroke="#ffffff" strokeWidth="0.2" opacity="0.3" />
+          <ellipse cx="50" cy="50" rx="45" ry="22" fill="none" stroke="#ffffff" strokeWidth="0.2" opacity="0.3" />
+          <line x1="5" y1="50" x2="95" y2="50" stroke="#ffffff" strokeWidth="0.2" opacity="0.3" />
+          <line x1="50" y1="5" x2="50" y2="95" stroke="#ffffff" strokeWidth="0.2" opacity="0.3" />
+        </svg>
+      </motion.div>
+
+      {/* Flight Paths and Airplanes */}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice">
+        {/* Plane 1: Bottom left to Top right */}
+        <path id="flight-arc-1" d="M -100,500 Q 500,250 1540,50" fill="none" stroke="#C5A059" strokeWidth="1.5" strokeDasharray="4 6" opacity="0.25" />
+        {!shouldReduceMotion && (
+          <g className="text-[#C5A059] opacity-[0.3]">
+            <g transform="translate(-12, -12)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3 3-3-1-2 2 3.5 3.5C9 19 9.5 21 10 22c1 .5 3 0 4.5-1.5l3.5-3.5 4-6-1.8-.7-.7.9z"/></svg>
+            </g>
+            <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#flight-arc-1" />
+            </animateMotion>
+          </g>
+        )}
+
+        {/* Plane 2: Top left to Right (Desktop only) */}
+        <g className="hidden md:block">
+          <path id="flight-arc-2" d="M -50,150 Q 600,-50 1500,300" fill="none" stroke="#93C5FD" strokeWidth="1.2" strokeDasharray="3 5" opacity="0.15" />
+          {!shouldReduceMotion && (
+            <g className="text-[#93C5FD] opacity-[0.25]">
+              <g transform="translate(-10, -10)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 4-3 3-3-1-2 2 3.5 3.5C9 19 9.5 21 10 22c1 .5 3 0 4.5-1.5l3.5-3.5 4-6-1.8-.7-.7.9z"/></svg>
+              </g>
+              <animateMotion dur="18s" repeatCount="indefinite" rotate="auto" begin="5s">
+                <mpath href="#flight-arc-2" />
+              </animateMotion>
+            </g>
+          )}
+        </g>
+      </svg>
+
+      {/* Floating Particles */}
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          className={`absolute rounded-full ${p.color} ${p.hideMobile ? 'hidden md:block' : ''}`}
+          style={{
+            width: p.size,
+            height: p.size,
+            left: p.left,
+            top: p.top,
+          }}
+          initial={{ opacity: 0.1, y: 0 }}
+          animate={shouldReduceMotion ? { opacity: 0.3 } : {
+            y: [0, -15, 0],
+            opacity: [0.1, 0.4, 0.1]
+          }}
+          transition={{
+            duration: p.dur,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+import { motion, useReducedMotion } from 'motion/react';
 import { Globe2, Plane, Compass, HeartHandshake } from 'lucide-react';
 import StudyAbroadVideoStory from '../components/StudyAbroadVideoStory';
 import StudyAbroadNewGallery from '../components/StudyAbroadNewGallery';
@@ -10,29 +112,7 @@ export default function StudyAbroad() {
     <div className="bg-[#FAFAFA] min-h-screen">
       {/* Hero Section */}
       <div className="relative pt-24 pb-24 md:pt-32 md:pb-0 overflow-hidden min-h-[400px] md:h-[560px] bg-gradient-to-br from-[#063568] via-[#0B4A86] to-[#123F73] flex items-center">
-        {/* Abstract Background Decorations */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.08]">
-          {/* Earth/Grid pattern */}
-          <svg className="absolute -right-20 top-10 w-[500px] h-[500px] md:w-[600px] md:h-[600px] text-white" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.5">
-             <circle cx="100" cy="100" r="80" />
-             <ellipse cx="100" cy="100" rx="40" ry="80" />
-             <ellipse cx="100" cy="100" rx="80" ry="40" />
-             <line x1="20" y1="100" x2="180" y2="100" />
-             <line x1="100" y1="20" x2="100" y2="180" />
-          </svg>
-          {/* Flight Path */}
-          <svg className="absolute left-0 top-1/4 w-[400px] h-[200px] text-[#C5A059]" viewBox="0 0 400 200" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6">
-             <path d="M 0,200 Q 200,0 400,100" />
-          </svg>
-          {/* Plane Icon */}
-          <div className="absolute top-[calc(25%+80px)] left-[380px] text-[#C5A059] rotate-45">
-             <Plane size={32} />
-          </div>
-          {/* Gold Dots */}
-          <div className="absolute right-1/3 bottom-20 w-2 h-2 bg-[#C5A059] rounded-full" />
-          <div className="absolute left-1/4 top-1/4 w-3 h-3 bg-[#C5A059] rounded-full opacity-50" />
-        </div>
-        
+        <HeroBackground />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center">
           <div className="w-full md:w-2/3 lg:w-1/2">
             <motion.div
