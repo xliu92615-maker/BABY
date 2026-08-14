@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Mail } from 'lucide-react';
+import brandLogo from '../assets/images/lu-555.jpg';
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -41,8 +42,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-2 mb-6 group cursor-pointer w-fit">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <span className="text-[#002B5B] font-serif text-3xl font-bold">樂</span>
+              <div className="w-[56px] h-[56px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <img src={brandLogo} alt="樂共學 Logo" className="w-full h-full object-cover rounded-full block" />
               </div>
               <span className="text-3xl font-black tracking-tight text-white drop-shadow-sm">樂共學</span>
             </div>

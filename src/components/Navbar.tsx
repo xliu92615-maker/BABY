@@ -4,6 +4,7 @@ import { Menu, X, Heart, MessageCircle, Volume2, HelpCircle } from 'lucide-react
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
 import logo from '../assets/images/regenerated_image_1784724383569.png'; // Will replace with actual logo or text
+import brandLogo from '../assets/images/lu-555.jpg';
 import AnnouncementMarquee from './AnnouncementMarquee';
 
 export function Navbar() {
@@ -45,8 +46,8 @@ export function Navbar() {
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             {/* Logo Area */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="bg-white rounded-full p-1 w-12 h-12 flex items-center justify-center">
-                <span className="text-[#0f439c] font-black text-xl">樂</span>
+              <div className="w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0">
+                <img src={brandLogo} alt="樂共學 Logo" className="w-full h-full object-cover rounded-full block" />
               </div>
               <span className="text-2xl font-black text-white tracking-widest hidden sm:block">樂共學</span>
               <span className="bg-[#FFCC00] text-[#0f439c] text-[10px] font-bold px-2 py-0.5 rounded-full hidden sm:block">樂</span>
