@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import rr16 from "../assets/images/RR-16.jpg";
-import ee002 from "../assets/images/EE-002.jpg";
+import qwe01 from "../assets/images/QWE-01.jpg";
+import qwe02 from "../assets/images/QWE-02.jpg";
+import qwe03 from "../assets/images/QWE-03.jpg";
 
 const sliderImages = [
-  rr16,
-  ee002
+  qwe01,
+  qwe02,
+  qwe03
 ];
 
 export default function HomeTopSlider() {
@@ -70,7 +72,7 @@ export default function HomeTopSlider() {
           key={currentIndex}
           src={sliderImages[currentIndex]}
           alt={`首頁輪播圖 ${currentIndex + 1}`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
