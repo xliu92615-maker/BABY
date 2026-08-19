@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Heart, Users, Globe, Shield, Activity } from 'lucide-react';
 
 import HomeTopSlider from '../components/HomeTopSlider';
-import HomeBrandImage from '../components/HomeBrandImage';
 import HomeVideoShowcase from '../components/HomeVideoShowcase';
 import HomeEventSlider from '../components/HomeEventSlider';
 
@@ -12,9 +11,6 @@ export default function Home() {
     <div>
       {/* Top Slider Section */}
       <HomeTopSlider />
-
-      {/* Brand Image Section */}
-      <HomeBrandImage />
 
       {/* Video Showcase Section */}
       <HomeVideoShowcase />

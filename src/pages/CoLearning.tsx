@@ -10,6 +10,11 @@ import img6 from '../assets/images/regenerated_image_1784823425976.png';
 import img7 from '../assets/images/regenerated_image_1784823427616.png';
 import taobanwuImage from '../assets/images/oooo-05.png';
 import bakeryImage from '../assets/images/regenerated_image_1785690748101.jpg';
+import ch002 from "../assets/images/ch-002.jpg";
+import ch003 from "../assets/images/ch-003.jpg";
+import ch004 from "../assets/images/ch-004.jpg";
+import ch005 from "../assets/images/ch-005.jpg";
+import ch006 from "../assets/images/ch-006.jpg";
 
 export default function CoLearning() {
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -35,6 +40,41 @@ export default function CoLearning() {
       desc: '🍍 邀請小寶貝化身「陽光小烘焙師」\n\n穿上專屬小小圍裙，\n\n做出屬於自己的鳳梨酥！\n\n⏱ 活動流程（約60～90分鐘）\n\n① 報到變裝\n\n② 故事與導覽\n\n③ 手作 DIY\n\n④ 點心時間與烘烤\n\n⑤ 頒獎、合照、領取贈禮隨行袋\n\n💰 活動費用\n\n原價 NT$899\n\n限時優惠 NT$450\n\n👶 適合年齡\n\n3～12歲兒童\n\n（5歲以下須至少一位家長全程陪同）', 
       category: '親子共學', 
       image: bakeryImage 
+    },
+    {
+      title: '小小機長＆空服員體驗',
+      shortDesc: '這個週末，給孩子一個不一樣的夢想體驗！✈️\n星宇航空【小小機長 & 小小空服員體驗營】熱烈招募中！',
+      desc: '這個週末，給孩子一個不一樣的夢想體驗！✈️\n星宇航空【小小機長 & 小小空服員體驗營】熱烈招募中！換上精緻制服、走進航空世界，留下最珍貴的童年紀錄❤️\n\n🎁 完成體驗再加碼送：\n聯名小禮包、星宇限定版飛行娃娃',
+      category: '親子共學',
+      image: ch002
+    },
+    {
+      title: 'GAP小小店長體驗活動',
+      shortDesc: '媽媽們詢問度最高的GAP小小店長活動回歸！週末不再煩惱去哪裡！帶寶貝到GAP體驗最萌的「一日職人」🛍',
+      desc: '媽媽們詢問度最高的GAP小小店長活動回歸！週末不再煩惱去哪裡！帶寶貝到GAP體驗最萌的「一日職人」🛍\n\n🔥 限量活動好禮\n👕 GAP童裝上衣一件\n🎫 GAP門市折價券\n🗞 專屬結業證書',
+      category: '親子共學',
+      image: ch003
+    },
+    {
+      title: '樂淇蘋果 × 萬家福｜一日店長活動',
+      shortDesc: '🍏 認識樂淇蘋果\n🎵 MV 舞蹈教學\n🍎 蘋果試吃員\n👒 一日店長主題活動',
+      desc: '🍏 認識樂淇蘋果\n🎵 MV 舞蹈教學\n🍎 蘋果試吃員\n👒 一日店長主題活動',
+      category: '親子共學',
+      image: ch004
+    },
+    {
+      title: '吐司上的梵谷│桂冠窩廚房 ‧ 親子油畫吐司',
+      shortDesc: '✨ 小畫家認證證書：記錄孩子創作的成就感\n✨ 限定精美小禮品：完成課程即可帶走',
+      desc: '課後獨家好禮：\n\n✨ 小畫家認證證書：頒發限量專屬證書，記錄孩子創作的成就感\n✨ 限定精美小禮品：完成課程即可帶走桂冠窩廚房準備的限量驚喜禮物\n\n• 限時特惠價：NT$350 / 人（原價$499）\n• 適合對象：3歲～12歲兒童',
+      category: '親子共學',
+      image: ch005
+    },
+    {
+      title: '小木屋鬆餅｜小小鬆餅師',
+      shortDesc: '讓孩子穿上小店長制服，親手做出香噴噴的鬆餅✨',
+      desc: '讓孩子穿上小店長制服，親手做出香噴噴的鬆餅✨\n\n👩🍳 小店長制服｜圍裙＋帽子，可帶回\n🧇 鬆餅製作｜專人帶領，親手完成\n🏅 專屬證書｜完成活動頒發小店長證書\n🎁 報名好禮｜小木屋鬆餅 6 折券\n\n🔥 每場僅開放少量名額，額滿即止！\n👉 活動價：$299／位',
+      category: '親子共學',
+      image: ch006
     }
   ];
 
