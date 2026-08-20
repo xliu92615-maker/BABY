@@ -1,6 +1,7 @@
+import { useFavorites } from "../contexts/FavoritesContext";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Star, Calendar, MapPin } from 'lucide-react';
+import { X, Star, Calendar, MapPin, Heart } from 'lucide-react';
 import activity1Image from '../assets/images/regenerated_image_1784723277413.png';
 import activity2Image from '../assets/images/regenerated_image_1784723276333.jpg';
 import activity3Image from '../assets/images/regenerated_image_1784723280280.jpg';
@@ -10,6 +11,7 @@ import activity6Image from '../assets/images/oooo-002.jpg';
 import activity7Image from '../assets/images/oooo-03.jpg';
 
 export default function Activities() {
+  const { toggleFavorite, isFavorite } = useFavorites();
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
 
   const activities = [
@@ -122,6 +124,15 @@ export default function Activities() {
                   alt={activity.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                
+                {/* Heart Button */}
+                <button 
+                  onClick={(e) => { e.stopPropagation(); toggleFavorite({...activity, id: `act-${activity.id}`, route: '/activities'}); }}
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-[#C5A059] shadow-sm hover:scale-110 transition-transform z-10"
+                >
+                  <Heart size={20} fill={isFavorite(`act-${activity.id}`) ? "currentColor" : "none"} className={isFavorite(`act-${activity.id}`) ? "text-[#C5A059]" : "text-slate-400"} />
+                </button>
+
                 <div className="absolute top-4 left-4 bg-[#FFCC00] text-[#0f439c] px-3 py-1 rounded-full text-xs font-bold shadow-md">
                   {activity.category}
                 </div>

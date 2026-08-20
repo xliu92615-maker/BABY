@@ -1,3 +1,4 @@
+import { useFavorites } from "../contexts/FavoritesContext";
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart, MessageCircle, Volume2, HelpCircle } from 'lucide-react';
@@ -11,6 +12,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { favorites } = useFavorites();
 
   const navLinks = [
     { name: '主題活動', path: '/activities' },
@@ -76,9 +78,14 @@ export function Navbar() {
 
             {/* Actions Area */}
             <div className="hidden lg:flex items-center gap-6">
-              <button className="text-white hover:text-[#FFCC00] transition-colors">
+              <Link to="/favorites" className="relative text-white hover:text-[#FFCC00] transition-colors flex items-center">
                 <Heart size={24} />
-              </button>
+                {favorites.length > 0 && (
+                  <span className="absolute -top-2 -right-3 bg-[#FFCC00] text-[#0f439c] text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">
+                    {favorites.length}
+                  </span>
+                )}
+              </Link>
               <a
                 href="https://line.me/ti/p/e9xyybD4Fb"
                 className="bg-[#00C300] hover:bg-[#00a600] text-white px-5 py-2.5 rounded-full text-[15px] font-bold flex items-center gap-2 transition-all shadow-sm"
@@ -136,10 +143,17 @@ export function Navbar() {
               ))}
               
               <div className="mt-8 flex flex-col gap-4">
-                <button className="flex items-center gap-3 py-3 text-white text-lg font-bold border-b border-white/10">
-                  <Heart size={20} />
-                  <span>我的收藏</span>
-                </button>
+                <Link to="/favorites" className="flex items-center justify-between py-3 text-white text-lg font-bold border-b border-white/10" onClick={() => setIsOpen(false)}>
+                  <div className="flex items-center gap-3">
+                    <Heart size={20} />
+                    <span>我的收藏</span>
+                  </div>
+                  {favorites.length > 0 && (
+                    <span className="bg-[#FFCC00] text-[#0f439c] text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full shadow-sm">
+                      {favorites.length}
+                    </span>
+                  )}
+                </Link>
                 <a
                   href="https://line.me/ti/p/e9xyybD4Fb"
                   className="w-full bg-[#00C300] text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all text-lg shadow-md mt-4"

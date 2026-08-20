@@ -1,3 +1,5 @@
+import { FavoritesProvider } from "./contexts/FavoritesContext";
+import Favorites from "./pages/Favorites";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import IntroAnimation from './components/IntroAnimation';
@@ -17,11 +19,13 @@ export default function App() {
   return (
     <>
       <IntroAnimation />
+      <FavoritesProvider>
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="activities" element={<Activities />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="co-learning" element={<CoLearning />} />
           <Route path="team" element={<Team />} />
           <Route path="charity" element={<Charity />} />
@@ -36,6 +40,7 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </FavoritesProvider>
     </>
   );
 }

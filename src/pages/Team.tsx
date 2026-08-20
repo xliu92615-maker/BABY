@@ -1,3 +1,4 @@
+import wang5 from "../assets/images/wanfg-5.jpg";
 import ch001 from "../assets/images/ch-001.jpg";
 import { motion } from 'motion/react';
 
@@ -69,7 +70,7 @@ export default function Team() {
         </motion.div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col gap-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,13 +80,33 @@ export default function Team() {
           <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
             <img 
               src={ch001} 
-              alt="創辦人" 
+              alt="執行長" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
 
           <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
             <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">執行長</h3>
+            <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col md:flex-row items-center md:items-center p-8 md:p-12 gap-10"
+        >
+          <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
+            <img 
+              src={wang5} 
+              alt="創辦人" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
+            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">創辦人</h3>
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
           </div>
         </motion.div>

@@ -1,6 +1,7 @@
+import { useFavorites } from "../contexts/FavoritesContext";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Star, Calendar, MapPin } from 'lucide-react';
+import { X, Star, Calendar, MapPin, Heart } from 'lucide-react';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
 import img3 from '../assets/images/regenerated_image_1784823699963.png';
@@ -17,6 +18,7 @@ import ch005 from "../assets/images/ch-005.jpg";
 import ch006 from "../assets/images/ch-006.jpg";
 
 export default function CoLearning() {
+  const { toggleFavorite, isFavorite } = useFavorites();
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
 
   const activities = [
@@ -104,6 +106,15 @@ export default function CoLearning() {
                   alt={activity.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                
+                {/* Heart Button */}
+                <button 
+                  onClick={(e) => { e.stopPropagation(); toggleFavorite({...activity, id: `co-${idx}`, route: '/co-learning'}); }}
+                  className="absolute top-3 right-3 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-[#C5A059] shadow-sm hover:scale-110 transition-transform z-10"
+                >
+                  <Heart size={20} fill={isFavorite(`co-${idx}`) ? "currentColor" : "none"} className={isFavorite(`co-${idx}`) ? "text-[#C5A059]" : "text-slate-400"} />
+                </button>
+
                 <div className="absolute top-3 left-3 bg-[#FFCC00] text-[#0f439c] px-3 py-1 rounded-full text-xs font-bold shadow-md">
                   {activity.category}
                 </div>
