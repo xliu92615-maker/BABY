@@ -1,4 +1,4 @@
-import wang5 from "../assets/images/wanfg-5.jpg";
+import kkk3 from "../assets/images/kkk-3.jpg";
 import ch001 from "../assets/images/ch-001.jpg";
 import { motion } from 'motion/react';
 
@@ -79,12 +79,11 @@ export default function Team() {
         >
           <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
             <img 
-              src={ch001} 
+              src={kkk3} 
               alt="執行長" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
-
           <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
             <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">執行長</h3>
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
@@ -99,14 +98,13 @@ export default function Team() {
         >
           <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
             <img 
-              src={wang5} 
-              alt="創辦人" 
+              src={ch001} 
+              alt="主任" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
-
           <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
-            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">創辦人</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">主任</h3>
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
           </div>
         </motion.div>
