@@ -1,0 +1,15 @@
+              src={ch001} 
+              alt="主任" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
+            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">主任</h3>
+            <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
+          </div>
+        </motion.div>
+      </div>
+
+    </div>
+  );
+}

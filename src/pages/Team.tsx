@@ -1,8 +1,66 @@
 import kkk3 from "../assets/images/kkk-3.jpg";
 import ch001 from "../assets/images/ch-001.jpg";
-import { motion } from 'motion/react';
+import jjj1 from "../assets/images/JJJ-1.jpg";
+import jjj2 from "../assets/images/JJJ-2.jpg";
+import jjj3 from "../assets/images/JJJ-3.jpg";
+import jjj4 from "../assets/images/JJJ-4.jpg";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Team() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+
+  const galleryImages = [jjj1, jjj2, jjj3, jjj4];
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (lightboxIndex === null) return;
+      if (e.key === "Escape") setLightboxIndex(null);
+      if (e.key === "ArrowLeft") {
+        setLightboxIndex((prev) =>
+          prev === null
+            ? null
+            : prev === 0
+              ? galleryImages.length - 1
+              : prev - 1,
+        );
+      }
+      if (e.key === "ArrowRight") {
+        setLightboxIndex((prev) =>
+          prev === null
+            ? null
+            : prev === galleryImages.length - 1
+              ? 0
+              : prev + 1,
+        );
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxIndex]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (lightboxIndex === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 50) {
+      setLightboxIndex((prev) =>
+        prev === null ? null : prev === galleryImages.length - 1 ? 0 : prev + 1,
+      );
+    }
+    if (diff < -50) {
+      setLightboxIndex((prev) =>
+        prev === null ? null : prev === 0 ? galleryImages.length - 1 : prev - 1,
+      );
+    }
+  };
+
   return (
     <div className="bg-[#fdfdfd] min-h-screen pb-24">
       {/* Intro Section */}
@@ -15,12 +73,18 @@ export default function Team() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full mix-blend-multiply opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4" />
           <div className="relative z-10">
-            <h2 className="text-3xl font-black text-[#002B5B] mb-6 tracking-tight drop-shadow-sm">關於樂共學｜以教育為根，以愛為名</h2>
+            <h2 className="text-3xl font-black text-[#002B5B] mb-6 tracking-tight drop-shadow-sm">
+              關於樂共學｜以教育為根，以愛為名
+            </h2>
             <div className="w-16 h-2 bg-[#C5A059] rounded-full mb-8" />
-            
-            <p className="text-xl text-[#002B5B] font-bold mb-4">教育，是改變人生的起點；視野，是開創未來的力量。</p>
-            <p className="text-[#C5A059] text-2xl font-black mb-8 italic drop-shadow-sm">「我們不只是送孩子出國，而是幫他們找到自己的未來。」</p>
-            
+
+            <p className="text-xl text-[#002B5B] font-bold mb-4">
+              教育，是改變人生的起點；視野，是開創未來的力量。
+            </p>
+            <p className="text-[#C5A059] text-2xl font-black mb-8 italic drop-shadow-sm">
+              「我們不只是送孩子出國，而是幫他們找到自己的未來。」
+            </p>
+
             <p className="text-slate-600 font-medium leading-relaxed mb-10 text-lg">
               樂共學以多元教育為核心，尊重每位學生的個性和志向，提供量身打造的職涯與學業規劃。我們陪伴孩子在探索世界的過程中，認識自我、建立自信，進而找到屬於自己的方向與抱負。
             </p>
@@ -28,7 +92,9 @@ export default function Team() {
             <div className="space-y-8">
               <div className="bg-slate-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-[#C5A059]/30 transition-colors">
                 <h3 className="text-lg font-black text-[#002B5B] mb-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">1</div>
+                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">
+                    1
+                  </div>
                   國際留遊學｜開闊視野，接軌世界
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -38,7 +104,9 @@ export default function Team() {
 
               <div className="bg-slate-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-[#C5A059]/30 transition-colors">
                 <h3 className="text-lg font-black text-[#002B5B] mb-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">2</div>
+                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">
+                    2
+                  </div>
                   多元教育適性發展｜因材施教，點燃潛能
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -48,7 +116,9 @@ export default function Team() {
 
               <div className="bg-slate-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-[#C5A059]/30 transition-colors">
                 <h3 className="text-lg font-black text-[#002B5B] mb-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">3</div>
+                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">
+                    3
+                  </div>
                   深耕公益與社會責任｜傳遞溫暖，播下希望
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -58,7 +128,9 @@ export default function Team() {
 
               <div className="bg-slate-50 rounded-2xl p-6 border-2 border-slate-100 hover:border-[#C5A059]/30 transition-colors">
                 <h3 className="text-lg font-black text-[#002B5B] mb-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">4</div>
+                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/10 flex items-center justify-center text-[#C5A059]">
+                    4
+                  </div>
                   陪伴家庭成長｜讓家庭更有底氣，讓孩子更有方向
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -78,15 +150,34 @@ export default function Team() {
           className="bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col md:flex-row items-center md:items-center p-8 md:p-12 gap-10"
         >
           <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
-            <img 
-              src={kkk3} 
-              alt="執行長" 
+            <img
+              src={kkk3}
+              alt="執行長"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
-          <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
-            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">執行長</h3>
-            <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
+          <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center w-full">
+            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">
+              執行長
+            </h3>
+            <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6 mb-8" />
+
+            {/* 照片牆 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+              {[jjj1, jjj2, jjj3, jjj4].map((img, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => setLightboxImg(img)}
+                  className="aspect-square rounded-2xl overflow-hidden shadow-sm border-2 border-white cursor-pointer hover:scale-105 hover:shadow-md transition-all duration-300"
+                >
+                  <img
+                    src={img}
+                    alt={`執行長生活照 ${idx + 1}`}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -97,19 +188,20 @@ export default function Team() {
           className="bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col md:flex-row items-center md:items-center p-8 md:p-12 gap-10"
         >
           <div className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group">
-            <img 
-              src={ch001} 
-              alt="主任" 
+            <img
+              src={ch001}
+              alt="主任"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
           <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center">
-            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">主任</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">
+              主任
+            </h3>
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
           </div>
         </motion.div>
       </div>
-
     </div>
   );
 }
