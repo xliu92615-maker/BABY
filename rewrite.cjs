@@ -1,4 +1,6 @@
-import kkk3 from "../assets/images/kkk-3.jpg";
+const fs = require('fs');
+
+const fullCode = `import kkk3 from "../assets/images/kkk-3.jpg";
 import ch001 from "../assets/images/ch-001.jpg";
 import jjj1 from "../assets/images/JJJ-1.jpg";
 import jjj2 from "../assets/images/JJJ-2.jpg";
@@ -163,7 +165,7 @@ export default function Team() {
                   onClick={() => setLightboxIndex(idx)}
                   className="group relative aspect-square rounded-2xl overflow-hidden shadow-sm border-2 border-white cursor-pointer hover:scale-105 hover:shadow-xl transition-all duration-300"
                 >
-                  <img src={img} alt={`執行長生活照 ${idx + 1}`} className="w-full h-full object-cover object-center" />
+                  <img src={img} alt={\`執行長生活照 \${idx + 1}\`} className="w-full h-full object-cover object-center" />
                   <div className="absolute inset-0 bg-[#002B5B]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                     <span className="text-white text-sm md:text-base font-medium flex items-center gap-2 drop-shadow-md">
                       <Search size={20} /> 查看大圖
@@ -255,7 +257,7 @@ export default function Team() {
               {galleryImages.map((_, idx) => (
                 <div 
                   key={idx} 
-                  className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === lightboxIndex ? 'bg-white' : 'bg-white/30'}`}
+                  className={\`w-2.5 h-2.5 rounded-full transition-colors \${idx === lightboxIndex ? 'bg-white' : 'bg-white/30'}\`}
                 />
               ))}
             </div>
@@ -265,3 +267,5 @@ export default function Team() {
     </div>
   );
 }
+`;
+fs.writeFileSync('src/pages/Team.tsx', fullCode);
