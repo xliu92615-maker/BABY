@@ -186,7 +186,7 @@ function CharityMaterialSupport() {
 }
 
 function CharityPhotoGrid() {
-  const photos = [ee002, ee003, ee004, ee005];
+  const photos = [ee003, ee004, ee005];
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
