@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import HandInHandWarmthSection from "../components/HandInHandWarmthSection";
 
-import ee001 from "../assets/images/EE-001.jpg";
 import ee003 from "../assets/images/EE-003.jpg";
 import ee004 from "../assets/images/EE-004.jpg";
 import ee005 from "../assets/images/EE-005.jpg";
@@ -187,7 +186,7 @@ function CharityMaterialSupport() {
 }
 
 function CharityPhotoGrid() {
-  const photos = [ee001, ee002, ee003, ee004, ee005];
+  const photos = [ee002, ee003, ee004, ee005];
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
