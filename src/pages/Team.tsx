@@ -4,6 +4,11 @@ import jjj1 from "../assets/images/JJJ-1.jpg";
 import jjj2 from "../assets/images/JJJ-2.jpg";
 import jjj3 from "../assets/images/JJJ-3.jpg";
 import jjj4 from "../assets/images/JJJ-4.jpg";
+import fff1 from "../assets/images/FFF-1.jpg";
+import fff2 from "../assets/images/FFF-2.jpg";
+import fff3 from "../assets/images/FFF-3.jpg";
+import fff4 from "../assets/images/FFF-4.jpg";
+import fff5 from "../assets/images/FFF-5.jpg";
 import { motion, AnimatePresence } from "motion/react";
 import React, { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight, Search } from "lucide-react";
@@ -12,26 +17,44 @@ export default function Team() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [touchStartX, setTouchStartX] = useState(0);
 
+  const [founderLightboxIndex, setFounderLightboxIndex] = useState<number | null>(null);
+  const [founderTouchStartX, setFounderTouchStartX] = useState(0);
+
   const galleryImages = [jjj1, jjj2, jjj3, jjj4];
+  const founderImages = [fff1, fff2, fff3, fff4, fff5];
+  const founderThumbnails = [fff2, fff3, fff4, fff5];
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
-      if (e.key === "Escape") setLightboxIndex(null);
-      if (e.key === "ArrowLeft") {
-        setLightboxIndex((prev) =>
-          prev === null ? null : prev === 0 ? galleryImages.length - 1 : prev - 1
-        );
-      }
-      if (e.key === "ArrowRight") {
-        setLightboxIndex((prev) =>
-          prev === null ? null : prev === galleryImages.length - 1 ? 0 : prev + 1
-        );
+      if (lightboxIndex !== null) {
+        if (e.key === "Escape") setLightboxIndex(null);
+        if (e.key === "ArrowLeft") {
+          setLightboxIndex((prev) =>
+            prev === null ? null : prev === 0 ? galleryImages.length - 1 : prev - 1
+          );
+        }
+        if (e.key === "ArrowRight") {
+          setLightboxIndex((prev) =>
+            prev === null ? null : prev === galleryImages.length - 1 ? 0 : prev + 1
+          );
+        }
+      } else if (founderLightboxIndex !== null) {
+        if (e.key === "Escape") setFounderLightboxIndex(null);
+        if (e.key === "ArrowLeft") {
+          setFounderLightboxIndex((prev) =>
+            prev === null ? null : prev === 0 ? founderImages.length - 1 : prev - 1
+          );
+        }
+        if (e.key === "ArrowRight") {
+          setFounderLightboxIndex((prev) =>
+            prev === null ? null : prev === founderImages.length - 1 ? 0 : prev + 1
+          );
+        }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, galleryImages.length]);
+  }, [lightboxIndex, founderLightboxIndex, galleryImages.length, founderImages.length]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.touches[0].clientX);
@@ -49,6 +72,26 @@ export default function Team() {
     if (diff < -50) {
       setLightboxIndex((prev) =>
         prev === null ? null : prev === 0 ? galleryImages.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const handleFounderTouchStart = (e: React.TouchEvent) => {
+    setFounderTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleFounderTouchEnd = (e: React.TouchEvent) => {
+    if (founderLightboxIndex === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = founderTouchStartX - touchEndX;
+    if (diff > 50) {
+      setFounderLightboxIndex((prev) =>
+        prev === null ? null : prev === founderImages.length - 1 ? 0 : prev + 1
+      );
+    }
+    if (diff < -50) {
+      setFounderLightboxIndex((prev) =>
+        prev === null ? null : prev === 0 ? founderImages.length - 1 : prev - 1
       );
     }
   };
@@ -196,9 +239,58 @@ export default function Team() {
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6" />
           </div>
         </motion.div>
+
+        {/* 創辦人 Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border-4 border-slate-50 flex flex-col md:flex-row items-center md:items-center p-8 md:p-12 gap-10"
+        >
+          <div 
+            onClick={() => setFounderLightboxIndex(0)}
+            className="w-full md:w-[400px] aspect-[4/3] md:aspect-[4/3] bg-slate-50 rounded-3xl overflow-hidden shrink-0 relative border-4 border-slate-100 shadow-sm transition-colors group cursor-pointer"
+          >
+            <img
+              src={fff1}
+              alt="創辦人"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-[#002B5B]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+              <span className="text-white text-sm md:text-base font-medium flex items-center gap-2 drop-shadow-md">
+                <Search size={20} /> 查看大圖
+              </span>
+            </div>
+          </div>
+
+          <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center w-full">
+            <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">
+              創辦人
+            </h3>
+            <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6 mb-8" />
+            
+            {/* 照片牆 (4 張小縮圖) */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full mt-4">
+              {founderThumbnails.map((img, idx) => (
+                <div 
+                  key={idx}
+                  onClick={() => setFounderLightboxIndex(idx + 1)}
+                  className="group relative aspect-square rounded-2xl overflow-hidden shadow-sm border-2 border-white cursor-pointer hover:scale-105 hover:shadow-xl transition-all duration-300"
+                >
+                  <img src={img} alt={`創辦人照片 ${idx + 1}`} className="w-full h-full object-cover object-center" />
+                  <div className="absolute inset-0 bg-[#002B5B]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                    <span className="text-white text-sm md:text-base font-medium flex items-center gap-2 drop-shadow-md">
+                      <Search size={20} /> 查看大圖
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Lightbox */}
+      {/* CEO Lightbox */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
@@ -256,6 +348,74 @@ export default function Team() {
                 <div 
                   key={idx} 
                   className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === lightboxIndex ? 'bg-white' : 'bg-white/30'}`}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Founder Lightbox */}
+      <AnimatePresence>
+        {founderLightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setFounderLightboxIndex(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-2 md:p-4"
+            onTouchStart={handleFounderTouchStart}
+            onTouchEnd={handleFounderTouchEnd}
+          >
+            <button 
+              onClick={(e) => { e.stopPropagation(); setFounderLightboxIndex(null); }}
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors cursor-pointer z-50 p-2 bg-black/20 rounded-full hover:bg-black/40"
+              aria-label="關閉大圖"
+            >
+              <X size={32} />
+            </button>
+
+            <button 
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                setFounderLightboxIndex(prev => prev === null ? null : (prev === 0 ? founderImages.length - 1 : prev - 1)); 
+              }}
+              className="absolute left-2 md:left-8 text-white/70 hover:text-white transition-colors cursor-pointer z-50 p-2 md:p-3 bg-black/30 rounded-full hover:bg-black/50"
+              aria-label="上一張照片"
+            >
+              <ChevronLeft size={36} />
+            </button>
+
+            <button 
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                setFounderLightboxIndex(prev => prev === null ? null : (prev === founderImages.length - 1 ? 0 : prev + 1)); 
+              }}
+              className="absolute right-2 md:right-8 text-white/70 hover:text-white transition-colors cursor-pointer z-50 p-2 md:p-3 bg-black/30 rounded-full hover:bg-black/50"
+              aria-label="下一張照片"
+            >
+              <ChevronRight size={36} />
+            </button>
+
+            <motion.img 
+              key={founderLightboxIndex}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              src={founderImages[founderLightboxIndex]} 
+              alt="創辦人照片放大檢視" 
+              className="w-auto h-auto max-w-[94vw] max-h-[85vh] md:max-w-[90vw] md:max-h-[90vh] object-contain rounded-xl shadow-2xl select-none"
+              onClick={(e) => e.stopPropagation()}
+              draggable="false"
+            />
+            
+            {/* Mobile Swipe hint / Indicator */}
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 pointer-events-none">
+              {founderImages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === founderLightboxIndex ? 'bg-white' : 'bg-white/30'}`}
                 />
               ))}
             </div>
