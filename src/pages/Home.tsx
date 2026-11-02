@@ -48,7 +48,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] mb-10 flex items-center justify-center gap-4">
-            <span>樂共學</span>
+            <span>國際教育發展團隊Global Edu</span>
             <span className="w-1 h-8 bg-slate-300 rounded"></span>
             <span>陪伴每一段成長，實現每一個夢想</span>
           </h2>

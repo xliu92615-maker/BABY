@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Mail } from 'lucide-react';
-import brandLogo from '../assets/images/lu-555.jpg';
+import brandLogo from '../assets/images/GED-000.png';
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -41,11 +41,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2 mb-6 group cursor-pointer w-fit">
-              <div className="w-[56px] h-[56px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <img src={brandLogo} alt="樂共學 Logo" className="w-full h-full object-cover rounded-full block" />
+            <div className="flex items-center gap-3 mb-6 group cursor-pointer w-fit">
+              <div className="w-[56px] h-[56px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0 group-hover:scale-105 transition-all duration-300">
+                <img src={brandLogo} alt="國際教育發展團隊Global Edu Logo" className="w-full h-full object-contain rounded-full block" />
               </div>
-              <span className="text-3xl font-black tracking-tight text-white drop-shadow-sm">樂共學</span>
+              <span className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-white drop-shadow-sm">國際教育發展團隊Global Edu</span>
             </div>
             <p className="text-blue-100 leading-relaxed text-sm font-medium mb-8">
               為每個孩子打造專屬的國際化學習旅程，啟發潛能，夢想啟航。
@@ -133,7 +133,7 @@ export function Footer() {
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-blue-200/60 text-xs font-bold tracking-wider">
-            © {new Date().getFullYear()} 樂共學. All rights reserved.
+            © {new Date().getFullYear()} 國際教育發展團隊Global Edu. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs font-bold text-blue-200/60">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">隱私權政策</Link>

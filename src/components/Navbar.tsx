@@ -4,8 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart, MessageCircle, Volume2, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
-import logo from '../assets/images/regenerated_image_1784724383569.png'; // Will replace with actual logo or text
-import brandLogo from '../assets/images/lu-555.jpg';
+import brandLogo from '../assets/images/GED-000.png';
 import AnnouncementMarquee from './AnnouncementMarquee';
 
 export function Navbar() {
@@ -48,12 +47,11 @@ export function Navbar() {
         <div className="bg-[#0f439c] py-3 px-4 sm:px-6 lg:px-12">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             {/* Logo Area */}
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0">
-                <img src={brandLogo} alt="樂共學 Logo" className="w-full h-full object-cover rounded-full block" />
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink min-w-0">
+              <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] md:w-[54px] md:h-[54px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0">
+                <img src={brandLogo} alt="國際教育發展團隊Global Edu Logo" className="w-full h-full object-contain rounded-full block" />
               </div>
-              <span className="text-2xl font-black text-white tracking-widest hidden sm:block">樂共學</span>
-              <span className="bg-[#FFCC00] text-[#0f439c] text-[10px] font-bold px-2 py-0.5 rounded-full hidden sm:block">樂</span>
+              <span className="text-base sm:text-lg md:text-xl xl:text-2xl font-black text-white tracking-tight sm:tracking-wide truncate">國際教育發展團隊Global Edu</span>
             </Link>
 
             {/* Desktop Nav */}
@@ -120,13 +118,13 @@ export function Navbar() {
             className="fixed inset-0 z-[60] bg-[#0f439c] flex flex-col"
           >
             <div className="flex justify-between items-center p-4 border-b border-white/10">
-              <div className="flex items-center gap-3">
-                <div className="bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
-                  <span className="text-[#0f439c] font-black text-lg">樂</span>
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
+                  <img src={brandLogo} alt="國際教育發展團隊Global Edu Logo" className="w-full h-full object-contain block" />
                 </div>
-                <span className="text-xl font-black text-white tracking-widest">樂共學</span>
+                <span className="text-sm sm:text-lg font-black text-white tracking-wider truncate">國際教育發展團隊Global Edu</span>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-white">
+              <button onClick={() => setIsOpen(false)} className="text-white shrink-0 ml-2">
                 <X size={28} />
               </button>
             </div>
