@@ -60,7 +60,7 @@ export default function HomeTopSlider() {
 
   return (
     <div 
-      className="relative w-full h-[260px] md:h-[450px] lg:h-[650px] overflow-hidden group bg-slate-100"
+      className="relative w-full aspect-[1280/600] md:aspect-auto md:h-[450px] lg:h-[650px] overflow-hidden group bg-slate-100"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={onTouchStart}
@@ -72,7 +72,7 @@ export default function HomeTopSlider() {
           key={currentIndex}
           src={sliderImages[currentIndex]}
           alt={`首頁輪播圖 ${currentIndex + 1}`}
-          className="absolute inset-0 w-full h-full object-cover object-[center_20%] md:object-center"
+          className="absolute inset-0 w-full h-full object-contain md:object-cover md:object-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -85,36 +85,38 @@ export default function HomeTopSlider() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/30 pointer-events-none" />
 
       {/* Arrows */}
-      <div className="absolute inset-y-0 left-0 flex items-center pl-4 md:pl-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+      <div className="absolute inset-y-0 left-0 flex items-center pl-2 md:pl-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <button 
           onClick={handlePrev}
-          className="w-12 h-12 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center text-[#002B5B] hover:bg-white hover:scale-110 transition-all shadow-lg focus:outline-none"
+          className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center text-[#002B5B] hover:bg-white hover:scale-110 transition-all shadow-lg focus:outline-none"
           aria-label="Previous image"
         >
-          <ChevronLeft size={28} className="mr-0.5" />
+          <ChevronLeft size={20} className="md:hidden mr-0.5" />
+          <ChevronLeft size={28} className="hidden md:block mr-0.5" />
         </button>
       </div>
       
-      <div className="absolute inset-y-0 right-0 flex items-center pr-4 md:pr-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+      <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:pr-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <button 
           onClick={handleNext}
-          className="w-12 h-12 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center text-[#002B5B] hover:bg-white hover:scale-110 transition-all shadow-lg focus:outline-none"
+          className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center text-[#002B5B] hover:bg-white hover:scale-110 transition-all shadow-lg focus:outline-none"
           aria-label="Next image"
         >
-          <ChevronRight size={28} className="ml-0.5" />
+          <ChevronRight size={20} className="md:hidden ml-0.5" />
+          <ChevronRight size={28} className="hidden md:block ml-0.5" />
         </button>
       </div>
 
       {/* Dots */}
-      <div className="absolute bottom-6 md:bottom-8 inset-x-0 flex justify-center gap-2.5 z-10">
+      <div className="absolute bottom-2.5 sm:bottom-4 md:bottom-8 inset-x-0 flex justify-center gap-2 md:gap-2.5 z-10">
         {sliderImages.map((_, idx) => (
           <button
             key={idx}
             onClick={() => handleDotClick(idx)}
-            className={`h-2.5 rounded-full transition-all duration-300 focus:outline-none shadow-sm ${
+            className={`h-2 md:h-2.5 rounded-full transition-all duration-300 focus:outline-none shadow-sm ${
               idx === currentIndex 
-                ? 'w-8 bg-[#ff6600]' 
-                : 'w-2.5 bg-white/60 hover:bg-white/90'
+                ? 'w-6 md:w-8 bg-[#ff6600]' 
+                : 'w-2 md:w-2.5 bg-white/60 hover:bg-white/90'
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
