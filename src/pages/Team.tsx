@@ -109,7 +109,7 @@ export default function Team() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full mix-blend-multiply opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4" />
           <div className="relative z-10">
             <h2 className="text-3xl font-black text-[#002B5B] mb-6 tracking-tight drop-shadow-sm">
-              關於國際教育發展團隊Global Edu｜以教育為根，以愛為名
+              關於國際教育發展團隊 Global Edu｜以教育為根，以愛為名
             </h2>
             <div className="w-16 h-2 bg-[#C5A059] rounded-full mb-8" />
 
@@ -121,7 +121,7 @@ export default function Team() {
             </p>
 
             <p className="text-slate-600 font-medium leading-relaxed mb-10 text-lg">
-              國際教育發展團隊Global Edu以多元教育為核心，尊重每位學生的個性和志向，提供量身打造的職涯與學業規劃。我們陪伴孩子在探索世界的過程中，認識自我、建立自信，進而找到屬於自己的方向與抱負。
+              國際教育發展團隊（Global Edu）以多元教育為核心，尊重每位學生的個性和志向，提供量身打造的職涯與學業規劃。我們陪伴孩子在探索世界的過程中，認識自我、建立自信，進而找到屬於自己的方向與抱負。
             </p>
 
             <div className="space-y-8">

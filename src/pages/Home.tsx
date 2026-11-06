@@ -23,7 +23,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#fef3c7] border border-[#f59e0b] text-[#92400e] text-sm font-bold rounded-full mb-6"
           >
-            <Star size={16} fill="currentColor" /> 全台唯一 24H 專業親子活動與職人營隊推薦門戶
+            <Star size={16} fill="currentColor" /> 國際教育發展團隊 Global Edu｜專業親子活動與職人營隊推薦
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-slate-600 font-bold leading-relaxed max-w-3xl mx-auto mb-16"
           >
-            全台最專業、最高規格的親子活動及職人體驗代訂推薦！我們深信「生活即教育，體驗即學習」，省去繁雜的多站比價與註冊手續，一鍵加 LINE 客服立刻由小幫手為您安排！
+            國際教育發展團隊（Global Edu）深信「生活即教育，體驗即學習」，為家長與孩子嚴選全台最高規格的親子活動、職人體驗與國際留遊學計畫，省去繁雜的多站比價與註冊手續，一鍵加 LINE 客服立刻由小幫手為您安排！
           </motion.p>
         </div>
       </section>
@@ -47,9 +47,12 @@ export default function Home() {
       {/* Intro Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] mb-10 flex items-center justify-center gap-4">
-            <span>國際教育發展團隊Global Edu</span>
-            <span className="w-1 h-8 bg-slate-300 rounded"></span>
+          <div className="mb-2">
+            <span className="text-xs md:text-sm font-black tracking-widest text-[#C5A059] uppercase">Global Edu</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black text-[#002B5B] mb-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            <span>國際教育發展團隊</span>
+            <span className="w-1 h-8 bg-slate-300 rounded hidden sm:inline-block"></span>
             <span>陪伴每一段成長，實現每一個夢想</span>
           </h2>
           <p className="text-[#002B5B] text-lg leading-loose font-bold mb-6">

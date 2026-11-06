@@ -49,9 +49,11 @@ export function Navbar() {
             {/* Logo Area */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink min-w-0">
               <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] md:w-[54px] md:h-[54px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0">
-                <img src={brandLogo} alt="國際教育發展團隊Global Edu Logo" className="w-full h-full object-contain rounded-full block" />
+                <img src={brandLogo} alt="國際教育發展團隊 Global Edu Logo" className="w-full h-full object-contain rounded-full block" />
               </div>
-              <span className="text-base sm:text-lg md:text-xl xl:text-2xl font-black text-white tracking-tight sm:tracking-wide truncate">國際教育發展團隊Global Edu</span>
+              <span className="text-base sm:text-lg md:text-xl xl:text-2xl font-black text-white tracking-tight sm:tracking-wide truncate">
+                國際教育發展團隊 <span className="font-bold text-xs sm:text-sm md:text-base opacity-90 tracking-normal">Global Edu</span>
+              </span>
             </Link>
 
             {/* Desktop Nav */}
@@ -120,9 +122,11 @@ export function Navbar() {
             <div className="flex justify-between items-center p-4 border-b border-white/10">
               <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                 <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
-                  <img src={brandLogo} alt="國際教育發展團隊Global Edu Logo" className="w-full h-full object-contain block" />
+                  <img src={brandLogo} alt="國際教育發展團隊 Global Edu Logo" className="w-full h-full object-contain block" />
                 </div>
-                <span className="text-sm sm:text-lg font-black text-white tracking-wider truncate">國際教育發展團隊Global Edu</span>
+                <span className="text-sm sm:text-lg font-black text-white tracking-wider truncate">
+                  國際教育發展團隊 <span className="font-bold text-xs opacity-90">Global Edu</span>
+                </span>
               </div>
               <button onClick={() => setIsOpen(false)} className="text-white shrink-0 ml-2">
                 <X size={28} />

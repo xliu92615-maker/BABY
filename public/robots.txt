@@ -1,0 +1,9 @@
+# Robots.txt for 國際教育發展團隊 Global Edu
+# Production Domain: https://globaledutw.com
+
+User-agent: *
+Allow: /
+Disallow: /favorites
+
+# Sitemap location
+Sitemap: https://globaledutw.com/sitemap.xml

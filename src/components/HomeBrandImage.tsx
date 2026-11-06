@@ -28,7 +28,7 @@ export default function HomeBrandImage() {
             <div className="relative aspect-[4/3] bg-white rounded-[24px] overflow-hidden shadow-2xl shadow-[#002B5B]/10 border border-[#C5A059]/20 group">
               <img 
                 src={dd01} 
-                alt="國際教育發展團隊Global Edu品牌形象" 
+                alt="國際教育發展團隊 Global Edu 品牌形象" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
