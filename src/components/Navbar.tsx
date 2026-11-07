@@ -16,6 +16,7 @@ export function Navbar() {
   const navLinks = [
     { name: '主題活動', path: '/activities' },
     { name: '親子共學', path: '/co-learning' },
+    { name: '親子教育專欄', path: '/parenting-education' },
     { name: '創辦人介紹', path: '/team' },
     { name: '大手牽小手・愛心齊步走', path: '/charity' },
     { name: '國際留遊學', path: '/study-abroad' },
@@ -44,32 +45,32 @@ export function Navbar() {
         <AnnouncementMarquee />
 
         {/* Main Blue Header */}
-        <div className="bg-[#0f439c] py-3 px-4 sm:px-6 lg:px-12">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="bg-[#0f439c] py-3 px-3 sm:px-5 lg:px-8 xl:px-10">
+          <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
             {/* Logo Area */}
-            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink min-w-0">
-              <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] md:w-[54px] md:h-[54px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0">
+            <Link to="/" className="flex items-center gap-2 sm:gap-2.5 shrink min-w-0">
+              <div className="w-[38px] h-[38px] sm:w-[44px] sm:h-[44px] md:w-[48px] md:h-[48px] rounded-full overflow-hidden bg-transparent p-0 border-none shrink-0">
                 <img src={brandLogo} alt="國際教育發展團隊 Global Edu Logo" className="w-full h-full object-contain rounded-full block" />
               </div>
-              <span className="text-base sm:text-lg md:text-xl xl:text-2xl font-black text-white tracking-tight sm:tracking-wide truncate">
-                國際教育發展團隊 <span className="font-bold text-xs sm:text-sm md:text-base opacity-90 tracking-normal">Global Edu</span>
+              <span className="text-sm sm:text-base md:text-lg xl:text-xl font-black text-white tracking-tight truncate">
+                國際教育發展團隊 <span className="font-bold text-xs sm:text-xs md:text-sm opacity-90 tracking-normal hidden sm:inline">Global Edu</span>
               </span>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-2 xl:gap-3.5 2xl:gap-5 shrink-0">
               {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
+                const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
                 return (
                   <Link
                     key={link.path}
                     to={link.path}
                     className={cn(
-                      'text-white font-bold text-[15px] flex items-center gap-1.5 transition-colors hover:text-[#FFCC00]',
+                      'text-white font-bold text-[13px] xl:text-[14px] 2xl:text-[15px] whitespace-nowrap flex items-center gap-1 transition-colors hover:text-[#FFCC00]',
                       isActive ? 'text-[#FFCC00]' : ''
                     )}
                   >
-                    {link.icon && <link.icon size={16} />}
+                    {link.icon && <link.icon size={15} />}
                     {link.name}
                   </Link>
                 );
@@ -77,22 +78,21 @@ export function Navbar() {
             </nav>
 
             {/* Actions Area */}
-            <div className="hidden lg:flex items-center gap-6">
-              <Link to="/favorites" className="relative text-white hover:text-[#FFCC00] transition-colors flex items-center">
-                <Heart size={24} />
+            <div className="hidden lg:flex items-center gap-3 xl:gap-5 shrink-0">
+              <Link to="/favorites" className="relative text-white hover:text-[#FFCC00] transition-colors flex items-center p-1">
+                <Heart size={22} />
                 {favorites.length > 0 && (
-                  <span className="absolute -top-2 -right-3 bg-[#FFCC00] text-[#0f439c] text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">
+                  <span className="absolute -top-1.5 -right-2 bg-[#FFCC00] text-[#0f439c] text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm">
                     {favorites.length}
                   </span>
                 )}
               </Link>
               <a
                 href="https://line.me/ti/p/e9xyybD4Fb"
-                className="bg-[#00C300] hover:bg-[#00a600] text-white px-5 py-2.5 rounded-full text-[15px] font-bold flex items-center gap-2 transition-all shadow-sm"
+                className="bg-[#00C300] hover:bg-[#00a600] text-white px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full text-xs xl:text-[14px] font-bold flex items-center gap-1.5 transition-all shadow-sm whitespace-nowrap shrink-0"
               >
-                <MessageCircle size={20} className="fill-current" />
+                <MessageCircle size={18} className="fill-current shrink-0" />
                 加LINE立即報名
-                <div className="w-2 h-2 rounded-full bg-[#FFCC00] absolute top-2 right-4 opacity-0"></div> {/* decorative */}
               </a>
             </div>
 

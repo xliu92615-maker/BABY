@@ -57,6 +57,30 @@ const ROUTE_SEO_MAP: Record<string, RouteSEO> = {
     title: '我的收藏活動｜國際教育發展團隊 Global Edu',
     description: '檢視您在國際教育發展團隊 Global Edu 網站收藏的活動清單，方便隨時追蹤與報名。',
   },
+  '/parenting-education': {
+    title: '親子教育專欄｜國際教育發展團隊 Global Edu',
+    description: 'Global Edu 親子教育專欄，提供多元的教育知識與實用資訊，涵蓋親子互動、生活教育、情緒培養與國際視野，陪伴家長找到適合孩子的成長方式。',
+  },
+  '/parenting-education/life-lessons-stories': {
+    title: '比童話更值得聽的故事：5個能讓孩子受益一生的人生啟蒙｜國際教育發展團隊 Global Edu',
+    description: '探索5個啟發孩子一生的經典故事：誠實勇氣、善良責任、自我接納、耐心積累與堅定自我，培養不被外界評價動搖的人生底氣。',
+  },
+  '/parenting-education/respect-child-growth': {
+    title: '我們能陪孩子慢慢雕琢，卻不能按照自己的期待改造孩子｜國際教育發展團隊 Global Edu',
+    description: '每個孩子都是獨一無二的個體。父母最珍貴的責任是給予足夠的愛、尊重與引導，陪伴孩子走出屬於自己的成長道路。',
+  },
+  '/parenting-education/global-perspective': {
+    title: '國際視野從小培養，讓孩子認識世界的多元與美好｜國際教育發展團隊 Global Edu',
+    description: '真正的國際視野不只是外語能力，更是尊重多元文化與不同觀點的胸懷。從小啟發孩子的好奇心，開啟探索世界的重要起點。',
+  },
+  '/parenting-education/five-essential-skills': {
+    title: '未來需要什麼樣的人才？從小培養孩子的五大關鍵能力｜國際教育發展團隊 Global Edu',
+    description: '面對AI與快速變化的未來，單純記住知識已不足夠。從小培養孩子的獨立思考、溝通合作、創造力、適應力與同理心等五大關鍵能力。',
+  },
+  '/parenting-education/learning-beyond-classroom': {
+    title: '走出教室也是一種學習，帶孩子用不同角度認識世界｜國際教育發展團隊 Global Edu',
+    description: '學習不只發生在教室裡。走進農場、博物館或公園，生活中的每一次探索與親身體驗，都能帶孩子用不同角度認識世界的多元與美好。',
+  },
 };
 
 export function SEO() {
