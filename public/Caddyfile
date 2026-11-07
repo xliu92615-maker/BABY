@@ -1,0 +1,29 @@
+{
+    servers {
+        trusted_proxies static private_ranges trusted_proxies_strict
+        client_ip_headers X-Forwarded-For X-Real-IP
+    }
+}
+
+:8080 {
+    # 舊網域 intlkids.com 與 www.intlkids.com 執行伺服器端 HTTP 301 永久轉址
+    @oldDomain {
+        host intlkids.com www.intlkids.com
+    }
+    @oldForwardedDomain {
+        header X-Forwarded-Host intlkids.com www.intlkids.com
+    }
+    redir @oldDomain https://globaledutw.com{uri} 301
+    redir @oldForwardedDomain https://globaledutw.com{uri} 301
+
+    # 靜態檔案根目錄（Zeabur caddy-static 預設路徑）
+    root * /usr/share/caddy
+
+    # 啟用壓縮
+    encode zstd gzip
+
+    # SPA Client-Side Routing 路由回退支援
+    try_files {path} {path}/ /index.html
+
+    file_server
+}

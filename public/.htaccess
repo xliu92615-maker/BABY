@@ -1,5 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # 301 Redirect old domain to new domain
+  RewriteCond %{HTTP_HOST} ^(www\.)?intlkids\.com$ [NC]
+  RewriteRule ^(.*)$ https://globaledutw.com/$1 [R=301,L,QSA]
+
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f

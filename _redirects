@@ -1,0 +1,8 @@
+# 301 Permanent Redirects from old domain to new domain
+https://intlkids.com/*      https://globaledutw.com/:splat  301!
+https://www.intlkids.com/*  https://globaledutw.com/:splat  301!
+http://intlkids.com/*       https://globaledutw.com/:splat  301!
+http://www.intlkids.com/*   https://globaledutw.com/:splat  301!
+
+# SPA Client-Side Routing fallback
+/*                          /index.html                     200
