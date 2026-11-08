@@ -9,6 +9,7 @@ import activity4Image from '../assets/images/regenerated_image_1784968699805.jpg
 import activity5Image from '../assets/images/oooo-001.jpg';
 import activity6Image from '../assets/images/oooo-002.jpg';
 import activity7Image from '../assets/images/oooo-03.jpg';
+import f04 from '../assets/images/F-04.jpg';
 
 export default function Activities() {
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -71,8 +72,22 @@ export default function Activities() {
 
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
+      {/* 頂部主視覺橫幅 Banner (F-04) */}
+      <div className="pt-20 sm:pt-24 md:pt-28 bg-[#fdfcf9]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
+          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white">
+            <img
+              src={f04}
+              alt="主題活動 主視覺 Banner"
+              className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Hero */}
-      <div className="pt-24 pb-16 relative overflow-hidden bg-transparent">
+      <div className="pt-8 pb-16 relative overflow-hidden bg-transparent">
         <div className="absolute top-10 right-10 w-64 h-64 bg-[#FFE5B4] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" />
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#E0F2FE] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">

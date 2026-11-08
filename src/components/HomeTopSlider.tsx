@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import qwe02 from "../assets/images/QWE-02.jpg";
 import qwe03 from "../assets/images/QWE-03.jpg";
+import f01 from "../assets/images/F-01.jpg";
 
 interface SlideItem {
   id: string;
@@ -21,6 +22,11 @@ const sliderItems: SlideItem[] = [
     id: 'slide-qwe-03',
     src: qwe03,
     alt: '首頁輪播圖 2',
+  },
+  {
+    id: 'slide-f-01',
+    src: f01,
+    alt: '首頁輪播圖 3',
   },
 ];
 

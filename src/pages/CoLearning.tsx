@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Star, Calendar, MapPin, Heart } from 'lucide-react';
 import { FEATURED_CO_LEARNING_ACTIVITIES } from '../data/featuredActivities';
+import f03 from '../assets/images/F-03.jpg';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
 import img3 from '../assets/images/regenerated_image_1784823699963.png';
@@ -97,8 +98,22 @@ export default function CoLearning() {
 
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
+      {/* 頂部主視覺橫幅 Banner (F-03) */}
+      <div className="pt-20 sm:pt-24 md:pt-28 bg-[#fdfcf9]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
+          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white">
+            <img
+              src={f03}
+              alt="親子共學 主視覺 Banner"
+              className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Hero */}
-      <div className="bg-[#0f439c] py-20 px-4 text-center">
+      <div className="bg-[#0f439c] py-16 sm:py-20 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-black text-white mb-6">親子共學</h1>
         <p className="text-[#FFCC00] text-lg font-bold">陪伴是最好的教育。透過精心設計的共學課程，創造優質的親子互動時光，共同成長。</p>
       </div>

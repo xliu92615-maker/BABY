@@ -5,6 +5,7 @@ import mm1 from '../assets/images/MM-1.jpg';
 import mm2 from '../assets/images/MM-2.jpg';
 import mm3 from '../assets/images/MM-3.jpg';
 import mm4 from '../assets/images/MM-4.jpg';
+import f02 from '../assets/images/F-02.jpg';
 
 const articles = [
   {
@@ -63,8 +64,22 @@ const movies = [
 export default function ParentingEducation() {
   return (
     <div className="bg-[#FAFAFA] min-h-screen pb-24">
-      {/* 第一區塊：親子教育專欄 Top Banner Section */}
-      <div className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-gradient-to-br from-[#002B5B] via-[#0B4A86] to-[#002B5B] text-center">
+      {/* 頂部主視覺橫幅 Banner (F-02) */}
+      <div className="pt-20 sm:pt-24 md:pt-28 bg-[#FAFAFA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
+          <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white">
+            <img
+              src={f02}
+              alt="親子教育專欄 主視覺 Banner"
+              className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* 第一區塊：親子教育專欄 Top Title Section */}
+      <div className="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-[#002B5B] via-[#0B4A86] to-[#002B5B] text-center">
         {/* Decorative background glow */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none" />
