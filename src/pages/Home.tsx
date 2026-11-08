@@ -5,6 +5,7 @@ import { ArrowRight, Star, Heart, Users, Globe, Shield, Activity } from 'lucide-
 import HomeTopSlider from '../components/HomeTopSlider';
 import HomeVideoShowcase from '../components/HomeVideoShowcase';
 import HomeEventSlider from '../components/HomeEventSlider';
+import HomeFeaturedActivities from '../components/HomeFeaturedActivities';
 
 export default function Home() {
   return (
@@ -63,6 +64,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Featured Activities Carousel Section */}
+      <HomeFeaturedActivities />
 
       {/* Services Grid Section (Replaces Features) */}
       <section id="services-section" className="py-24 bg-[#fdfcf9] border-t border-slate-100">

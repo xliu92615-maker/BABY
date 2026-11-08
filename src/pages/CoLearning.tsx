@@ -1,7 +1,9 @@
 import { useFavorites } from "../contexts/FavoritesContext";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Star, Calendar, MapPin, Heart } from 'lucide-react';
+import { FEATURED_CO_LEARNING_ACTIVITIES } from '../data/featuredActivities';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
 import img3 from '../assets/images/regenerated_image_1784823699963.png';
@@ -20,8 +22,10 @@ import ch006 from "../assets/images/ch-006.jpg";
 export default function CoLearning() {
   const { toggleFavorite, isFavorite } = useFavorites();
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
+  const location = useLocation();
 
   const activities = [
+    ...FEATURED_CO_LEARNING_ACTIVITIES,
     { title: '小小農夫生存戰', desc: '【週末爸媽救星】週末想帶孩子出門，又怕自己回家比上班還累？\n\n這週末把孩子交給大自然，把電力通通留在田裡！\n\n⚡️孩子極致放電｜拔蘿蔔、採野菜、認識農作、野趣DIY\n☕️爸媽專屬休息｜遮陽休息區、飲品無限量、乾淨沖洗區\n💥原價$750，限時優惠只要$399\n\n在汗水與笑聲中，玩出最棒的課外第一課！🌱', category: '親子共學', image: img1 },
     { title: '公主夢成真！', desc: '還在煩惱假日帶孩子去哪裡嗎？\n7～12月限定活動來啦～\n專業兒童彩妝體驗，搭配夢幻造型與拍照紀念，留下最珍貴的童年回憶❤️\n\n✨限量優惠｜前20位報名贈 Shushu & Sassy冰雪奇緣聯名款彩妝乙組！\n\n孩子的童年只有一次，讓我們一起陪伴她，完成一次屬於自己的公主夢✨', category: '親子共學', image: img2 },
     { title: '【最接地氣的感恩教育】長大後，我就成了你！', desc: '讓孩子穿上你的制服，用他的視角，讀懂父母的偉大\n體會辛苦： 戴上工程帽、手拿工具，明白上班需要付出汗水。\n理解責任： 知道安全是為了「平安回家陪你」，理解父母的叮嚀。\n建立崇拜： 發現爸爸媽媽在社會上，是默默守護大家安全的無名英雄。\n\n今年最觸動人心的親子職業體驗', category: '親子共學', image: img3 },
@@ -80,6 +84,17 @@ export default function CoLearning() {
     }
   ];
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const targetId = params.get('activity') || params.get('id');
+    if (targetId) {
+      const found = activities.find((a: any) => a.id === targetId);
+      if (found) {
+        setSelectedActivity(found);
+      }
+    }
+  }, [location.search]);
+
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
       {/* Hero */}
@@ -91,12 +106,14 @@ export default function CoLearning() {
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {activities.map((activity, idx) => (
+          {activities.map((activity: any, idx) => {
+            const actId = activity.id || `co-${idx}`;
+            return (
             <motion.div 
-              key={idx}
+              key={actId}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              transition={{ delay: Math.min(idx * 0.05, 0.5) }}
               className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border-2 border-slate-100 flex flex-col group cursor-pointer"
               onClick={() => setSelectedActivity(activity)}
             >
@@ -109,10 +126,10 @@ export default function CoLearning() {
                 
                 {/* Heart Button */}
                 <button 
-                  onClick={(e) => { e.stopPropagation(); toggleFavorite({...activity, id: `co-${idx}`, route: '/co-learning'}); }}
+                  onClick={(e) => { e.stopPropagation(); toggleFavorite({...activity, id: actId, route: '/co-learning'}); }}
                   className="absolute top-3 right-3 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-[#C5A059] shadow-sm hover:scale-110 transition-transform z-10"
                 >
-                  <Heart size={20} fill={isFavorite(`co-${idx}`) ? "currentColor" : "none"} className={isFavorite(`co-${idx}`) ? "text-[#C5A059]" : "text-slate-400"} />
+                  <Heart size={20} fill={isFavorite(actId) ? "currentColor" : "none"} className={isFavorite(actId) ? "text-[#C5A059]" : "text-slate-400"} />
                 </button>
 
                 <div className="absolute top-3 left-3 bg-[#FFCC00] text-[#0f439c] px-3 py-1 rounded-full text-xs font-bold shadow-md">
@@ -131,7 +148,8 @@ export default function CoLearning() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          );
+          })}
         </div>
       </div>
 
