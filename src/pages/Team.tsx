@@ -99,7 +99,7 @@ export default function Team() {
   return (
     <div className="bg-[#fdfdfd] min-h-screen pb-24">
       {/* Intro Section */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 md:pt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

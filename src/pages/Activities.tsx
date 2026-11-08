@@ -73,7 +73,7 @@ export default function Activities() {
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
       {/* 頂部主視覺橫幅 Banner (F-04) */}
-      <div className="pt-20 sm:pt-24 md:pt-28 bg-[#fdfcf9]">
+      <div className="pt-4 sm:pt-6 md:pt-8 bg-[#fdfcf9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
           <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white">
             <img
@@ -86,43 +86,8 @@ export default function Activities() {
         </div>
       </div>
 
-      {/* Hero */}
-      <div className="pt-8 pb-16 relative overflow-hidden bg-transparent">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-[#FFE5B4] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E0F2FE] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#FFF9E6] border border-[#F59E0B] text-[#92400E] font-bold text-sm sm:text-base tracking-wide mb-8 shadow-sm"
-          >
-            <Star size={18} className="fill-[#92400E] text-[#92400E]" />
-            全台唯一 24H 專業親子活動與職人營隊推薦門戶
-          </motion.div>
-
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-5xl md:text-7xl font-black mb-6 tracking-tight drop-shadow-sm flex flex-wrap justify-center gap-2"
-          >
-            <span className="text-[#002B5B]">主題</span>
-            <span className="text-[#F59E0B]">活動</span>
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-slate-600 max-w-2xl mx-auto font-bold tracking-widest bg-white/50 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm border border-slate-100"
-          >
-            主題活動熱烈報名中 🔥
-          </motion.p>
-        </div>
-      </div>
-
       {/* Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {activities.map((activity, idx) => (
             <motion.div 

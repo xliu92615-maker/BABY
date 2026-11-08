@@ -165,7 +165,7 @@ export default function Reviews() {
   const col2 = [reviewsData[1], reviewsData[3]];
 
   return (
-    <div className="bg-[#fdfcf9] min-h-screen pt-32 pb-24 font-sans">
+    <div className="bg-[#fdfcf9] min-h-screen pb-24 font-sans">
       
       {/* Lightbox */}
       <AnimatePresence>
@@ -197,32 +197,8 @@ export default function Reviews() {
         )}
       </AnimatePresence>
       
-      {/* 頁面最上方 / Hero */}
-      <div className="max-w-4xl mx-auto px-4 text-center mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[#002B5B]/5 border border-[#002B5B]/10 text-[#002B5B] font-bold text-sm mb-6">
-            家長反饋
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#002B5B] tracking-tight mb-6">
-            陪伴成長的真心話：<br className="md:hidden" />聽聽爸媽怎麼說
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 font-bold max-w-2xl mx-auto leading-relaxed">
-            超過 <span className="text-[#C5A059] text-2xl mx-1 font-black">500+</span> 位爸媽的真心推薦，<br className="hidden md:block" />與我們一起大手牽小手，探索更廣闊的世界！
-          </p>
-          <div className="flex justify-center items-center gap-3 mt-8">
-            <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#C5A059]"></div>
-            <Heart size={20} className="text-[#C5A059]" fill="currentColor" />
-            <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#C5A059]"></div>
-          </div>
-        </motion.div>
-      </div>
-
       {/* 評價卡片區 */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* 左欄 */}
           <div className="flex flex-col gap-8">

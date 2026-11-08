@@ -434,7 +434,7 @@ export default function Charity() {
   return (
     <div className="bg-[#fdfdfd] min-h-screen pb-24">
       {/* Hero */}
-      <div className="relative py-24 bg-white overflow-hidden border-b border-slate-100">
+      <div className="relative py-12 md:py-16 bg-white overflow-hidden border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-[45%]">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C5A059]/10 text-[#C5A059] font-bold text-[10px] tracking-widest uppercase mb-6">

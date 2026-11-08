@@ -99,7 +99,7 @@ export default function CoLearning() {
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
       {/* 頂部主視覺橫幅 Banner (F-03) */}
-      <div className="pt-20 sm:pt-24 md:pt-28 bg-[#fdfcf9]">
+      <div className="pt-4 sm:pt-6 md:pt-8 bg-[#fdfcf9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
           <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white">
             <img
@@ -112,14 +112,8 @@ export default function CoLearning() {
         </div>
       </div>
 
-      {/* Hero */}
-      <div className="bg-[#0f439c] py-16 sm:py-20 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-black text-white mb-6">親子共學</h1>
-        <p className="text-[#FFCC00] text-lg font-bold">陪伴是最好的教育。透過精心設計的共學課程，創造優質的親子互動時光，共同成長。</p>
-      </div>
-
       {/* Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((activity: any, idx) => {
             const actId = activity.id || `co-${idx}`;

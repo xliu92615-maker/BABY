@@ -34,20 +34,8 @@ export default function FAQ() {
 
   return (
     <div className="bg-[#fdfdfd] min-h-screen pb-24">
-      {/* Header */}
-      <div className="bg-[#002B5B] py-24 relative overflow-hidden">
-        <div className="absolute top-10 left-20 w-32 h-32 bg-[#C5A059] rounded-full mix-blend-multiply filter blur-2xl opacity-40" />
-        <div className="absolute bottom-10 right-20 w-48 h-48 bg-white rounded-full mix-blend-overlay filter blur-2xl opacity-20" />
-        <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl font-black text-white mb-4 tracking-tight drop-shadow-sm">常見問題</h1>
-          <p className="text-slate-200 font-medium">
-            為您整理了家長們最常詢問的問題，若找不到您需要的答案，歡迎隨時聯繫我們。
-          </p>
-        </div>
-      </div>
-
       {/* FAQ Accordion */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-12">
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div 

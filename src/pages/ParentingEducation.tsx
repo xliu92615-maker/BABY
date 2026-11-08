@@ -65,7 +65,7 @@ export default function ParentingEducation() {
   return (
     <div className="bg-[#FAFAFA] min-h-screen pb-24">
       {/* 頂部主視覺橫幅 Banner (F-02) */}
-      <div className="pt-20 sm:pt-24 md:pt-28 bg-[#FAFAFA]">
+      <div className="pt-4 sm:pt-6 md:pt-8 bg-[#FAFAFA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6">
           <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-white">
             <img
@@ -78,31 +78,8 @@ export default function ParentingEducation() {
         </div>
       </div>
 
-      {/* 第一區塊：親子教育專欄 Top Title Section */}
-      <div className="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-[#002B5B] via-[#0B4A86] to-[#002B5B] text-center">
-        {/* Decorative background glow */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A059]/20 border border-[#C5A059]/30 text-[#C5A059] font-bold text-sm mb-6 backdrop-blur-sm">
-              <BookOpen size={16} />
-              <span>Parenting Education Column</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight drop-shadow-md">
-              親子教育專欄
-            </h1>
-          </motion.div>
-        </div>
-      </div>
-
       {/* Main Content Area */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 relative z-20">
         {/* Intro Section Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

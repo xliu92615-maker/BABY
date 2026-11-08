@@ -143,204 +143,39 @@ function HeroBackground() {
 }
 
 export default function StudyAbroad() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const handleNext = useCallback(() => {
-    setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
-  }, []);
-
-  const handlePrev = useCallback(() => {
-    setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
-  }, []);
-
-  const handleDotClick = useCallback((index: number) => {
-    setCurrentIndex(index);
-  }, []);
-
-  // When switching away from video, pause and reset; when switching to video, start from beginning
   useEffect(() => {
-    if (currentIndex === 1) {
-      const video = videoRef.current;
-      if (video) {
-        video.currentTime = 0;
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch((err) => {
-            console.warn('NNN-03 video autoplay blocked or pending interaction:', err);
-          });
-        }
-      }
-    } else {
-      const video = videoRef.current;
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
+    const video = videoRef.current;
+    if (video) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn('NNN-03 video autoplay pending interaction:', err);
+        });
       }
     }
-  }, [currentIndex]);
-
-  // Slide 0 (Blue visual) timer: 4 seconds, pauses on hover
-  useEffect(() => {
-    if (currentIndex !== 0) return;
-    if (isHovered) return;
-
-    const timer = setTimeout(() => {
-      handleNext();
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, [currentIndex, isHovered, handleNext]);
-
-  // Video playback completion handler: triggers transition back to Slide 0
-  const handleVideoEnded = () => {
-    handleNext();
-  };
-
-  // Video error handler failsafe: return to Slide 0 if error occurs
-  const handleVideoError = () => {
-    console.warn('NNN-03 video failed to load, switching back to hero slide');
-    setTimeout(() => {
-      handleNext();
-    }, 1500);
-  };
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const currentTouch = e.targetTouches[0].clientX;
-    const diff = touchStart - currentTouch;
-
-    if (diff > 50) {
-      handleNext();
-      setTouchStart(null);
-    } else if (diff < -50) {
-      handlePrev();
-      setTouchStart(null);
-    }
-  };
+  }, []);
 
   return (
     <div className="bg-[#FAFAFA] min-h-screen">
-      {/* Hero Section Carousel */}
-      <div 
-        className="relative overflow-hidden min-h-[420px] md:h-[560px] bg-gradient-to-br from-[#063568] via-[#0B4A86] to-[#123F73] group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={() => setTouchStart(null)}
-      >
-        <AnimatePresence initial={false}>
-          {currentIndex === 0 ? (
-            <motion.div
-              key="hero-slide-visual"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              className="absolute inset-0 w-full h-full pt-24 pb-24 md:pt-32 md:pb-0 flex items-center"
-            >
-              <HeroBackground />
-              <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center">
-                <div className="w-full md:w-2/3 lg:w-1/2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A059]/20 border border-[#C5A059]/30 text-[#C5A059] font-bold text-sm mb-6 backdrop-blur-sm">
-                      <Globe2 size={16} />
-                      <span>國際留遊學</span>
-                    </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 drop-shadow-lg">
-                      從台灣出發<br />
-                      <span className="text-[#C5A059]">走向世界</span><br />
-                      開啟孩子無限可能
-                    </h1>
-                    <p className="text-xl text-white/90 font-medium leading-relaxed drop-shadow-md">
-                      教育改變人生，國際視野成就未來
-                    </p>
-                  </motion.div>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -bottom-20 -right-10 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-[80px] pointer-events-none" />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="hero-slide-video"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              className="absolute inset-0 w-full h-full flex items-center justify-center bg-[#063568] overflow-hidden"
-            >
-              <video
-                ref={videoRef}
-                src={nnn03Video}
-                autoPlay
-                muted
-                playsInline
-                controls={false}
-                disablePictureInPicture
-                disableRemotePlayback
-                onEnded={handleVideoEnded}
-                onError={handleVideoError}
-                onCanPlay={(e) => {
-                  e.currentTarget.play().catch(() => {});
-                }}
-                className="w-full h-full object-contain md:object-cover md:object-center pointer-events-none select-none"
-              >
-                <source src="/videos/NNN-03.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Carousel Arrows */}
-        <div className="absolute inset-y-0 left-0 flex items-center pl-2 md:pl-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-auto">
-          <button 
-            onClick={handlePrev}
-            className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#002B5B] hover:scale-105 transition-all shadow-lg focus:outline-none"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={22} className="mr-0.5" />
-          </button>
-        </div>
-        
-        <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:pr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-auto">
-          <button 
-            onClick={handleNext}
-            className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#002B5B] hover:scale-105 transition-all shadow-lg focus:outline-none"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={22} className="ml-0.5" />
-          </button>
-        </div>
-
-        {/* Indicator Dots */}
-        <div className="absolute bottom-4 md:bottom-6 inset-x-0 flex justify-center gap-2.5 z-20 pointer-events-auto">
-          {[0, 1].map((idx) => (
-            <button
-              key={idx}
-              onClick={() => handleDotClick(idx)}
-              className={`h-2 md:h-2.5 rounded-full transition-all duration-300 focus:outline-none shadow-md ${
-                idx === currentIndex 
-                  ? 'w-7 md:w-9 bg-[#C5A059]' 
-                  : 'w-2 md:w-2.5 bg-white/50 hover:bg-white/80'
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
+      {/* 頂部影片主視覺 (NNN-03) */}
+      <div className="relative overflow-hidden w-full h-[360px] sm:h-[440px] md:h-[540px] bg-[#063568]">
+        <video
+          ref={videoRef}
+          src={nnn03Video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls={false}
+          disablePictureInPicture
+          disableRemotePlayback
+          className="w-full h-full object-contain md:object-cover md:object-center pointer-events-none select-none"
+        >
+          <source src="/videos/NNN-03.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
       </div>
 
       <StudyAbroadVideoStory />

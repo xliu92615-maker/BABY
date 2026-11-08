@@ -62,46 +62,8 @@ export default function AntiFraud() {
 
   return (
     <div className="bg-[#fdfcf9] min-h-screen pb-24">
-      {/* Hero Banner */}
-      <div className="relative pt-24 pb-20 md:pt-32 md:pb-28 bg-[#002B5B] overflow-hidden">
-        {/* Background Graphics */}
-        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-          <Shield className="absolute top-10 left-10 text-[#C5A059] w-32 h-32 rotate-12" />
-          <Lock className="absolute bottom-10 right-20 text-[#C5A059] w-40 h-40 -rotate-12" />
-          <AlertTriangle className="absolute top-20 right-10 text-white w-24 h-24 rotate-45" />
-          <Smartphone className="absolute bottom-20 left-20 text-white w-28 h-28 -rotate-6" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight drop-shadow-sm flex items-center justify-center gap-3"
-          >
-            <span>🛡️ 防詐宣導</span>
-          </motion.h1>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="w-16 h-1.5 bg-[#C5A059] rounded-full mb-8"
-          />
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-blue-100 max-w-2xl mx-auto font-bold tracking-wide leading-relaxed"
-          >
-            建立正確防詐觀念<br />
-            共同守護孩子與每一個家庭的安全
-          </motion.p>
-        </div>
-      </div>
-
       {/* Fraud Types Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-black text-[#002B5B] mb-4 tracking-tight">常見詐騙類型</h2>
           <div className="w-16 h-1.5 bg-[#FFCC00] mx-auto rounded-full" />
