@@ -6,6 +6,7 @@ import mm2 from '../assets/images/MM-2.jpg';
 import mm3 from '../assets/images/MM-3.jpg';
 import mm4 from '../assets/images/MM-4.jpg';
 import f02 from '../assets/images/F-02.jpg';
+import SectionHeading from '../components/SectionHeading';
 
 const articles = [
   {
@@ -78,25 +79,19 @@ export default function ParentingEducation() {
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 relative z-20">
-        {/* Intro Section Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-100 mb-10"
-        >
-          <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
-            <p>
-              在孩子成長的每一個階段，都有值得我們學習與探索的課題。
-            </p>
-            <p>
-              從親子互動、生活教育、情緒培養，到學習發展與國際視野，Global Edu 希望透過多元的教育知識與實用資訊，陪伴每一位家長認識孩子、理解孩子，找到適合孩子的成長方式。
-            </p>
-          </div>
-        </motion.div>
+      {/* 統一風格標題與前言區塊 */}
+      <SectionHeading
+        englishTitle="PARENTING INSIGHTS"
+        chineseTitle="親子教育專欄"
+        subtitle="陪孩子慢慢長大，也一起學習怎麼當爸媽"
+        paragraphs={[
+          "從孩子出生的那一刻起，父母就開始了一段充滿驚喜與挑戰的旅程。有時候不知道該怎麼溝通，有時候也會為了孩子的成長與教育感到煩惱，其實這些都是每個家庭都可能經歷的日常。",
+          "這裡分享親子相處、兒童成長、教育觀念、情緒溝通與學習培養等實用內容，希望陪伴爸媽在育兒路上少一點迷惘、多一點方向，也讓我們在陪伴孩子的同時，一起成為更好的自己！",
+        ]}
+      />
 
+      {/* Main Content Area */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12 relative z-20">
         {/* 第二區塊：教育文章列表 (01~05 依序排列，只顯示標題，點擊進入詳細頁面) */}
         <div className="space-y-4 sm:space-y-5">
           {articles.map((article, index) => (
@@ -187,6 +182,30 @@ export default function ParentingEducation() {
           </div>
         </motion.div>
       </div>
+
+      {/* 專欄溫暖結語區塊 (所有文章與電影之後、Footer 之前) */}
+      <section className="mt-16 sm:mt-24 pt-12 sm:pt-16 pb-6 bg-gradient-to-b from-[#FAF8F5] via-[#fdfcf9] to-transparent relative overflow-hidden border-t border-slate-100">
+        <div className="max-w-[850px] mx-auto px-4 sm:px-6 relative z-10 text-center">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <Sparkles className="text-[#C5A059] shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="h-px w-10 sm:w-16 bg-gradient-to-r from-transparent to-[#C5A059]/40" />
+            <div className="h-px w-10 sm:w-16 bg-gradient-to-l from-transparent to-[#C5A059]/40" />
+            <Sparkles className="text-[#C5A059] shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
+          </div>
+
+          <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-[16.5px] text-slate-700 leading-[1.8] font-medium text-center">
+            <p className="leading-[1.8] text-justify sm:text-center">
+              每個孩子都有自己的想法與個性，每位父母也都有不同的教養方式。親子之間難免會有意見不同的時候，但比起一味地要求孩子聽話，更重要的是願意聆聽孩子的聲音，試著理解他們的感受與需求。
+            </p>
+            <p className="leading-[1.8] text-justify sm:text-center">
+              教育是一場雙向的學習，父母陪伴孩子長大，孩子也讓父母重新認識成長的意義。
+            </p>
+            <p className="pt-2 text-base sm:text-lg md:text-[18px] font-black text-[#002B5B] leading-[1.8]">
+              國際教育發展團隊 Global Edu，期待與每個家庭一起，用愛陪伴孩子探索世界，讓每一段親子時光都成為成長中最美好的回憶！
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

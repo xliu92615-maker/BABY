@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, Star, Calendar, MapPin, Heart } from 'lucide-react';
 import { FEATURED_CO_LEARNING_ACTIVITIES } from '../data/featuredActivities';
 import f03 from '../assets/images/F-03.jpg';
+import SectionHeading from '../components/SectionHeading';
 import img1 from '../assets/images/regenerated_image_1784724380995.jpg';
 import img2 from '../assets/images/regenerated_image_1784724381940.png';
 import img3 from '../assets/images/regenerated_image_1784823699963.png';
@@ -112,8 +113,18 @@ export default function CoLearning() {
         </div>
       </div>
 
+      {/* 統一風格標題與前言區塊 */}
+      <SectionHeading
+        englishTitle="FAMILY LEARNING"
+        chineseTitle="親子共學"
+        subtitle="陪孩子一起玩、一起學，把每一天都變成有趣的冒險！"
+        paragraphs={[
+          "學習不一定只能坐在教室裡，也可以透過遊戲、閱讀、手作和生活中的各種體驗，讓孩子在玩樂中發現新事物。快放下忙碌的日常，和孩子一起探索、一起學習，創造更多專屬於你們的美好回憶！",
+        ]}
+      />
+
       {/* Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((activity: any, idx) => {
             const actId = activity.id || `co-${idx}`;

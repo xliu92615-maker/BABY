@@ -10,6 +10,7 @@ import activity5Image from '../assets/images/oooo-001.jpg';
 import activity6Image from '../assets/images/oooo-002.jpg';
 import activity7Image from '../assets/images/oooo-03.jpg';
 import f04 from '../assets/images/F-04.jpg';
+import SectionHeading from '../components/SectionHeading';
 
 export default function Activities() {
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -86,8 +87,17 @@ export default function Activities() {
         </div>
       </div>
 
+      {/* 統一風格標題與前言區塊 */}
+      <SectionHeading
+        englishTitle="THEMED ACTIVITIES"
+        chineseTitle="主題活動"
+        paragraphs={[
+          "小朋友最期待的卡通人物見面會來啦！不論是人氣卡通角色現身、限定主題活動，還是近距離互動、合照留念，都能讓孩子有機會見到自己最喜歡的角色，感受不同以往的歡樂體驗。快帶著孩子一起出發，和喜歡的卡通明星留下難忘回憶吧！",
+        ]}
+      />
+
       {/* Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {activities.map((activity, idx) => (
             <motion.div 
