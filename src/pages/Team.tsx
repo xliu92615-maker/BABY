@@ -2,7 +2,6 @@ import kkk3 from "../assets/images/kkk-3.jpg";
 import ch001 from "../assets/images/ch-001.jpg";
 import jjj1 from "../assets/images/JJJ-1.jpg";
 import jjj2 from "../assets/images/JJJ-2.jpg";
-import jjj3 from "../assets/images/JJJ-3.jpg";
 import jjj4 from "../assets/images/JJJ-4.jpg";
 import fff1 from "../assets/images/FFF-1.jpg";
 import fff2 from "../assets/images/FFF-2.jpg";
@@ -25,7 +24,7 @@ export default function Team() {
   const [mediaLightboxIndex, setMediaLightboxIndex] = useState<number | null>(null);
   const [mediaTouchStartX, setMediaTouchStartX] = useState(0);
 
-  const galleryImages = [jjj1, jjj2, jjj3, jjj4];
+  const galleryImages = [jjj1, jjj2, jjj4];
   const founderImages = [fff1, fff2, fff3, fff4, fff5];
   const founderThumbnails = [fff2, fff3, fff4, fff5];
   const mediaImages = [s1, s2];
@@ -236,8 +235,8 @@ export default function Team() {
             </h3>
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6 mb-8" />
             
-            {/* 照片牆 */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full mt-4">
+            {/* 照片牆 (3 張小照片自然排列) */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 w-full mt-4">
               {galleryImages.map((img, idx) => (
                 <div 
                   key={idx}
