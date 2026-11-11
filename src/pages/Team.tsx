@@ -9,9 +9,11 @@ import fff2 from "../assets/images/FFF-2.jpg";
 import fff3 from "../assets/images/FFF-3.jpg";
 import fff4 from "../assets/images/FFF-4.jpg";
 import fff5 from "../assets/images/FFF-5.jpg";
+import s1 from "../assets/images/s-1.jpg";
+import s2 from "../assets/images/s-2.jpg";
 import { motion, AnimatePresence } from "motion/react";
 import React, { useState, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight, Search } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Search, ExternalLink, Sparkles } from "lucide-react";
 
 export default function Team() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -20,9 +22,13 @@ export default function Team() {
   const [founderLightboxIndex, setFounderLightboxIndex] = useState<number | null>(null);
   const [founderTouchStartX, setFounderTouchStartX] = useState(0);
 
+  const [mediaLightboxIndex, setMediaLightboxIndex] = useState<number | null>(null);
+  const [mediaTouchStartX, setMediaTouchStartX] = useState(0);
+
   const galleryImages = [jjj1, jjj2, jjj3, jjj4];
   const founderImages = [fff1, fff2, fff3, fff4, fff5];
   const founderThumbnails = [fff2, fff3, fff4, fff5];
+  const mediaImages = [s1, s2];
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -50,11 +56,23 @@ export default function Team() {
             prev === null ? null : prev === founderImages.length - 1 ? 0 : prev + 1
           );
         }
+      } else if (mediaLightboxIndex !== null) {
+        if (e.key === "Escape") setMediaLightboxIndex(null);
+        if (e.key === "ArrowLeft") {
+          setMediaLightboxIndex((prev) =>
+            prev === null ? null : prev === 0 ? mediaImages.length - 1 : prev - 1
+          );
+        }
+        if (e.key === "ArrowRight") {
+          setMediaLightboxIndex((prev) =>
+            prev === null ? null : prev === mediaImages.length - 1 ? 0 : prev + 1
+          );
+        }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, founderLightboxIndex, galleryImages.length, founderImages.length]);
+  }, [lightboxIndex, founderLightboxIndex, mediaLightboxIndex, galleryImages.length, founderImages.length, mediaImages.length]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.touches[0].clientX);
@@ -92,6 +110,26 @@ export default function Team() {
     if (diff < -50) {
       setFounderLightboxIndex((prev) =>
         prev === null ? null : prev === 0 ? founderImages.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const handleMediaTouchStart = (e: React.TouchEvent) => {
+    setMediaTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleMediaTouchEnd = (e: React.TouchEvent) => {
+    if (mediaLightboxIndex === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = mediaTouchStartX - touchEndX;
+    if (diff > 50) {
+      setMediaLightboxIndex((prev) =>
+        prev === null ? null : prev === mediaImages.length - 1 ? 0 : prev + 1
+      );
+    }
+    if (diff < -50) {
+      setMediaLightboxIndex((prev) =>
+        prev === null ? null : prev === 0 ? mediaImages.length - 1 : prev - 1
       );
     }
   };
@@ -290,6 +328,149 @@ export default function Team() {
         </motion.div>
       </div>
 
+      {/* 媒體報導專區 (Media Coverage) */}
+      <section className="mt-16 sm:mt-24 pt-12 sm:pt-16 pb-16 bg-gradient-to-b from-[#FAF8F5] via-[#fdfcf9] to-[#FAF8F5] border-t border-slate-100 relative overflow-hidden">
+        {/* Decorative playful dots */}
+        <div className="absolute top-8 left-8 w-4 h-4 rounded-full bg-[#C5A059]/20 pointer-events-none hidden sm:block" />
+        <div className="absolute top-12 right-12 w-5 h-5 rounded-full bg-[#002B5B]/10 pointer-events-none hidden sm:block" />
+        <div className="absolute bottom-8 left-1/4 w-3.5 h-3.5 rounded-full bg-[#ff6600]/15 pointer-events-none hidden sm:block" />
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Top Header */}
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-300/40 tracking-widest uppercase select-none pointer-events-none font-serif leading-none mb-1">
+              MEDIA COVERAGE
+            </div>
+            <div className="relative inline-block -mt-3 sm:-mt-6">
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3">
+                <Sparkles className="text-[#C5A059] shrink-0 w-5 h-5 sm:w-6 sm:h-6" />
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">
+                  媒體報導
+                </h2>
+                <Sparkles className="text-[#C5A059] shrink-0 w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+            </div>
+            <p className="mt-3.5 sm:mt-4 text-base sm:text-lg md:text-xl font-bold text-[#002B5B] max-w-2xl mx-auto leading-relaxed">
+              江毅澤執行長｜親子共學與國際教育推廣
+            </p>
+          </div>
+
+          {/* 新聞報導主卡片 */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-md border-2 border-slate-100 relative overflow-hidden"
+          >
+            {/* 卡片上方標題區域 */}
+            <div className="mb-8 sm:mb-10 text-center md:text-left border-b border-slate-100 pb-6 sm:pb-8">
+              {/* 小型分類標籤 */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#C5A059]/30 text-[#C5A059] font-bold text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4">
+                <Sparkles size={14} className="text-[#C5A059]" />
+                <span>媒體報導 MEDIA COVERAGE</span>
+              </div>
+
+              {/* 經濟日報名稱（醒目放大，電腦版約 36–42px，手機版約 28–32px） */}
+              <h3 className="text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] font-black text-[#002B5B] tracking-tight leading-tight">
+                經濟日報
+              </h3>
+
+              {/* 新聞標題（電腦版約 26–30px，手機版約 21–24px，自然換行，無日期） */}
+              <h4 className="mt-3 sm:mt-4 text-[21px] sm:text-[24px] md:text-[27px] lg:text-[30px] font-black text-[#002B5B] leading-snug">
+                江毅澤執行長推動親子共學、國際教育，陪伴逾600家庭再開放100名額
+              </h4>
+            </div>
+
+            {/* 卡片內容排版：電腦版左圖右文，手機版上圖下文 */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* 左側：新聞截圖 s-1、s-2（電腦版並排，手機版上下排列） */}
+              <div className="lg:col-span-5 flex flex-col gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                  {/* s-1 圖片 */}
+                  <div
+                    onClick={() => setMediaLightboxIndex(0)}
+                    className="group relative bg-white rounded-[12px] p-2.5 border-2 border-slate-100 shadow-sm hover:border-[#C5A059] hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden flex flex-col"
+                  >
+                    <div className="relative overflow-hidden rounded-[8px] bg-slate-50">
+                      <img
+                        src={s1}
+                        alt="經濟日報新聞報導截圖 第一部分"
+                        className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-[#002B5B]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2">
+                        <span className="text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-xs shadow-lg">
+                          <Search size={16} /> 點擊放大檢視
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* s-2 圖片 */}
+                  <div
+                    onClick={() => setMediaLightboxIndex(1)}
+                    className="group relative bg-white rounded-[12px] p-2.5 border-2 border-slate-100 shadow-sm hover:border-[#C5A059] hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden flex flex-col"
+                  >
+                    <div className="relative overflow-hidden rounded-[8px] bg-slate-50">
+                      <img
+                        src={s2}
+                        alt="經濟日報新聞報導截圖 第二部分"
+                        className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-[#002B5B]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2">
+                        <span className="text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-xs shadow-lg">
+                          <Search size={16} /> 點擊放大檢視
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-sm sm:text-base font-bold text-[#002B5B] text-center tracking-wide pt-1">
+                  感謝經濟日報獨家報導
+                </p>
+              </div>
+
+              {/* 右側：新聞完整內容與連結按鈕 */}
+              <div className="lg:col-span-7 flex flex-col">
+                <div className="space-y-4 text-slate-700 font-normal leading-[1.85] text-base sm:text-[16.5px] text-justify sm:text-left">
+                  <p>
+                    教育不只是孩子的成長，更是整個家庭共同學習與進步的旅程。江毅澤執行長長期關注親子共學與國際教育，希望透過多元教育資源與實際行動，陪伴家長與孩子拓展視野、累積學習經驗，為家庭創造更多成長的可能。
+                  </p>
+                  <p>
+                    面對全球化與多元文化的發展，國際視野已逐漸成為孩子未來成長的重要能力，執行長持續推動相關教育理念，希望讓更多家庭有機會接觸不同形式的學習資源，讓孩子不只是學習知識，更能在體驗中發現興趣、建立自信，逐步培養面對未來所需要的能力。
+                  </p>
+                  <p>
+                    執行長推動至今，已陪伴超過600個家庭參與親子共學及多元教育相關活動。每個家庭都有不同的需求與期待，而這些參與經驗，也讓親子教育的推廣有機會持續向更多家庭延伸。
+                  </p>
+                  <p>
+                    為了讓更多家長與孩子能夠接觸相關資源，江毅澤執行長宣布再次開放100個參與名額，希望將親子共學與國際教育的理念帶給更多家庭，讓不同家庭都能擁有更多學習、探索與成長的機會。
+                  </p>
+                  <p>
+                    執行長期盼透過持續的努力，讓更多家庭看見教育的不同可能，讓孩子擁有更寬廣的學習舞台，也讓每一份陪伴都能成為孩子成長路上珍貴的養分。
+                  </p>
+                </div>
+
+                {/* 閱讀完整新聞報導按鈕 */}
+                <div className="mt-8 pt-6 border-t border-slate-100 flex justify-center md:justify-start">
+                  <a
+                    href="https://pse.is/9qkfdb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-[#002B5B] hover:bg-[#001f42] text-white font-bold text-base sm:text-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group"
+                  >
+                    <span>閱讀完整新聞報導</span>
+                    <ExternalLink size={18} className="shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CEO Lightbox */}
       <AnimatePresence>
         {lightboxIndex !== null && (
@@ -416,6 +597,74 @@ export default function Team() {
                 <div 
                   key={idx} 
                   className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === founderLightboxIndex ? 'bg-white' : 'bg-white/30'}`}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Media Lightbox */}
+      <AnimatePresence>
+        {mediaLightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setMediaLightboxIndex(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-2 md:p-4"
+            onTouchStart={handleMediaTouchStart}
+            onTouchEnd={handleMediaTouchEnd}
+          >
+            <button 
+              onClick={(e) => { e.stopPropagation(); setMediaLightboxIndex(null); }}
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors cursor-pointer z-50 p-2 bg-black/20 rounded-full hover:bg-black/40"
+              aria-label="關閉大圖"
+            >
+              <X size={32} />
+            </button>
+
+            <button 
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                setMediaLightboxIndex(prev => prev === null ? null : (prev === 0 ? mediaImages.length - 1 : prev - 1)); 
+              }}
+              className="absolute left-2 md:left-8 text-white/70 hover:text-white transition-colors cursor-pointer z-50 p-2 md:p-3 bg-black/30 rounded-full hover:bg-black/50"
+              aria-label="上一張截圖"
+            >
+              <ChevronLeft size={36} />
+            </button>
+
+            <button 
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                setMediaLightboxIndex(prev => prev === null ? null : (prev === mediaImages.length - 1 ? 0 : prev + 1)); 
+              }}
+              className="absolute right-2 md:right-8 text-white/70 hover:text-white transition-colors cursor-pointer z-50 p-2 md:p-3 bg-black/30 rounded-full hover:bg-black/50"
+              aria-label="下一張截圖"
+            >
+              <ChevronRight size={36} />
+            </button>
+
+            <motion.img 
+              key={mediaLightboxIndex}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              src={mediaImages[mediaLightboxIndex]} 
+              alt="經濟日報新聞報導大圖檢視" 
+              className="w-auto h-auto max-w-[94vw] max-h-[88vh] md:max-w-[90vw] md:max-h-[90vh] object-contain rounded-xl shadow-2xl select-none"
+              onClick={(e) => e.stopPropagation()}
+              draggable="false"
+            />
+            
+            {/* Mobile Swipe hint / Indicator */}
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 pointer-events-none">
+              {mediaImages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === mediaLightboxIndex ? 'bg-white' : 'bg-white/30'}`}
                 />
               ))}
             </div>
