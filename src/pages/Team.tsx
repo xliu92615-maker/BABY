@@ -471,6 +471,45 @@ export default function Team() {
         </div>
       </section>
 
+      {/* 創辦人頁面品牌結語區塊 (Closing Section) */}
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#fdfcf9] via-[#FAF8F5] to-[#fdfcf9] border-t border-slate-100 relative overflow-hidden">
+        <div className="max-w-[850px] mx-auto px-4 sm:px-6 relative z-10 text-center">
+          {/* 金色細線與星芒裝飾 */}
+          <div className="flex items-center justify-center gap-2 mb-6 sm:mb-8">
+            <Sparkles className="text-[#C5A059] shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-[#C5A059]/40" />
+            <div className="h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-[#C5A059]/40" />
+            <Sparkles className="text-[#C5A059] shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
+          </div>
+
+          {/* 主標題 */}
+          <h2 className="text-[24px] sm:text-[28px] md:text-[34px] lg:text-[38px] font-black text-[#002B5B] tracking-tight leading-snug">
+            因為相信教育的力量，所以我們持續前行
+          </h2>
+
+          {/* 簡潔金色細線分隔 */}
+          <div className="w-16 h-1 bg-[#C5A059] rounded-full mx-auto mt-5 sm:mt-6 mb-8 sm:mb-10" />
+
+          {/* 兩段內文 */}
+          <div className="space-y-4 sm:space-y-5 text-slate-700 leading-[1.8] text-base sm:text-[17px] md:text-[18px] font-normal text-justify sm:text-center">
+            <p className="leading-[1.8]">
+              國際教育發展團隊 Global Edu 秉持著對教育的熱忱，持續串聯多元學習資源、規劃豐富的親子活動，並推動親子共學與國際教育，希望讓更多孩子有機會探索不同領域、拓展國際視野，也讓每個家庭都能在陪伴與學習中創造更多美好的可能。
+            </p>
+            <p className="leading-[1.8]">
+              教育的路上，我們不只希望帶給孩子更多元的學習機會，更期待成為家長值得信賴的夥伴。未來，Global Edu 將持續帶著這份初心，與更多家庭攜手同行，讓學習不受限於課堂，讓世界成為孩子成長的舞台。
+            </p>
+          </div>
+
+          {/* 分隔金線裝飾 */}
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#C5A059]/50 to-transparent mx-auto my-8 sm:my-10" />
+
+          {/* 結尾品牌標語 */}
+          <p className="text-base sm:text-lg md:text-[20px] font-black text-[#002B5B] leading-relaxed tracking-wide">
+            國際教育發展團隊 Global Edu｜以教育連結世界，以陪伴成就未來。
+          </p>
+        </div>
+      </section>
+
       {/* CEO Lightbox */}
       <AnimatePresence>
         {lightboxIndex !== null && (
