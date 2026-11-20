@@ -4,6 +4,7 @@ import { Globe2, Plane, Compass, HeartHandshake, ChevronLeft, ChevronRight } fro
 import StudyAbroadVideoStory from '../components/StudyAbroadVideoStory';
 import StudyAbroadNewGallery from '../components/StudyAbroadNewGallery';
 import StudyAbroadEditorialGallery from '../components/StudyAbroadEditorialGallery';
+import StudyAbroadDestinations from '../components/StudyAbroadDestinations';
 import nnn03Video from '../assets/videos/NNN-03.mp4';
 
 
@@ -279,6 +280,7 @@ export default function StudyAbroad() {
 
       <StudyAbroadNewGallery />
       <StudyAbroadEditorialGallery />
+      <StudyAbroadDestinations />
     </div>
   );
 }

@@ -70,6 +70,22 @@ export function Footer() {
                 </div>
               </div>
             </div>
+
+            {/* 聯絡信箱區塊 */}
+            <div className="inline-block w-full max-w-sm mt-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Mail className="text-[#C5A059]" size={20} />
+                <h4 className="text-white font-bold text-lg">聯絡信箱</h4>
+              </div>
+              <div className="text-sm">
+                <a
+                  href="mailto:globaledu@globaledutw.com"
+                  className="text-blue-100 hover:text-white transition-colors font-medium tracking-wide inline-block"
+                >
+                  globaledu@globaledutw.com
+                </a>
+              </div>
+            </div>
           </div>
           
           <div className="lg:col-span-3">
