@@ -231,7 +231,7 @@ export default function Team() {
 
           <div className="text-center md:text-left flex-1 flex flex-col items-center md:items-start justify-center w-full">
             <h3 className="text-4xl md:text-5xl font-black text-[#002B5B] tracking-tight">
-              執行長
+              江毅澤執行長
             </h3>
             <div className="w-16 h-1.5 bg-[#C5A059] rounded-full mt-6 mb-8" />
             

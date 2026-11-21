@@ -26,7 +26,7 @@ const ROUTE_SEO_MAP: Record<string, RouteSEO> = {
     description: '提供專業國際留遊學評估、海外文化交流活動與夏冬令營規劃，為孩子打造放眼全球的國際教育之路。',
   },
   '/team': {
-    title: '創辦人與專業師資團隊介紹｜國際教育發展團隊 Global Edu',
+    title: '團隊介紹｜國際教育發展團隊 Global Edu',
     description: '認識國際教育發展團隊 Global Edu 的創辦人、執行長與各領域專業師資陣容，以愛心、耐心與專業陪伴每位孩子。',
   },
   '/charity': {

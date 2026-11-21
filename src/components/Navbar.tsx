@@ -17,7 +17,7 @@ export function Navbar() {
     { name: '主題活動', path: '/activities' },
     { name: '親子共學', path: '/co-learning' },
     { name: '親子教育專欄', path: '/parenting-education' },
-    { name: '創辦人介紹', path: '/team' },
+    { name: '團隊介紹', path: '/team' },
     { name: '大手牽小手・愛心齊步走', path: '/charity' },
     { name: '國際留遊學', path: '/study-abroad' },
     { name: '家長反饋', path: '/reviews' },
