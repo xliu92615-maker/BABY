@@ -7,24 +7,28 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: '我們的課程適合什麼年齡層的孩子？',
-      answer: '我們的課程主要針對 3 歲至 12 歲的孩童設計。針對不同年齡層的心智與體能發展，我們會規劃專屬的分齡課程，確保每個孩子都能在最適合的節奏中學習。'
+      question: '01｜國際教育發展團隊 Global Edu主要提供哪些服務？',
+      answer: 'A：我們致力於提供多元的親子教育與國際學習體驗，服務內容包含親子活動、主題活動、親子共學、教育資訊分享，以及海外遊學與留學相關規劃，希望陪伴孩子在不同的學習環境中探索興趣、累積經驗，拓展國際視野。'
     },
     {
-      question: '什麼是「親子共學」？家長一定要全程參與嗎？',
-      answer: '「親子共學」是我們非常重視的核心理念，旨在透過活動加深親子間的連結。我們大部分的週末活動都需要家長陪伴參與，但也有部分平日營隊或進階技能課程是讓孩子獨立參加的。具體規定會在每個活動的詳情頁面中說明。'
+      question: '02｜活動費用要如何繳交？需要事先匯款嗎？',
+      answer: 'A：國際教育發展團隊所有活動費用皆採現場繳費方式，不會要求家長事先匯款，也不會要求轉帳至任何私人帳戶。家長可以安心依照活動現場的繳費流程完成付款。'
     },
     {
-      question: '如何報名參加主題活動？',
-      answer: '您可以透過點擊網站上方的「LINE 諮詢」按鈕加入我們的官方 LINE 帳號，我們的教育顧問將為您提供最新活動資訊與報名連結，並解答您的任何疑問。'
+      question: '03｜報名活動後，還會有其他額外費用嗎？',
+      answer: 'A：各項活動的收費內容會依活動性質有所不同，報名前都會提供相關費用資訊。若有其他必要支出，也會事先向家長說明，讓家長清楚了解整體費用。'
     },
     {
-      question: '請問退費機制是如何規定的？',
-      answer: '我們的活動都是一律現場繳費即可，不需事先匯款'
+      question: '04｜活動當天如果遇到天候或其他不可抗力因素怎麼辦？',
+      answer: 'A：若遇到天候不佳或其他特殊狀況，團隊會依照活動性質與現場情況評估，並透過聯絡管道通知家長後續安排。'
     },
     {
-      question: '如果孩子在活動中受傷怎麼辦？',
-      answer: '安全是我們的首要考量。所有活動我們皆會為學員投保公共意外責任險與旅遊平安險。同時，我們的帶隊老師皆受過基本急救訓練，戶外活動更會配置具備專業野外急救證照的人員。'
+      question: '05｜我們有提供哪些國家的留遊學規劃？',
+      answer: 'A：可依照不同國家、教育環境與學習需求進行規劃，常見國家包含美國、英國、加拿大、澳洲、紐西蘭、新加坡、日本及德國等，實際可安排的國家與行程，歡迎進一步諮詢。'
+    },
+    {
+      question: '06｜留學和遊學有什麼不同？',
+      answer: 'A：遊學以短期語言學習、文化體驗及生活探索為主；留學則是較長期的海外就學安排。兩者在時間、課程及準備方式上都有差異，可以依照家庭需求選擇。'
     }
   ];
 
@@ -43,10 +47,10 @@ export default function FAQ() {
               className={`bg-white rounded-[2rem] border-4 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 ${openId === index ? 'border-[#C5A059]/30' : 'border-slate-50'}`}
             >
               <button
-                className="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none"
+                className="w-full px-6 sm:px-8 py-5 sm:py-6 flex justify-between items-center text-left focus:outline-none cursor-pointer"
                 onClick={() => toggleAccordion(index)}
               >
-                <span className={`font-black text-lg tracking-tight transition-colors ${openId === index ? 'text-[#C5A059]' : 'text-[#002B5B]'}`}>
+                <span className={`font-black text-base sm:text-lg tracking-tight leading-snug transition-colors ${openId === index ? 'text-[#C5A059]' : 'text-[#002B5B]'}`}>
                   {faq.question}
                 </span>
                 <div className={`shrink-0 ml-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${openId === index ? 'bg-amber-50 text-[#C5A059]' : 'bg-slate-50 text-slate-400'}`}>
@@ -62,7 +66,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, type: "spring", bounce: 0.2 }}
                   >
-                    <div className="px-8 pb-8 text-slate-500 text-sm leading-relaxed border-t-2 border-slate-50 pt-6 font-medium">
+                    <div className="px-6 sm:px-8 pb-6 sm:pb-8 text-slate-600 text-sm sm:text-[15px] leading-[1.8] border-t-2 border-slate-50 pt-5 sm:pt-6 font-medium">
                       {faq.answer}
                     </div>
                   </motion.div>
